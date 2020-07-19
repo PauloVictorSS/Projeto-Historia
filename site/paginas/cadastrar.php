@@ -21,7 +21,7 @@
 	</head>
 	<body>
 
-		<?php	include "menu.php"	?>
+		<?php	include "menu.html"	?>
 
 		<main>
 			<article class="cadastro">
@@ -90,7 +90,7 @@
 		</main>
 		
 		
-		<?php   include "rodape.php";   ?>
+		<?php   include "rodape.html";   ?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>

@@ -21,7 +21,7 @@
 	</head>
 	<body>
 
-		<?php   include "menu.php";     ?>
+		<?php   include "menu.html";     ?>
 
 		<main>
 			<article class="area-de-questoes">
@@ -56,7 +56,7 @@
 			</article>
 		</main>
 
-		<?php   include "../paginas/rodape.php";   ?>
+		<?php   include "../paginas/rodape.html";   ?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>
