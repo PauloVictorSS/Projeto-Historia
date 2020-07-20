@@ -9,12 +9,12 @@
 
 	$rede = mysqli_query($conexao,"select * from rede");
 
-	while($n = mysqli_fetch_array($rede)){
+	while($m = mysqli_fetch_array($rede)){
 
-		$rede = $n[1];
-		$numb2 = $n[0];
-		echo "<option value='$numb2'>$rede</option>";
-		
+		$ensino = $m[1];
+		$numb = $m[0];
+		echo "<option value='$numb'>$ensino</option>";
+
 	}
 	
 ?>
