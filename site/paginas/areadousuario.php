@@ -34,6 +34,8 @@
 				<br><br>
 				<div class="dados-questoes">
 					<h1>Dados sobre as Questões</h1>
+					<br><br>
+					<p>Dados ainda não disponíveis</p>
 				</div>
 
 				<br><br><hr><br>
