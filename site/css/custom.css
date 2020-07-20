@@ -592,6 +592,80 @@ form a:hover{ text-decoration: underline; }
 }
 
 
+/* ===== Área do Administrador ===== */
+
+.area-admin{
+	width: 100%;
+	float: left;
+	padding: 3% 4%;
+	background: #3c6e71;
+}
+
+.admin-h1{
+	color: white;
+	text-align: center;
+	font-size: 200%;
+}
+
+.admin-h2{
+	color: black;
+	text-align: center;
+	font-size: 110%;
+	font-style: italic;
+}
+
+.admin-a{
+	display: block;
+	margin: 0 auto; 
+	width: 55%;
+}
+
+.admin-button{
+	width: 100%;
+	padding: 3% 4%;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+.area-admin #sair{
+	color: white;
+	float:  right;
+}
+
+
+/* ===== Área do Administrador: Gerenciar questões ===== */
+
+.admin-gerenciar_questoes{
+	width: 100%;
+	float: left;
+	padding: 3% 4%;
+	background: #3c6e71;
+}
+
+.admin-gerenciar_questoes #voltar{
+	color: white;
+	float:  right;
+}
+
+
+/* ===== Área do Administrador: Gerenciar Relatórios ===== */
+
+.admin-gerenciar_relat{
+	width: 100%;
+	float: left;
+	padding: 3% 4%;
+	background: #3c6e71;
+}
+
+.admin-gerenciar_relat #voltar{
+	color: white;
+	float:  right;
+}
+
+
 /* ===== Rodapé ===== */
 
 .rodape{

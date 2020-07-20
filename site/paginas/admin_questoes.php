@@ -24,16 +24,17 @@
 		<?php   include "menu.html";     ?>
 
 		<main>
-			<article class="area-admin">
+			<article class="admin-gerenciar_questoes">
                 <br><h1 class='admin-h1'>Área do Administrador</h1>
+                <h2 class='admin-h2'>Gerenciamento das questões</h2>
                 <br><br>
 
-                <a href='admin_relatorios.php' class='admin-a'><button class='admin-button'><br>Gerar e Gerenciar relatórios<br><i class="fa fa-bar-chart" aria-hidden="true"></i><br><br></button></a>
+                <a href='admin_addquest.php' class='admin-a'><button class='admin-button'><br>Adicionar questão<br><br></button></a>
                 <br><br>
-                <a href='admin_questoes.php' class='admin-a'><button class='admin-button'><br>Gerenciar questões e afins<br><i class="fa fa-question-circle-o" aria-hidden="true"></i><br><br></button></a>
+                <a href='admin_addvestib.php' class='admin-a'><button class='admin-button'><br>Adicionar vestibular<br><br></button></a>
                 <br><br><hr><br>
 
-                <a href="../php/usuario_deslogar.php" id="sair">Deslogar<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a href="areadoadmin.php" id="voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i>Voltar</a>
 			</article>
 		</main>
 
