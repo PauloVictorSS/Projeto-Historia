@@ -24,20 +24,9 @@
 		<?php   include "menu.html";     ?>
 
 		<main>
-			<article class="area-usuario">
-				<div class="dados-pessoais">
-					<h1>Dados Pessoais</h1>
-
-					<?php  include '../php/usuario_dadospessoais.php';		?>
-
-				</div>
-				<br><br>
-				<div class="dados-questoes">
-					<h1>Dados sobre as Questões</h1>
-				</div>
-
-				<br><br><hr><br>
-				<a href="../php/usuario_deslogar.php" id="sair">Deslogar<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+			<article class="area-admin">
+                
+                <a href="../php/usuario_deslogar.php" id="sair">Deslogar<i class="fa fa-sign-out" aria-hidden="true"></i></a>
 			</article>
 		</main>
 

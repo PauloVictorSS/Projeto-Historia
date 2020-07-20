@@ -13,20 +13,30 @@
 		$login = $_POST['login']; 
 		$senha = $_POST['senha'];
 
-		$result = mysqli_query($conexao, "select login, senha from usuarios where login = '$login' and senha = '$senha'");
+		$result = mysqli_query($conexao, "select login, senha, id_mestre from usuarios where login = '$login' and senha = '$senha'");
 
 		//Verifica se houve algum resultado com o login e senha iguais
 		if(mysqli_num_rows($result) == 1){
 			$_SESSION['login'] = $login;
 			$_SESSION['senha'] = $senha;
-			$_SESSION['status_login'] = 1;
 
 			$test1 = $_SESSION['login'];
 			$test2 = $_SESSION['senha'];
 
 			echo "$test1 | $test2"; 
 
-			header ("location: areadousuario.php");
+			while($n = mysqli_fetch_array($result)){
+
+				if($n[2] == 1562){
+					$_SESSION['status_login'] = 2;
+					header ("location: areadoadmin.php");
+				}
+				else{
+					$_SESSION['status_login'] = 1;
+					header ("location: areadousuario.php");
+				}
+				exit();
+			}
 		}
 		else
 			echo "<p class='mensagem_erro'>Usuário ou Senha incorretos!</p>";
