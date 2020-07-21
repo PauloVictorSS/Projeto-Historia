@@ -22,7 +22,9 @@
 
 	$id = $_SESSION["id_questao"];
 
-	$questao = mysqli_query($conexao, "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta, questoes.id, questoes.tipo from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and questoes.id = $id group by questoes.id");
+	$consulta = "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta, questoes.id, questoes.tipo from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and questoes.id = $id group by questoes.id";
+
+	$questao = mysqli_query($conexao, $consulta);
 
 	while($p = mysqli_fetch_array($questao)){
 

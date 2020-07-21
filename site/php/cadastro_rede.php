@@ -7,7 +7,9 @@
 
 	include "conexao_session.php";
 
-	$rede = mysqli_query($conexao,"select * from rede");
+	$consulta1 = "select * from rede";
+
+	$rede = mysqli_query($conexao, $consulta1);
 
 	while($m = mysqli_fetch_array($rede)){
 

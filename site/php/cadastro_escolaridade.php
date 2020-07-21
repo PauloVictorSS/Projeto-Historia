@@ -8,7 +8,9 @@
 
 	include "conexao_session.php";
 
-	$escolar = mysqli_query($conexao,"select * from escolaridade");
+	$consulta1 = "select * from escolaridade";
+
+	$escolar = mysqli_query($conexao, $consulta1);
 
 	while($m = mysqli_fetch_array($escolar)){
 

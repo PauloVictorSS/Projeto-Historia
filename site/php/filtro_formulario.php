@@ -7,7 +7,10 @@
 
 	include "conexao_session.php";
 
-	$vestibular = mysqli_query($conexao,"select vestibular.descricao from vestibular");
+	$consulta1 = "select vestibular.descricao from vestibular";
+	$consulta2 = "select sub_tema.descricao, sub_tema.id from sub_tema";
+
+	$vestibular = mysqli_query($conexao, $consulta1);
 				
 	while($n = mysqli_fetch_array($vestibular)){
 
@@ -46,7 +49,7 @@
 
 	echo "<select name='tema' id='tema-input'><option value=''>Temas</option>";
 				
-	$sub_tema = mysqli_query($conexao,"select sub_tema.descricao, sub_tema.id from sub_tema");
+	$sub_tema = mysqli_query($conexao, $consulta2);
 				
 	while($m = mysqli_fetch_array($sub_tema)){
 

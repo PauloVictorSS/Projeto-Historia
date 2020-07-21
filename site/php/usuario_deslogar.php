@@ -10,12 +10,12 @@
 
 	$_SESSION['status_login'] = 0;
 
-	session_destroy();
-
 	unset(
 		$_SESSION['usuario'],
 		$_SESSION['senha']
 	);
+
+	session_destroy();
 
 	header ("location: ../index.php");	
 

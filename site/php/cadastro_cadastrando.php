@@ -24,7 +24,9 @@
 
 			$cont = 0;
 
-			$verificausuario = mysqli_query($conexao, "select login from usuarios");
+			$consulta1 = "select login from usuarios";  
+
+			$verificausuario = mysqli_query($conexao, $consulta1);
 
 			while($u = mysqli_fetch_array($verificausuario) and $cont == 0)
 				if($login == $u[0])
@@ -35,7 +37,10 @@
 			else{
 				
 				$senhamd5 = md5($senha);
-				$insert = mysqli_query($conexao, "insert into usuarios values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar, 0)");
+
+				$insert1 = "insert into usuarios values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar, 0)";
+
+				$insert = mysqli_query($conexao, $insert1);
 
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;

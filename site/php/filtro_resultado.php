@@ -30,9 +30,13 @@
 	$vestibular = $_SESSION['vestibular'];
 	$tema = $_SESSION['tema'];
 			
-	$limite = mysqli_query($conexao, "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta, questoes.id from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%') LIMIT $inicio,$total_reg");
+	$consulta1 = "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta, questoes.id from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%') LIMIT $inicio,$total_reg";
+
+	$consulta2 = "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%')";
+
+	$limite = mysqli_query($conexao, $consulta1);
 			
-	$todos = mysqli_query($conexao, "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%')");
+	$todos = mysqli_query($conexao, $consulta2);
 			
 	$tr = mysqli_num_rows($todos); // verifica o número total de registros
 	$tp = $tr / $total_reg; // verifica o número total de páginas
