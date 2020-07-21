@@ -11,14 +11,14 @@
 
 	if(!empty($_POST['login']) and !empty($_POST['senha']) and !empty($_POST['nome']) and !empty($_POST['conf_senha']) and !empty($_POST['e-mail']) and !empty($_POST['aniver']) and !empty($_POST['escolar']) and !empty($_POST['rede'])){
 
-		$nome = $_POST['nome'];
-		$login = $_POST['login'];
-		$senha = $_POST['senha'];
-		$conf_senha = $_POST['conf_senha'];
-		$email = $_POST['e-mail'];
-		$aniversario = $_POST['aniver'];
-		$escolar = $_POST['escolar'];
-		$rede = $_POST['rede'];
+		$nome = mysqli_escape_string($conexao, $_POST['nome']);
+		$login = mysqli_escape_string($conexao, $_POST['login']);
+		$senha = mysqli_escape_string($conexao, $_POST['senha']);
+		$conf_senha = mysqli_escape_string($conexao, $_POST['conf_senha']);
+		$email = mysqli_escape_string($conexao, $_POST['e-mail']);
+		$aniversario = mysqli_escape_string($conexao, $_POST['aniver']);
+		$escolar = mysqli_escape_string($conexao, $_POST['escolar']);
+		$rede = mysqli_escape_string($conexao, $_POST['rede']);
 
 		if($senha == $conf_senha){
 

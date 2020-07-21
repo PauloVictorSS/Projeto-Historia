@@ -8,10 +8,10 @@
 	include "conexao_session.php";
    				
 	if(!empty($_POST["id_questao"]))
-		$_SESSION["id_questao"] = $_POST["id_questao"];
+		$_SESSION["id_questao"] = mysqli_escape_string($conexao, $_POST["id_questao"]);
 
 	if(!empty($_POST["lettler"])){
-		$_SESSION["resposta"] = $_POST["lettler"];
+		$_SESSION["resposta"] = mysqli_escape_string($conexao, $_POST["lettler"]);
 		$resposta = $_SESSION["resposta"];
 	}
 	
