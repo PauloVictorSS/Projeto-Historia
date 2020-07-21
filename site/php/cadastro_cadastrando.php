@@ -31,10 +31,11 @@
 					$cont = 1;
 
 			if($cont == 1)
-				echo "<p class='mensagem_erro'>Já existe um usuário com essse login</p>";
+				echo "<br><p class='mensagem_erro'>Já existe um usuário com essse login</p>";
 			else{
 				
-				$insert = mysqli_query($conexao, "insert into usuarios values('$login', '$senha', '$nome', '$email', '$aniversario', $rede, $escolar)");
+				$senhamd5 = md5($senha);
+				$insert = mysqli_query($conexao, "insert into usuarios values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar, 0)");
 
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;
@@ -45,9 +46,9 @@
 			}
 		}
 		else
-			echo "<p class='mensagem_erro'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</p>";
+			echo "<br><p class='mensagem_erro'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</p>";
 	}
 	else if(!empty($_POST['login']) or !empty($_POST['senha']) or !empty($_POST['nome']) or !empty($_POST['conf_senha']) or !empty($_POST['e-mail']) or !empty($_POST['aniver']) or !empty($_POST['escolar']) or !empty($_POST['rede']))
-			echo "<p class='mensagem_erro'>Todos os campos devem estar preenchidos</p>";
+			echo "<br><p class='mensagem_erro'>Todos os campos devem estar preenchidos</p>";
 
 ?>
