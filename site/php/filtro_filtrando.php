@@ -6,20 +6,21 @@
 */
 
 	include "conexao_session.php";
+	include "clear.php";
 
 	if(!empty($_POST['tema']))
-		$_SESSION['tema'] = mysqli_escape_string($conexao, $_POST['tema']);
+		$_SESSION['tema'] = clear($_POST['tema']);
 
 	if(!empty($_POST['ano']))
-		$_SESSION['ano'] = mysqli_escape_string($conexao, $_POST['ano']);
+		$_SESSION['ano'] = clear($_POST['ano']);
 
 	if(!empty($_POST['partenome']))
-		$_SESSION['partenome'] = mysqli_escape_string($conexao, $_POST['partenome']);
+		$_SESSION['partenome'] = clear($_POST['partenome']);
 
 	if(!empty($_POST['vestibular']))
-		$_SESSION['vestibular'] = mysqli_escape_string($conexao, $_POST['vestibular']);
+		$_SESSION['vestibular'] = clear($_POST['vestibular']);
 
 	if(!empty($_POST['qtd_quest']))
-		$_SESSION['qtd_quest'] = mysqli_escape_string($conexao, $_POST['qtd_quest']);
+		$_SESSION['qtd_quest'] = clear($_POST['qtd_quest']);
 		
 ?>

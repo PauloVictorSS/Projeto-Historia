@@ -8,17 +8,18 @@
 */
 
 	include "conexao_session.php";
+	include "clear.php";
 
 	if(!empty($_POST['login']) and !empty($_POST['senha']) and !empty($_POST['nome']) and !empty($_POST['conf_senha']) and !empty($_POST['e-mail']) and !empty($_POST['aniver']) and !empty($_POST['escolar']) and !empty($_POST['rede'])){
 
-		$nome = mysqli_escape_string($conexao, $_POST['nome']);
-		$login = mysqli_escape_string($conexao, $_POST['login']);
-		$senha = mysqli_escape_string($conexao, $_POST['senha']);
-		$conf_senha = mysqli_escape_string($conexao, $_POST['conf_senha']);
-		$email = mysqli_escape_string($conexao, $_POST['e-mail']);
-		$aniversario = mysqli_escape_string($conexao, $_POST['aniver']);
-		$escolar = mysqli_escape_string($conexao, $_POST['escolar']);
-		$rede = mysqli_escape_string($conexao, $_POST['rede']);
+		$nome = clear($_POST['nome']);
+		$login = clear($_POST['login']);
+		$senha = clear($_POST['senha']);
+		$conf_senha = clear($_POST['conf_senha']);
+		$email = clear($_POST['e-mail']);
+		$aniversario = clear($_POST['aniver']);
+		$escolar = clear($_POST['escolar']);
+		$rede = clear($_POST['rede']);
 
 		if($senha == $conf_senha){
 

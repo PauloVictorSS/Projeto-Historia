@@ -7,11 +7,12 @@
 */
 
 	include "conexao_session.php";
+	include "clear.php";
 
 	if(!empty($_POST['login']) and !empty($_POST['senha'])){
 
-		$login = mysqli_escape_string($conexao, $_POST['login']); 
-		$senha = mysqli_escape_string($conexao, $_POST['senha']); 
+		$login = clear($_POST['login']); 
+		$senha = clear($_POST['senha']); 
 
 		$senhamd5 = md5($senha);
 
