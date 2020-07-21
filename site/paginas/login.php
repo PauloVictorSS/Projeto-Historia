@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/conexao.php";
+	include "../conexao/start_conexao.php";
 	include "../php/usuario_verificalogado.php";
 ?>
 
@@ -49,6 +49,8 @@
 				<br><br>
 
 				<?php  include "../php/usuario_logando.php";	?>
+
+				<?php 	include "../conexao/close_conexao.php"; 	?>
 
 			</article>
 		</main>

@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/conexao.php";
+	include "../conexao/start_conexao.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +51,8 @@
 
 
 		<?php   include "../paginas/rodape.html";   ?>
+		
+		<?php 	include "../conexao/close_conexao.php";?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>
