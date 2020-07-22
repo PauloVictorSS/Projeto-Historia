@@ -36,17 +36,17 @@
 					<br>
 					<div class="text-box">
 						<i class="fa fa-user" aria-hidden="true"></i>
-						<input type="text" name="login" id="usuario" class="informacoes" placeholder="Login">
+						<input type="text" name="login" id="usuario" class="informacoes" placeholder="Login" maxlength="20">
 					</div>
 					<br>
 					<div class="text-box">
 						<i class="fa fa-lock" aria-hidden="true"></i>
-						<input type="password" name="senha" id="senha" class="informacoes" placeholder="Senha">
+						<input type="password" name="senha" id="senha" class="informacoes" placeholder="Senha" maxlength="15">
 					</div>
 					<br>
 					<div class="text-box">
 						<i class="fa fa-lock" aria-hidden="true"></i>
-						<input type="password" name="conf_senha" id="conf_senha" class="informacoes" placeholder="Confirmar Senha">
+						<input type="password" name="conf_senha" id="conf_senha" class="informacoes" placeholder="Confirmar Senha" maxlength="15">
 					</div>
 					<br>
 					<div class="text-box">
