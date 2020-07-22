@@ -30,12 +30,12 @@
 				<form method="POST" action="login.php">
 					<div class="text-box">
 						<i class="fa fa-user" aria-hidden="true"></i>
-						<input type="text" name="login" id="usuario" class="informacoes" maxlength="25" placeholder="Usuário">
+						<input type="text" name="login" id="usuario" class="informacoes" maxlength="20" placeholder="Usuário">
 					</div>
 					<br><br>
 					<div class="text-box">
 						<i class="fa fa-lock" aria-hidden="true"></i>
-						<input type="password" name="senha" id="senha" class="informacoes" maxlength="20" placeholder="Senha">
+						<input type="password" name="senha" id="senha" class="informacoes" maxlength="15" placeholder="Senha">
 					</div>
 					<br><br>
 					<a href="#">Esqueceu a Senha?</a>
