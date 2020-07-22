@@ -29,7 +29,7 @@
 				<br><hr><br>
 				<form method="POST" action="areadequestoes.php">
 					<div class="text-box">
-						<input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="100">
+						<input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</div>
 					<br><br>
