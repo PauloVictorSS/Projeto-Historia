@@ -45,7 +45,6 @@
 				</form><br>
 				<h2>Entre em contato de outras formas</h2>
 				<br><br>
-				<p>Outras formas ainda não disponíveis</p>
 			</article>
 		</main>
 
