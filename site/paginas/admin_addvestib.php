@@ -31,9 +31,11 @@
                 <p><i>Vestibulares já cadastrados no banco de dados:</i></p>
                 <br>
                 <div>
-                    <?php   include "admin_addvestib.php";     ?>
+                    <?php   include "../php/admin_cadastrovest.php";     ?>
+                    <?php   include "../php/admin_addvest.php";     ?>
                     <br>
-                    <form action="../php/admin_addvest.php" method="POST">
+
+                    <form action="admin_addvestib.php" method="POST">
                         <br>
                         <label for="vestibular" id="label"><b>Nome do Vestibular para adicionar:</b></label>
                         <input type="text" name="vestibular" id="vestibular"><br><br>
@@ -41,11 +43,7 @@
                         <br>
                     </form>
                     <br>
-                </div>
-
-                <br><br>
-
-                <?php   include"../php/admin_addvest.php";     ?>
+                </div>           
 
                 <br><br><hr><br>
                 <a href="admin_questoes.php" id="voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i>Voltar</a>
