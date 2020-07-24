@@ -637,17 +637,43 @@ form a:hover{ text-decoration: underline; }
 
 /* ===== Área do Administrador: Gerenciar questões ===== */
 
-.admin-gerenciar_questoes{
+.admin-gerenciar_questoes, .admin-adicionar_vestibulares{
 	width: 100%;
 	float: left;
 	padding: 3% 4%;
 	background: #3c6e71;
 }
 
-.admin-gerenciar_questoes #voltar{
+.admin-gerenciar_questoes #voltar, .admin-adicionar_vestibulares #voltar{
 	color: white;
 	float:  right;
 }
+
+.admin-adicionar_vestibulares .vest_adicion{
+	text-align: center;
+}
+
+.admin-adicionar_vestibulares form{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.admin-adicionar_vestibulares form #vestibular{
+	border-radius: 5px;
+	padding: 1.5%;
+	border: 1px solid black;
+}
+
+.admin-adicionar_vestibulares form #btn{
+	padding: 1.5% 1.5%;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	background: linear-gradient(to left, #006000, #004400);
+}
+
+.admin-adicionar_vestibulares form #btn:hover{ background: linear-gradient(to right, #006000, #004400); }
 
 
 /* ===== Área do Administrador: Gerenciar Relatórios ===== */

@@ -5,7 +5,7 @@
 	disponíveis para o cadastro de um 
 	usuário
 */
-
+	
 	include "conexao_session.php";
 
 	$consulta1 = "select * from escolaridade";
