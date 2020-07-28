@@ -30,9 +30,9 @@
 	$vestibular = $_SESSION['vestibular'];
 	$tema = $_SESSION['tema'];
 			
-	$consulta1 = "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta, questoes.id from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%') LIMIT $inicio,$total_reg";
+	$consulta1 = "SELECT * FROM `questoes_filtro` where (enunciado like '%$enunciado%' and ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%') LIMIT $inicio,$total_reg";
 
-	$consulta2 = "select vestibular.descricao as 'Vestibular', questoes.ano, questoes.imagem, tema.descricao as 'Tema', sub_tema.descricao as 'Sub-Tema', questoes.enunciado, questoes.alternativa_a, questoes.alternativa_b, questoes.alternativa_c, questoes.alternativa_d, questoes.alternativa_e, questoes.alternativa_certa, questoes.explicacao, questoes.pergunta from questoes, sub_tema, tema, vestibular where (questoes.id_vestibular = vestibular.id and questoes.id_sub_tema = sub_tema.id and sub_tema.id_tema = tema.id) and (questoes.enunciado like '%$enunciado%' and questoes.ano like '%$ano%' and vestibular.descricao like '%$vestibular%' and sub_tema.descricao like '%$tema%')";
+	$consulta2 = "SELECT * FROM `questoes_filtro` where (enunciado like '%$enunciado%' and ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%')";
 
 	$limite = mysqli_query($conexao, $consulta1);
 			
