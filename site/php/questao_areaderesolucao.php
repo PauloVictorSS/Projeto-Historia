@@ -5,8 +5,8 @@
 	organizada
 */
 			
-	include "conexao_session.php";
-	include "clear.php";
+	include_once("conexao_session.php");
+	include_once("clear.php");
 	
 	if(!empty($_POST["id_questao"]))
 		$_SESSION["id_questao"] = clear($_POST["id_questao"]);
@@ -99,9 +99,9 @@
 		echo "</form>";
 
 		if(!empty($resposta) and $tipo == 1)
-			include "../php/questao_verificaresposta1.php";
+			include_once("../php/questao_verificaresposta1.php");
 		elseif(empty($resposta) and $tipo == 2 and $button == 1)
-			include "../php/questao_verificaresposta2.php";
+			include_once("../php/questao_verificaresposta2.php");
 
 		echo "<br><br><hr><br><form actino='resolvendoquestoes.php' method='POST'>";
 

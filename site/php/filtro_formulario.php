@@ -5,7 +5,7 @@
 	filtrar os resultados na Área de Questões
 */
 
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	$consulta1 = "select vestibular.descricao from vestibular";
 	$consulta2 = "select sub_tema.descricao, sub_tema.id from sub_tema";

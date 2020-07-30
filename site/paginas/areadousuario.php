@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/start_conexao.php";
+	include_once("../conexao/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -21,14 +21,14 @@
 	</head>
 	<body>
 		
-		<?php   include "menu.html";     ?>
+		<?php   include_once("menu.html");     ?>
 
 		<main>
 			<article class="area-usuario">
 				<div class="dados-pessoais">
 					<h1>Dados Pessoais</h1>
 
-					<?php  include '../php/usuario_dadospessoais.php';		?>
+					<?php  include_once("../php/usuario_dadospessoais.php");		?>
 
 				</div>
 				<br><br>
@@ -43,9 +43,9 @@
 			</article>
 		</main>
 
-		<?php   include "../paginas/rodape.html";   ?>
+		<?php   include_once("../paginas/rodape.html");   ?>
 
-		<?php 	include "../conexao/close_conexao.php";?>
+		<?php 	include_once("../conexao/close_conexao.php");?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>

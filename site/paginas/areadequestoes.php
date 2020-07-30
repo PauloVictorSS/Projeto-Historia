@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/start_conexao.php";
+	include_once("../conexao/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 	</head>
 	<body>
 
-		<?php   include "menu.html";     ?>
+		<?php   include_once("menu.html");     ?>
 
 		<main>
 			<article class="area-de-questoes">
@@ -36,7 +36,7 @@
 					<select name="vestibular" id="vestibular-input">
 						<option value="">Vestibular</option>
 
-						<?php 	include "../php/filtro_formulario.php";		?>
+						<?php 	include_once("../php/filtro_formulario.php");		?>
 
 					<br><br>
 					<div class="div-btn-filtrar">
@@ -50,15 +50,15 @@
 				<br><br><hr><br>
 				<h2>Resultados</h2>
 
-				<?php   include "../php/filtro_filtrando.php";   ?>
-				<?php 	include "../php/filtro_resultado.php";	 ?>
+				<?php   include_once("../php/filtro_filtrando.php");   ?>
+				<?php 	include_once("../php/filtro_resultado.php");	 ?>
 
 			</article>
 		</main>
 
-		<?php   include "../paginas/rodape.html";   ?>
+		<?php   include_once("../paginas/rodape.html");   ?>
 
-		<?php 	include "../conexao/close_conexao.php";?>
+		<?php 	include_once("../conexao/close_conexao.php");?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>

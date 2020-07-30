@@ -6,7 +6,7 @@
 	estava legado
 */
 	
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	$_SESSION['status_login'] = 0;
 

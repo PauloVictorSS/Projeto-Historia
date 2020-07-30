@@ -1,6 +1,6 @@
 <?php 
-	include "../conexao/start_conexao.php";
-	include "../php/usuario_verificalogado.php";
+	include_once("../conexao/start_conexao.php");
+	include_once("../php/usuario_verificalogado.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 	</head>
 	<body>
 
-		<?php   include "menu.html";     ?>
+		<?php   include_once("menu.html");     ?>
 
 		<main>
 			<article class="login">
@@ -48,13 +48,13 @@
 				</form>
 				<br><br>
 
-				<?php  include "../php/usuario_logando.php";	?>
+				<?php  include_once("../php/usuario_logando.php");	?>
 
-				<?php 	include "../conexao/close_conexao.php"; 	?>
+				<?php 	include_once("../conexao/close_conexao.php"); 	?>
 
 			</article>
 		</main>
-		<?php  include "rodape.html";      ?>
+		<?php  include_once("rodape.html");      ?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>

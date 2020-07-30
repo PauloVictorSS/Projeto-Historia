@@ -1,6 +1,6 @@
 <?php
 
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	if(!empty($_SESSION['status_login']))
 		if($_SESSION['status_login'] == 1)

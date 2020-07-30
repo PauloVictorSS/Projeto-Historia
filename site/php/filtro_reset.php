@@ -5,7 +5,7 @@
 	na Área de Questões
 */
 
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	$_SESSION['partenome'] = '';
 	$_SESSION['vestibular'] = '';

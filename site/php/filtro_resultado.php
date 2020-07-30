@@ -5,7 +5,7 @@
 	e a paginação aplicada
 */
 
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 	
 	if (!empty($_SESSION['qtd_quest'])) 
 		$total_reg = $_SESSION['qtd_quest'];

@@ -6,8 +6,8 @@
 	caso seja igual, entra na área do usuário
 */
 
-	include "conexao_session.php";
-	include "clear.php";
+	include_once("conexao_session.php");
+	include_once("clear.php");
 
 	if(!empty($_POST['login']) and !empty($_POST['senha'])){
 

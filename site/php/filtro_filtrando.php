@@ -5,8 +5,8 @@
 	de filtro para as SESSIONs
 */
 
-	include "conexao_session.php";
-	include "clear.php";
+	include_once("conexao_session.php");
+	include_once("clear.php");
 
 	if(!empty($_POST['tema']))
 		$_SESSION['tema'] = clear($_POST['tema']);

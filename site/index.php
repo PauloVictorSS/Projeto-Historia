@@ -40,8 +40,8 @@
 			</article>
 		</main>
 
-		<?php  include "php/filtro_reset.php"    ?>
-		<?php  include "paginas/rodape.html"      ?>
+		<?php  include_once("php/filtro_reset.php");    ?>
+		<?php  include_once("paginas/rodape.html");      ?>
 
 		<!-- JQUERY -->
 		<script src="js/jquery-3.5.1.min.js"></script>

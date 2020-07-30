@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/start_conexao.php";
+	include_once("../conexao/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		
-		<?php   include "menu.html"     ?>
+		<?php   include_once("menu.html");     ?>
 
 		<main>
 			<article class="contato">
@@ -48,9 +48,9 @@
 		</main>
 
 
-		<?php   include "../paginas/rodape.html";   ?>
+		<?php   include_once("../paginas/rodape.html");   ?>
 		
-		<?php 	include "../conexao/close_conexao.php";?>
+		<?php 	include_once("../conexao/close_conexao.php");	  ?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>

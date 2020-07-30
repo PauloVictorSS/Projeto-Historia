@@ -5,7 +5,7 @@
 	na área do usuário
 */
 
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	$login = $_SESSION['login'];
 

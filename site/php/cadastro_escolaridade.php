@@ -6,7 +6,7 @@
 	usuário
 */
 	
-	include "conexao_session.php";
+	include_once("conexao_session.php");
 
 	$consulta1 = "select * from escolaridade";
 

@@ -1,5 +1,5 @@
 <?php 
-	include "../conexao/start_conexao.php";
+	include_once("../conexao/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 	</head>
 	<body>
 
-		<?php	include "menu.html"	?>
+		<?php	include_once("menu.html");	?>
 
 		<main>
 			<article class="cadastro">
@@ -64,7 +64,7 @@
 						<select id="escolar" name="escolar">
 							<option value="">Escolaridade</option>
 
-							<?php  include "../php/cadastro_escolaridade.php";	?>
+							<?php  include_once("../php/cadastro_escolaridade.php");	?>
 
 						</select>
 					</div>
@@ -74,7 +74,7 @@
 						<select id="rede" name="rede">
 							<option value="">Rede</option>
 
-							<?php  include "../php/cadastro_rede.php";	?>
+							<?php  include_once("../php/cadastro_rede.php");	?>
 
 						</select>
 					</div><br>
@@ -84,15 +84,15 @@
 					</div>
 				</form>
 				<br>
-				<?php   include "../php/cadastro_cadastrando.php"   ?>
+				<?php   include_once("../php/cadastro_cadastrando.php");   ?>
 				<br><br>
 			</article>
 		</main>
 		
 		
-		<?php   include "rodape.html";   ?>
+		<?php   include_once("rodape.html");   ?>
 
-		<?php 	include "../conexao/close_conexao.php";?>
+		<?php 	include_once("../conexao/close_conexao.php");?>
 
 		<!-- JQUERY -->
 		<script src="../js/jquery-3.5.1.min.js"></script>
