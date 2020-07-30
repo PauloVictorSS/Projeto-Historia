@@ -27,9 +27,6 @@ select{
     -moz-appearance: none; /* Remove estilo padrão do FireFox */
  	appearance: none; /* Remove estilo padrão Geral */
 }
-.clear{
-    clear: both; 
-}
 
 
 /* ===== Cabeçalho ===== */

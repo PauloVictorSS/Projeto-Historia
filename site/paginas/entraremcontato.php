@@ -42,8 +42,7 @@
 					<br><br>
 					<label>Sugestão e/ou Crítica:</label><br>
 					<textarea name="sugestao">Sua sugestão aqui!</textarea>
-				</form><br>
-				<h2>Entre em contato de outras formas</h2>
+				</form>
 				<br><br>
 			</article>
 		</main>
