@@ -7,31 +7,30 @@
 	font-size: 100%;
 	border: none;
 }
-
 a{
 	text-decoration: none;
 	color: black;
 }
-
 body{ 
 	background-color: #fff; 
 }
-
 ul{ 
 	list-style: none; 
 }
-
 hr{ 
 	border: 1px solid silver;
 	width: 105%; 
 	margin-left: -2.5%;
 }
-
 select{
 	-webkit-appearance: none;  /* Remove estilo padrão do Chrome */
     -moz-appearance: none; /* Remove estilo padrão do FireFox */
  	appearance: none; /* Remove estilo padrão Geral */
 }
+.clear{
+    clear: both; 
+}
+
 
 /* ===== Cabeçalho ===== */
 
@@ -40,13 +39,11 @@ select{
 	float: left;
 	padding: 3% 4%;
 }
-
 .logo{
 	width: 56px;
 	height: 56px;
 	float: left;
 }
-
 .btn-menu{
 	width: 56px;
 	height: 56px;
@@ -56,7 +53,6 @@ select{
 	float: right;
 	background: linear-gradient(to right, #3c6e71, #284b63);
 }
-
 .btn-menu:hover{ background: linear-gradient(to left, #3c6e71, #284b63); }
 
 
@@ -71,7 +67,6 @@ select{
 	left: 0;
 	display: none;
 }
-
 .btn-close{
 	font-size: 300%;
 	color: white;
@@ -80,21 +75,19 @@ select{
 	margin-right: 7%;
 	margin-top: 3%;
 }
-
 .menu ul{
 	width: 100%;
 	float: left;
 	text-align: center;
 }
-
-.menu li{ padding: 2%; }
-
+.menu li{ 
+	padding: 2%; 
+}
 .menu li a{
 	font-size: 165%;
 	color: #fff;
 	padding: 1.5% 3%;
 }
-
 .menu li a:hover{ background: #3c6e71; }
 
 
@@ -107,75 +100,67 @@ select{
 	background: #3c6e71;
 	height: 475px;
 }
-
 .login h1{
 	margin-top: 17%;
 	font-size: 180%;
 	text-align: center;
 	color: white;
 }
-
 .login form{
 	display: block;
 	width: 75%;
 	padding: 1.5%;
 	margin: 0 auto;
 }
-
 .login .text-box{
 	width: 100%;
 	border-bottom: 1px solid #424242;
 	padding: 3% 0;
 }
-
 .login .text-box i{
 	width: 9.5%;
 	float: left;
 	text-align: center;
 	color: white;
 }
-
 .login .informacoes{
 	width: 90.5%;
 	border: none;
 	outline: none;
 	background: none;
 }
-
 form a{
 	display: block;
 	text-align: center;
 }
-
-form a:hover{ text-decoration: underline; }
-
+form a:hover{ 
+	text-decoration: underline; 
+}
 .div-btn-login{
 	display: block;
 	margin: 0 auto;
 	text-align: center;
 }
-
 .div-btn-login input{
 	padding: 1.5% 1.5%;
 	text-align: center;
 	cursor: pointer;
 	border-radius: 5px;
 }
-
 .div-btn-login #btn-login{ 
 	background: linear-gradient(to left, #008000, #006400); 
 	float: right;
 }
-
 .div-btn-login #btn-apagar{ 
 	background: linear-gradient(to left, #EE0000, #BC0000); 
 	float: left;
 }
-
-.div-btn-login #btn-login:hover{ background: linear-gradient(to right, #008000, #006400); }
-
-.div-btn-login #btn-apagar:hover{ background: linear-gradient(to right, #EE0000, #BC0000); }
-
+.div-btn-login #btn-login:hover{ 
+	background: linear-gradient(to right, #008000, #006400); 
+}
+.div-btn-login #btn-apagar:hover{
+	 background: linear-gradient(to right, #EE0000, #BC0000);
+}
 .login .mensagem_erro{
 	text-align: center;
 	color: white;
@@ -190,13 +175,11 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #9DBBBD;
 }
-
 .sobrenos h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 }
-
 .sobrenos p{
 	padding: 1%;
 	font-size: 105%;
@@ -211,48 +194,41 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .cadastro h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 	margin-top: 3%;
 }
-
 .cadastro form{
 	display: block;
 	width: 100%;
 	padding: 1.5%;
 	margin-left: -1%;
 }
-
 .cadastro form .text-box{
 	width: 100%;
 	border-bottom: 1px solid #424242;
 	padding: 3% 0;
 }
-
 .cadastro form .text-box i{
 	width: 9.5%;
 	float: left;
 	text-align: center;
 	color: white;
 }
-
 .cadastro form .fa-graduation-cap{
 	width: 9.5%;
 	float: left;
 	text-align: center;
 	color: white;
 }
-
 .cadastro form .text-box .informacoes{
 	width: 90.5%;
 	border: none;
 	outline: none;
 	background: none;
 }
-
 .cadastro form select{
 	width: 90.5%;
 	border-radius: 5px;
@@ -260,34 +236,31 @@ form a:hover{ text-decoration: underline; }
 	background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) right no-repeat;
 	color: #303030;
 }
-
 .div-btn-cadastrar{
 	display: block;
 	text-align: center;
 	margin-top: 30%;
 }
-
 .div-btn-cadastrar input{
 	padding: 1.5% 1.5%;
 	text-align: center;
 	cursor: pointer;
 	border-radius: 5px;
 }
-
 .div-btn-cadastrar #btn-cadastrar{ 
 	background: linear-gradient(to left, #008000, #006400); 
 	float: right;
 }
-
 .div-btn-cadastrar #btn-apagar{ 
 	background: linear-gradient(to left, #EE0000, #BC0000); 
 	float: left;
 }
-
-.div-btn-cadastrar #btn-cadastrar:hover{ background: linear-gradient(to left, #006400, #008000); }
-
-.div-btn-cadastrar #btn-apagar:hover{ background: linear-gradient(to left, #BC0000, #EE0000); }
-
+.div-btn-cadastrar #btn-cadastrar:hover{ 
+	background: linear-gradient(to left, #006400, #008000);
+}
+.div-btn-cadastrar #btn-apagar:hover{ 
+	background: linear-gradient(to left, #BC0000, #EE0000); 
+}
 .cadastro .mensagem_erro{
 	text-align: center;
 	color: white;
@@ -302,27 +275,24 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .area-de-questoes h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 }
-
-.area-de-questoes img{ width: 100%; }
-
+.area-de-questoes img{ 
+	width: 100%; 
+}
 .area-de-questoes form{
 	display: block;
 	width: 108%;
 	padding: 1.5%;
 	margin-left: -4.5%;
 }
-
 .area-de-questoes form .text-box{
 	width: 100%;
 	padding: 3% 0;
 }
-
 .area-de-questoes form .text-box i{
 	width: 9.5%;
 	text-align: center;
@@ -330,7 +300,6 @@ form a:hover{ text-decoration: underline; }
 	float: right;
 	margin-top: 2%;
 }
-
 .area-de-questoes form .text-box input{
 	width: 90.5%;
 	float: left;
@@ -338,7 +307,6 @@ form a:hover{ text-decoration: underline; }
 	padding: 1.5%;
 	border: 1px solid black;
 }
-
 .area-de-questoes form select{
 	padding: 1.5%;
 	border: 1px solid black;
@@ -347,22 +315,24 @@ form a:hover{ text-decoration: underline; }
 	color: #404040;
 	font-size: 85%;
 }
-
-.area-de-questoes form #vestibular-input{ width: 67%; }
-
-.area-de-questoes form #ano-input{ width: 32.5%; float: right;}
-
-.area-de-questoes form #qtd_quest-input{ width: 100%; }
-
-.area-de-questoes form #tema-input{ width: 100%; }
-
+.area-de-questoes form #vestibular-input{ 
+	width: 67%; 
+}
+.area-de-questoes form #ano-input{ 
+	width: 32.5%; float: right;
+}
+.area-de-questoes form #qtd_quest-input{ 
+	width: 100%; 
+}
+.area-de-questoes form #tema-input{ 
+	width: 100%; 
+}
 .area-de-questoes .div-btn-filtrar{
 	display: block;
 	margin: 0 auto;
 	text-align: center;
 	margin-top: 5%;
 }
-
 .area-de-questoes form #btn-filtrar{
 	padding: 1.5% 1.5%;
 	text-align: center;
@@ -371,9 +341,9 @@ form a:hover{ text-decoration: underline; }
 	background: linear-gradient(to left, #006000, #004400);
 	float: right;
 }
-
-.area-de-questoes form #btn-filtrar:hover{ background: linear-gradient(to right, #006000, #004400); }
-
+.area-de-questoes form #btn-filtrar:hover{ 
+	background: linear-gradient(to right, #006000, #004400); 
+}
 .area-de-questoes form #btn-reseta-filtro{
 	padding: 1.5% 1.5%;
 	float: left;
@@ -382,33 +352,33 @@ form a:hover{ text-decoration: underline; }
 	border-radius: 5px;
 	background: linear-gradient(to left, #BE0000, #990000);
 }
-
-.area-de-questoes form #btn-reseta-filtro:hover{ background: linear-gradient(to right, #BE0000, #990000); }
-
+.area-de-questoes form #btn-reseta-filtro:hover{
+	background: linear-gradient(to right, #BE0000, #990000); 
+}
 .area-de-questoes h2{
 	font-size: 150%;
 	text-align: center;
 	color: white;
 }
-
 .area-de-questoes a{
 	text-decoration: none;
 	color: white;
 	font-style: italic;
 }
-
-.area-de-questoes #paginacao-anterior{ float: left; }
-
-.area-de-questoes #paginacao-proxima{ float: right; }
-
-.area-de-questoes #paginacao-inicio{ margin-left: 46%; }
-
+.area-de-questoes #paginacao-anterior{
+	float: left; 
+}
+.area-de-questoes #paginacao-proxima{
+	float: right; 
+}
+.area-de-questoes #paginacao-inicio{ 
+	margin-left: 46%; 
+}
 .area-de-questoes .entrar_questao{
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 }
-
 .area-de-questoes .entrar_questao .btn-resolver-questao{
 	float: right;
 	background: none;
@@ -416,7 +386,6 @@ form a:hover{ text-decoration: underline; }
 	color: black;
 	font-style: italic;
 }
-
 .area-de-questoes #mensagem_erro{
 	text-align: center;
 	color: white;
@@ -431,34 +400,30 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .dados-pessoais{
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 	padding: 3% 4%;
 }
-
 .dados-pessoais strong{
 	color: white;
 	padding: 1%;
 }
-
-.dados-pessoais p{ margin-top: 1%; }
-
+.dados-pessoais p{ 
+	margin-top: 1%; 
+}
 .area-usuario h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 }
-
 .dados-questoes{
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 	padding: 3% 4%;
 }
-
 .area-usuario #sair{
 	float: right;
 	color: white;
@@ -473,26 +438,21 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .resolvendo-questoes h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 }
-
 .resolvendo-questoes #form_alternativas{
 	width: 100%;
 }
-
 .resolvendo-questoes form .input-radio{
 	width: 12px;
 	height: 12px;
 }
-
 .resolvendo-questoes form label{
 	margin-left: 1.3%;
 }
-
 .resolvendo-questoes form #btn-verificar{
 	padding: 1.5% 1.5%;
 	text-align: center;
@@ -501,32 +461,31 @@ form a:hover{ text-decoration: underline; }
 	background: linear-gradient(to left, #006000, #004400);
 	float: right;
 }
-
-.resolvendo-questoes form #btn-verificar:hover{ background: linear-gradient(to right, #006000, #004400); }
-
-.resolvendo-questoes h2{ font-size: 100%; }
-
-.resolvendo-questoes img{ width: 100%; }
-
+.resolvendo-questoes form #btn-verificar:hover{ 
+	background: linear-gradient(to right, #006000, #004400); 
+}
+.resolvendo-questoes h2{ 
+	font-size: 100%; 
+}
+.resolvendo-questoes img{ 
+	width: 100%; 
+}
 .resolvendo-questoes #btn-proximo{
 	float: right;
 	background: none;
 	cursor: pointer;
 	color: white;
 }
-
 .resolvendo-questoes #btn-anterior{
 	float: left;
 	background: none;
 	cursor: pointer;
 	color: white;
 }
-
 .resolvendo-questoes #mensagem_acerto{
 	text-align: center;
 	color: #004000;
 }
-
 .resolvendo-questoes #mensagem_erro{
 	text-align: center;
 	color: #600000;
@@ -541,45 +500,38 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .contato h1{
 	font-size: 200%;
 	text-align: center;
 	color: white;
 }
-
 .contato h2{
 	font-size: 95%;
 	margin-left: 5%;
 }
-
 .contato form{
 	display: block;
 	padding: 1.5%;
 	margin: 0 auto;
 	width: 95%;
 }
-
 .contato form .text-box{
 	width: 100%;
 	border-bottom: 1px solid #424242;
 	padding: 3% 0;
 }
-
 .contato form .text-box i{
 	width: 9.5%;
 	float: left;
 	text-align: center;
 	color: white;
 }
-
 .contato form .text-box input{
 	width: 90.5%;
 	border: none;
 	outline: none;
 	background: none;
 }
-
 .contato form textarea{
 	margin-top: 3%;
 	width: 100%;
@@ -599,26 +551,22 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .admin-h1{
 	color: white;
 	text-align: center;
 	font-size: 200%;
 }
-
 .admin-h2{
 	color: black;
 	text-align: center;
 	font-size: 110%;
 	font-style: italic;
 }
-
 .admin-a{
 	display: block;
 	margin: 0 auto; 
 	width: 55%;
 }
-
 .admin-button{
 	width: 100%;
 	padding: 3% 4%;
@@ -628,7 +576,6 @@ form a:hover{ text-decoration: underline; }
 	cursor: pointer;
 	border-radius: 15px;
 }
-
 .area-admin #sair{
 	color: white;
 	float:  right;
@@ -643,28 +590,23 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .admin-gerenciar_questoes #voltar, .admin-adicionar_vestibulares #voltar{
 	color: white;
 	float:  right;
 }
-
 .admin-adicionar_vestibulares .vest_adicion{
 	text-align: center;
 }
-
 .admin-adicionar_vestibulares form{
 	display: block;
 	width: 100%;
 	text-align: center;
 }
-
 .admin-adicionar_vestibulares form #vestibular{
 	border-radius: 5px;
 	padding: 1.5%;
 	border: 1px solid black;
 }
-
 .admin-adicionar_vestibulares #div_sucesso{
 	background-color: #fff;
 	display: block;
@@ -675,7 +617,6 @@ form a:hover{ text-decoration: underline; }
 	padding: 1.5%;
 	color: #004000; 
 }
-
 .admin-adicionar_vestibulares form #btn{
 	padding: 1.5% 1.5%;
 	text-align: center;
@@ -683,8 +624,9 @@ form a:hover{ text-decoration: underline; }
 	border-radius: 5px;
 	background: linear-gradient(to left, #006000, #004400);
 }
-
-.admin-adicionar_vestibulares form #btn:hover{ background: linear-gradient(to right, #006000, #004400); }
+.admin-adicionar_vestibulares form #btn:hover{ 
+	background: linear-gradient(to right, #006000, #004400); 
+}
 
 
 /* ===== Área do Administrador: Gerenciar Relatórios ===== */
@@ -695,7 +637,6 @@ form a:hover{ text-decoration: underline; }
 	padding: 3% 4%;
 	background: #3c6e71;
 }
-
 .admin-gerenciar_relat #voltar{
 	color: white;
 	float:  right;
