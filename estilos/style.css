@@ -1,0 +1,620 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    font-size: 100%;
+}
+html, body{
+    overflow-x: hidden; /* Retirando a barra de bolagem da horizontal (caso apareça) */
+    height: 100%;
+}
+input{
+    border:0;
+}
+img{
+    max-width: 100%;
+}
+p{
+    font-size: 19px;
+}
+a{
+    text-decoration: none;
+    font-size: 19px;
+    color: black;
+}
+h1{
+    font-size: 25px;
+    text-align: center;
+    padding: 20px 0;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/** Boot CSS **/
+
+.center{
+    max-width: 1280px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+.w66{
+    padding: 0 10px;
+    width: 66%;
+}
+.w50{
+    padding: 0 10px;
+    width: 50%;
+}
+.w33{
+    width: 33%;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear: both; /* Reseta todos os floats que foram usados*/
+}
+.buttons{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.mensagem-red{
+    text-align: center;
+    padding: 20px 0;
+    color: red;
+}
+.mensagem-green{
+    text-align: center;
+    padding: 20px 0;
+    color: green;
+}
+
+/** Menu CSS **/
+
+header{
+    padding: 20px 0;
+    background: #3D437A;
+}
+
+header .logo{
+    font-size: 23px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.mobile{
+    display: none; /* Fazendo o menu do mobile sumir */
+}
+
+nav.desktop ul{
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+nav.desktop li{
+    font-size: 17px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav.desktop a{
+    color: white;
+    text-decoration: none;
+}
+
+.logo img{
+    width: 75px;
+}
+
+
+/** Banner CSS **/
+
+section.banner-principal{
+    width: 100%;
+    height: 400px;
+    background-size: cover; /*Fazendo o background esticar até cobrir todo o container*/
+    position: relative;
+}
+
+section.banner-principal .banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagens/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+section.banner-principal #cadastro{
+    width: 93%;
+    max-width: 600px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+section.banner-principal #cadastro button{
+    padding: 14px 0;
+    width: 100%;
+    background: #00C59E;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+section.banner-principal #cadastro button i{
+    margin-right: 20px;
+    margin-top: 4px;
+    font-size: 25px;
+}
+
+
+/** Sobre Nós CSS **/
+
+section.sobre-site{
+    background: #ccc;
+}
+
+section.sobre-site h1{
+    padding-top: 20px;
+}
+
+section.sobre-site p{
+    padding: 20px 100px;
+}
+
+
+/** Login **/
+
+section.login{
+    background: #ccc;
+    min-height: 500px;
+}
+
+section.login div.center{
+    width: 100%;
+    padding-top: 50px;
+}
+
+section.login form{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+
+section.login form input[type=text], 
+section.login form input[type=password]{
+    width: 70%;
+    padding: 10px 5px;
+    margin-top: 20px;
+    background: none;
+    border-bottom: 1px solid black;
+}
+
+section.login form a:hover{
+    text-decoration: underline;
+}
+
+section.login form div.buttons{
+    width: 70%;
+    padding: 20px 0;
+}
+
+section.login form div.buttons input{
+    padding: 5px 7px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #019c01;
+}
+
+section.login form div.buttons input[value=Apagar]{
+    background-color: #a80202;
+}
+
+
+/** Área do usuário **/
+
+section.area-usuario{
+    background: #ccc;
+    min-height: 500px;
+}
+
+section.area-usuario .center{
+    max-width: 1000px;
+    padding-bottom: 50px;
+}
+
+section.area-usuario .center p{
+    line-height: 40px;
+}
+
+section.area-usuario div.dados-pessoais,
+section.area-usuario div.dados-questoes{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/** Área de Questões **/
+
+section.area-de-questoes{
+    background: #ccc;
+    min-height: 500px;
+}
+
+section.area-de-questoes form#form{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+section.area-de-questoes form#form input{
+    padding: 5px 5px;
+}
+
+section.area-de-questoes form#form select{
+    margin-top: 10px;
+    padding: 5px 5px;
+    border: none;
+}
+
+section.area-de-questoes form#form select+select.w33{
+    margin-left: 0.5%;
+}
+
+section.area-de-questoes form#form #pesquisar-input,
+section.area-de-questoes form#form #tema-input{
+    width: 100%;
+}
+
+section.area-de-questoes form#form input[type=submit]{
+    border: none;
+    background-color: #019c01;
+    padding: 3px 3px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+section.area-de-questoes form button[type=submit]{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: none;
+    background-color: #a80202;
+    padding: 3px 3px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+section.area-de-questoes div.resultados{
+    margin-top: 20px;
+    max-width: 1000px;
+}
+
+section.area-de-questoes div.resultados h2{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+section.area-de-questoes div.resultados img{
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+section.area-de-questoes div.resultados form.entrar_questao{
+    margin-top: 20px;
+}
+
+section.area-de-questoes div.resultados form.entrar_questao button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+section.area-de-questoes a{
+    text-decoration: none;
+    color: black;
+	font-style: italic;
+}
+section.area-de-questoes #paginacao-inicio{
+    display: block; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+
+/** Resolução de Questões **/
+
+section.resolvendo-questoes{
+    background: #ccc;
+    min-height: 500px;
+}
+
+section.resolvendo-questoes div.center{
+    max-width: 1000px;
+}
+
+section.resolvendo-questoes div.center img{
+    display: block;
+    margin: 10px auto;
+    max-width: 500px;
+}
+
+section.resolvendo-questoes form#form_alternativas{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+section.resolvendo-questoes form#form_alternativas input[type=radio]{
+    min-width: 15px;
+}
+
+section.resolvendo-questoes form#form_alternativas button{
+    display: block;
+    margin: 0 auto;
+    padding: 3px 3px;
+    border: none;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    background-color: #019c01;
+    cursor: pointer;
+}
+
+section.resolvendo-questoes a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin: 0 auto;
+    padding: 15px 0 25px;
+    cursor: pointer;
+    text-align: center;
+    max-width: 300px;
+}
+
+section.resolvendo-questoes a:hover{
+    text-decoration: underline;
+}
+
+section.resolvendo-questoes form#navegation-bar button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/** Cadastrar **/
+
+section.cadastro{
+    background: #ccc;
+}
+
+section.cadastro form{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    padding: 0 30px 30px;
+}
+
+section.cadastro form div.text-box{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+section.cadastro form div.text-box i{
+    width: 5%;
+    font-size: 120%;
+    text-align: center;
+}
+
+section.cadastro form div.text-box input,
+section.cadastro form div.text-box select{
+    width: 94%;
+    padding: 5px 2px;
+    margin-top: 20px;
+    border: none;
+}
+
+section.cadastro form div.buttons{
+    width: 80%;
+    padding: 20px 0;
+}
+
+section.cadastro form div.buttons input,
+section.cadastro form div.buttons button{
+    padding: 5px 5px;
+    cursor: pointer;
+    border: none;
+}
+
+section.cadastro form div.buttons input.left{
+    background-color: #a80202;
+}
+
+section.cadastro form div.buttons button.right{
+    background-color: #019c01;
+}
+
+
+/** Entrar em contato **/
+
+section.contato{
+    background: #ccc;
+}
+
+section.contato form{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.contato form input[type=text], 
+section.contato form textarea{
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 20px;
+}
+
+section.contato form textarea{
+    min-height: 200px;
+    margin-bottom: 40px;
+    resize: vertical;
+    border: none;
+}
+
+
+/** Rodapé e Erro404 CSS **/
+
+footer{
+    background: #313462;
+    padding: 30px 0;
+}
+
+footer p{
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+section.erro404 {
+    text-align: center;
+}
+
+section.erro404 h1{
+    border-top: 2px solid #a31300be;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #a31300be;
+}
+
+section.erro404 p{
+    margin-top: 30px;
+    color: black;
+}
+
+section.erro404 p a:hover{
+    text-decoration: underline;
+}
+
+
+/** Media para mudar o CSS**/
+
+@media screen and (max-width: 1000px){
+
+    nav.desktop{
+        display: none;
+    }
+    nav.mobile{
+        display: block;
+    }
+    nav.mobile .botao-menu-mobile{
+        position: relative;
+        z-index: 3;
+    }
+    nav.mobile ul{
+        z-index: 2;
+        list-style-type: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        text-align: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        height: 100%;
+    }
+    nav.mobile li{
+        width: 100%;
+        padding: 20px 0;
+        font-size: 17px; 
+    }
+    nav.mobile li{
+        width: 100%;
+        padding: 20px 0;
+        font-size: 17px;
+    }
+    nav.mobile li:first-child{
+        margin-top: 75px;
+    }
+    nav.mobile li a {
+        display: block;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.87);
+    }
+    .botao-menu-mobile{
+        cursor: pointer;
+        color: white;
+        font-size: 50px;
+        margin-top: 10px;
+    }
+    section.sobre-site p{
+        padding: 20px 30px;
+    }
+    section.contato form{
+        width: 80%;
+    }
+    section.login form{
+        width: 100%;
+    }
+
+    section.cadastro form div.text-box i{
+        display: none;
+    }
+    section.cadastro form div.text-box input,
+    section.cadastro form div.text-box select{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    section.cadastro form{
+        width: 80%;
+    }
+    section.cadastro form div.text-box{
+        width: 100%;
+    }
+    section.cadastro form div.buttons{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 475px){
+    .w33{
+        width: 100%;
+    }
+
+    section.cadastro form{
+        width: 100%;
+    }
+
+    section.area-de-questoes form#form select+select.w33{
+        margin-left: 0;
+    }
+}
