@@ -1,7 +1,7 @@
 <?php 
     include_once("config.php");
-    include_once("conexoes/start_conexao.php");
-    include_once("conexoes/conexao_session.php");
+    include_once("include/start_conexao.php");
+    include_once("include/conexao_session.php");
     include_once("php/clear.php");   
 ?>
 
@@ -15,14 +15,14 @@
     <meta name="keywords" content="palavbra-chave, do meu, site">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>imagens/favicon.ico" type="image/x-icon">
-    <link href="<?php echo INCLUDE_PATH; ?>estilos/style.css" rel="stylesheet">
+    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
+    <link href="<?php echo INCLUDE_PATH; ?>css/style.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="center">
-            <div class="logo left"><a href="<?php echo INCLUDE_PATH; ?>"><img src="imagens/logo.ico"></a></div>
+            <div class="logo left"><a href="<?php echo INCLUDE_PATH; ?>"><img src="images/logo.ico"></a></div>
             <nav class="desktop right">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
@@ -83,7 +83,7 @@
         </div>
     </footer>
 
-    <?php 	include_once("conexoes/close_conexao.php");?>
+    <?php 	include_once("include/close_conexao.php");?>
 
     <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>

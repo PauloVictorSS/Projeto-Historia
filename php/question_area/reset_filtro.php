@@ -5,7 +5,7 @@
 	na Área de Questões
 */
 
-	include_once("../../conexoes/conexao_session.php"); 
+	include_once("../../include/conexao_session.php"); 
 	include_once("../../config.php");
 
 	$_SESSION['partenome'] = '';

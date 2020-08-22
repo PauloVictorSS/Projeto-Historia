@@ -2,6 +2,6 @@
 
     //Definindo a url padrão do site, tanto para um acesso mais limpo
     //quanto para um acesso mais dinâmico
-    define("INCLUDE_PATH", "http://Localhost/Historia-Nova-Marcacao/");
+    define("INCLUDE_PATH", "http://Localhost/GitHub/Projetos%20Pessoais/Projeto-Historia/");
 
 ?>

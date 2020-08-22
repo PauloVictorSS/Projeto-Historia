@@ -7,7 +7,7 @@
 */
 
 	include_once("../../config.php");
-	include_once("../../conexoes/conexao_session.php");
+	include_once("../../include/conexao_session.php");
 
 	$_SESSION['status_login'] = 0;
 
