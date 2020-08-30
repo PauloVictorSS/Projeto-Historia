@@ -26,6 +26,23 @@
 
 	while($p = mysqli_fetch_array($questao)){
 
+		$resolveu = "";
+
+		if(isset($_SESSION['status_login'])){
+			$id_usuario = $_SESSION['id_usuario'];
+			$id_questao = $id;
+			
+			$sql = "select * from resolucao where id_usuario = $id_usuario and id_questao = $id_questao";
+
+			$result = mysqli_query($conexao, $sql);
+
+			if(mysqli_num_rows($result) == 1)
+				$resolveu = "Questão já resolvida";
+			else
+				$resolveu = "Questão ainda não resolvida";
+			
+		}
+
 		$tipo = $p['tipo'];
 		$id = $p['id'];
 
@@ -51,7 +68,13 @@
 		$areaquestoes = INCLUDE_PATH.'area-de-questoes';
 
 		echo "<h1>Questão sobre $sub_tema</h1>";
-		echo "<h2>Questão $id</h2><hr>";
+		echo "<h2>Questão $id</h2>";
+
+		if(!empty($resolveu))
+			echo "<p class='right'>$resolveu</p>";
+
+		echo "<hr>";
+
 		echo "<p><b>($vestibular $ano)</b> $enunciado</p>";
 					
 		if(!empty($imagem))
