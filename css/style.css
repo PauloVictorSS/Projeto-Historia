@@ -131,7 +131,7 @@ section.banner-principal .banner{
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../imagens/banner.jpg");
+    background-image: url("../images/banner.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -434,7 +434,7 @@ section.cadastro form div.text-box i{
 section.cadastro form div.text-box input,
 section.cadastro form div.text-box select{
     width: 94%;
-    padding: 5px 2px;
+    padding: 5px;
     margin-top: 20px;
     border: none;
 }

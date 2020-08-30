@@ -25,7 +25,7 @@
 				</div>
 				<div class="text-box">
 					<i class="fa fa-birthday-cake" aria-hidden="true"></i>
-					<input type="date" name="aniver" id="aniver" class="informacoes" required>
+					<input type="date" name="aniver" id="aniver" class="informacoes" placeholder="dd/mm/aaaa" required>
 				</div>
 				<div class="text-box">
 					<i class="fa fa-graduation-cap" aria-hidden="true"></i>

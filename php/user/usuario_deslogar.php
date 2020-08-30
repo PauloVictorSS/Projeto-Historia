@@ -13,7 +13,8 @@
 
 	unset(
 		$_SESSION['usuario'],
-		$_SESSION['senha']
+		$_SESSION['senha'],
+		$_SESSION['status_login']
 	);
 
 	$url = INCLUDE_PATH.'login';

@@ -17,4 +17,12 @@
 	if(!empty($gabarito))
 		echo"<strong>C)</strong> $gabarito";
 
+	if(isset($_SESSION['status_login'])){
+		$resposta = 1;
+		$acertou = 's';
+
+		include_once("php/question_resolution/questao_gravaresultado.php");
+		
+	}
+
 ?>
