@@ -20,7 +20,7 @@
         $result = mysqli_query($conexao, $sql);
 
         if(mysqli_affected_rows($conexao) != 1){
-            echo "deu ruim";
+            echo "<script>alert('Erro ao salvar o seu progresso, contate-nos para falar o que houve')</script>";
         }
 
     }
