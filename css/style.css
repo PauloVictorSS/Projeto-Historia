@@ -630,7 +630,11 @@ section.erro404 p a:hover{
     section.login form{
         width: 100%;
     }
-
+    section.area-usuario div.dados-questoes div.qtdQuestResolv p{
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+    }
     section.cadastro form div.text-box i{
         display: none;
     }
