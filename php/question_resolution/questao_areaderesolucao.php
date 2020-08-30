@@ -72,6 +72,8 @@
 
 		if(!empty($resolveu))
 			echo "<p class='right'>$resolveu</p>";
+		
+		echo "<div class='clear'></div>";
 
 		echo "<hr>";
 

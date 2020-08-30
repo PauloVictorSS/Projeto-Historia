@@ -655,6 +655,11 @@ section.erro404 p a:hover{
     section.cadastro form div.buttons{
         width: 100%;
     }
+    section.resolvendo-questoes h2+p{
+        float: none;
+        width: 200px;
+        margin: 10px auto 0;
+    }
 }
 
 
