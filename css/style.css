@@ -29,7 +29,7 @@ h1{
     padding: 20px 0;
 }
 hr{
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 20px;
 }
 
@@ -236,6 +236,10 @@ section.area-usuario{
     min-height: 500px;
 }
 
+section.area-usuario h1{
+    padding: 30px 0 0;
+}
+
 section.area-usuario .center{
     max-width: 1000px;
     padding-bottom: 50px;
@@ -251,6 +255,38 @@ section.area-usuario div.dados-questoes{
     width: 100%;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+section.area-usuario div.dados-pessoais p{
+    background-color: white;
+    padding: 2px 10px;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+section.area-usuario div.dados-pessoais>p{
+    margin-top: 10px;
+}
+
+section.area-usuario div.dados-questoes>p{
+    text-align: center;
+    padding: 5px 0;
+    text-decoration: underline;
+}
+
+section.area-usuario div.dados-questoes div.qtdQuestResolv{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+section.area-usuario div.dados-questoes div.qtdQuestResolv p{
+    display: inline-block;
+    width: 33%;
+    background-color: white;
+    border-radius: 7px;
+    margin-left: 2px;
 }
 
 
@@ -351,6 +387,10 @@ section.area-de-questoes #paginacao-inicio{
 section.resolvendo-questoes{
     background: #ccc;
     min-height: 500px;
+}
+section.resolvendo-questoes h2{
+    text-align: center;
+    font-size: 22px;
 }
 
 section.resolvendo-questoes div.center{

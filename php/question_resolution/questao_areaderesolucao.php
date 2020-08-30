@@ -46,15 +46,12 @@
 
 		$gabarito = $p['alternativa_certa'];
 		$explicacao = $p['explicacao'];
-		
-
-		$proximo = $id + 1;
-		$anterior = $id - 1;
 
 		$resolucao = INCLUDE_PATH.'resolucao-de-questoes';
 		$areaquestoes = INCLUDE_PATH.'area-de-questoes';
 
-		echo "<h1>Questão sobre $sub_tema</h1><hr>";
+		echo "<h1>Questão sobre $sub_tema</h1>";
+		echo "<h2>Questão $id</h2><hr>";
 		echo "<p><b>($vestibular $ano)</b> $enunciado</p>";
 					
 		if(!empty($imagem))

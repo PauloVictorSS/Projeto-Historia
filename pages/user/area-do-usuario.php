@@ -1,15 +1,17 @@
 <main>
 	<section class="area-usuario">
 		<div class="center">
-			<div class="dados-pessoais">
-				<h1>Dados Pessoais</h1>
+			<h1>Dados Pessoais</h1>
+			<div class="dados-pessoais">				
 
 				<?php  include_once("php/user/usuario_dadospessoais.php");		?>
 
 			</div>
+			<h1>Dados sobre as Questões</h1>
 			<div class="dados-questoes">
-				<h1>Dados sobre as Questões</h1>
-				<p>Dados ainda não disponíveis</p>
+
+				<?php  include_once("php/user/usuario_dadosquestoes.php");		?>
+
 			</div>
 			<hr>
 			<a href="php/user/usuario_deslogar.php" id="sair" class="right">Deslogar<i class="fa fa-sign-out" aria-hidden="true"></i></a>
