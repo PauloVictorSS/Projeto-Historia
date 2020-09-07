@@ -46,6 +46,12 @@
 			$sql = MySql::conectar()->exec("DELETE FROM `admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
 		}
 
+        public static function listarUsuariosCadastrados(){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `usuarios`");
+			$sql->execute();
+			return $sql->fetchAll();
+        }
+
     }
     
 

@@ -32,7 +32,7 @@
 </div>
 
 <div class="box-content left">
-    <h2><i class="fa fa-globe" aria-hidden="true"></i> Usuários Online no Site</h2>
+    <h2><i class="fa fa-globe" aria-hidden="true"></i> Pessoas Online no Site</h2>
 
 	<div class="table-responsive">
 		<div class="row">

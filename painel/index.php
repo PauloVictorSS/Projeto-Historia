@@ -38,6 +38,7 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirQuestoes">Exibir questões</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirTemas">Exibir temas</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirVestibulares">Exibir vestibulares</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários cadastrados</a>
                 </div>
                 <div class="itens">
                     <h2>Cadastrar</h2>
@@ -49,7 +50,7 @@
                     <h2>Administração do Painel</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>painelCMS">Painel CMS</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarUsuario">Cadastrar usuário</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirAdms">Exibir usuários</a>
                 </div>
             </div>
         </div>
