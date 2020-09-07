@@ -137,20 +137,16 @@ section.content div.box-infs div.infs{
 	color: white;
 	padding: 10px;
 	background: #F4B03E;
+	min-height: 95px;
+	height: 100%;
 	float: left;
-	position: relative;
-	height: 90px;
+	text-align: center;
 } 
 section.content div.box-infs div.infs:nth-of-type(2){
 	background: #E05C4E;
 }
 section.content div.box-infs div.infs:nth-of-type(3){
 	background: #0091ea;
-}
-
-section.content div.box-infs div.infs h2,
-section.content div.box-infs div.infs p{
-	text-align: center;
 }
 
 section.content div.box-infs div.infs+div.infs{
@@ -194,7 +190,6 @@ section.content div.box-infs div.infs.userCad:nth-of-type(2){
 section.content div.box-infs div.infs.userCad:nth-of-type(3){
 	margin: 10px 0;
 	width: 100%;
-	height: 100%;
 }
 
 
@@ -209,12 +204,12 @@ section.content div.box-infs div.infs.userCad:nth-of-type(3){
 	}
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 550px){
 	section.content div.box-infs div.infs{
-		width: 100%;
+		width: 100% !important;
 	}
-	section.content div.box-infs div.infs+div.infs{
-		margin-left: 0;
-		margin-top: 10px;
+	section.content div.box-infs div.infs+div.infs {
+		margin: 0 !important;
+		margin-top: 10px !important;
 	}
 }

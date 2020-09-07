@@ -20,11 +20,11 @@
             <p><?php echo count($usuariosOnline); ?></p>
         </div>
         <div class="infs">
-            <h2>Total de visitas</h2>
+            <h2>Total de visitas</h2><br>
             <p><?php echo $pegarVisitasTotais; ?></p>
         </div>
         <div class="infs">
-            <h2>Visitas hoje</h2>
+            <h2>Visitas hoje</h2><br>
             <p><?php echo $pegarVisitasHoje; ?></p>
         </div>
         <div class="clear"></div>

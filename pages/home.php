@@ -10,7 +10,7 @@
     </section>
 	<section class="sobre-site">
 		<div class="center">
-			<h1>Sobre o Site</h1>
+			<h1>Sobre o site</h1>
 			<p>Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! Texto sobreo o site aqui! 
 			</p><br>
 		</div><!-- Div Center -->

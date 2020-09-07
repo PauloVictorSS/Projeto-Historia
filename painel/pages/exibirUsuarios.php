@@ -39,7 +39,7 @@
     <h2><i class="fa fa-user" aria-hidden="true"></i> Usuários Cadastrados no Site</h2>
     <div class="box-infs">
         <div class="infs userCad">
-            <h2>Total de Cadastros</h2>
+            <h2>Total de Cadastros</h2><br>
             <p><?php echo count($users); ?></p>
         </div>
         <div class="infs userCad">
@@ -57,3 +57,36 @@
         <div class="clear"></div>
     </div>
 </div>
+<div class="clear"></div>
+
+<div class="box-content left">
+    <h2><i class="fa fa-user" aria-hidden="true"></i> Todos os usuário cadastrados</h2>
+
+	<div class="table-responsive">
+		<div class="row">
+			<div class="col">
+				<span>Nome</span>
+			</div><!--col-->
+			<div class="col">
+				<span>Data de nascimento</span>
+			</div><!--col-->
+			<div class="clear"></div>
+		</div><!--row-->
+
+		<?php
+			foreach ($users as $key => $value) {
+
+		?>
+		<div class="row">
+			<div class="col">
+				<span><?php echo $value['nome']; ?></span>
+			</div>
+			<div class="col">
+				<span><?php echo $value['aniversario']; ?></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<?php } ?>
+	</div>
+</div>
+<div class="clear"></div>
