@@ -1,0 +1,90 @@
+.center{
+    padding:0 2%;
+    margin:0 auto;
+}
+.menu-wraper{
+    width:250px;
+}
+
+
+/* Menu CSS */
+
+div.menu{
+	overflow-x:hidden;
+	overflow-y: auto;
+	height: 100%;
+	padding:10px 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: #455a64;
+	float: left;
+	width: 250px;
+}
+
+div.menu div.box-usuario{
+	padding: 8px;
+	text-align: center;
+}
+
+div.menu div.box-usuario div.avatar-usuario{
+	text-align: left;
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 3px solid #2F3D42;
+}
+
+div.menu div.box-usuario div.avatar-usuario i{
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	font-size: 35px;
+	color: #2F3D42;
+}
+
+div.menu div.box-usuario div.nome-usuario{
+	text-align: center;
+	margin-top: 10px;
+}
+
+div.menu div.box-usuario div.nome-usuario p{
+	color: white;
+	font-size: 15px;
+}
+
+
+/* HEADER CSS */
+
+header{
+	position: relative;
+	left: 250px;
+	padding: 10px 0;
+	background: #78909c; 
+	width: calc(100% - 250px);
+}
+
+header div.menu-btn{
+	cursor: pointer;
+	font-size: 23px;
+	color: white;
+}
+
+header a.loggout{
+	padding: 0 20px;
+	position: relative;
+	top: 4px;
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+}
+
+section.content{
+	width: calc(100% - 250px);
+	position: relative;
+	left: 250px;
+	padding: 2%;
+}

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
+    <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
     <link href="<?php echo INCLUDE_PATH; ?>css/style.css" rel="stylesheet">
 </head>
 <body>
