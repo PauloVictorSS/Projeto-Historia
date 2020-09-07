@@ -82,7 +82,7 @@
 				<span><?php echo $value['nome']; ?></span>
 			</div>
 			<div class="col">
-				<span><?php echo $value['aniversario']; ?></span>
+				<span><?php echo date('d/m/Y',strtotime($value['aniversario'])) ?></span>
 			</div>
 			<div class="clear"></div>
 		</div>
