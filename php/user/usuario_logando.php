@@ -36,15 +36,13 @@
 			}
 		}
 		elseif(mysqli_num_rows($result2) == 1){
-			$_SESSION['login'] = $login;
+			$_SESSION['admin'] = $login;
 
-			while($n = mysqli_fetch_array($result2)){
+			while($infs = mysqli_fetch_array($result2)){
 
-				$_SESSION['type_usuario'] = $n['type'];
+				$_SESSION['type_usuario'] = $infs['type'];
 
-				$url = INCLUDE_PATH_PANEL;
-
-				header("location: $url");
+				header("location: ".INCLUDE_PATH_PANEL);
 			}
 		}
 		else
