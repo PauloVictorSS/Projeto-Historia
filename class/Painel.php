@@ -21,6 +21,20 @@
 
         }
 
+        public static function carregaPagina(){
+            if(isset($_GET['url'])){
+
+                if(file_exists("pages/".$_GET['url'].".php")){
+                    include("pages/".$_GET['url'].".php");
+                }else{
+                    header("location: ".INCLUDE_PATH_PAINEL);
+                }
+
+            }else{
+                include("pages/home.php");
+            }
+        }
+
     }
     
 
