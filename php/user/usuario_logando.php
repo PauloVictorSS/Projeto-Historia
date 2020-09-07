@@ -47,7 +47,7 @@
 			}
 		}
 		else
-			echo "<p class='mensagem-red'>Usuário ou Senha incorretos!</p>";
+			echo "<div class='mensagem red'><p>Usuário ou Senha incorretos!</p></div>";
 		
 	}
 

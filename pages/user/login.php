@@ -1,6 +1,9 @@
 <?php   include_once("php/user/usuario_verificalogado.php");  ?>
 
 <main>
+
+	<?php  include_once("php/user/usuario_logando.php");	    ?>
+
 	<section class="login">
 		<div class="center">
 			<form method="POST" action="<?php echo INCLUDE_PATH; ?>login">
@@ -14,8 +17,6 @@
 					<div class="clear"></div>
 				</div>
 			</form>
-			<?php  include_once("php/user/usuario_logando.php");	    ?>
-			
 		</div>
 	</section>
 </main>

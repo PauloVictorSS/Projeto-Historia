@@ -113,13 +113,13 @@
 		elseif($tipo == 2){
 
 			if(!empty($alternativa_A))
-				echo "<b>A) </b> $alternativa_A";
+				echo "<b>A) </b> $alternativa_A<br>";
 
 			if(!empty($alternativa_B))
-				echo "<b>B) </b> $alternativa_B";
+				echo "<b>B) </b> $alternativa_B<br>";
 
 			if(!empty($alternativa_C))
-				echo "<b>C) </b> $alternativa_C";
+				echo "<b>C) </b> $alternativa_C<br>";
 
 		}
 

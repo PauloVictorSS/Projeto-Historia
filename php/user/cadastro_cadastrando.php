@@ -31,12 +31,12 @@
 					$cont = 1;
 
 			if($cont == 1)
-				echo "<p class='mensagem-red'>Já existe um usuário com essse login</p>";
+				echo "<div class='mensagem red'><p>Já existe um usuário com essse login</p></div>";
 			else{
 				
 				$senhamd5 = md5($senha);
 
-				$insert1 = "insert into usuarios (login, senha, nome, email, aniversario, id_rede, id_escolaridade, id_mestre) values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar, 0)";
+				$insert1 = "insert into usuarios (login, senha, nome, email, aniversario, id_rede, id_escolaridade) values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar)";
 
 				$query = mysqli_query($conexao, $insert1);
 
@@ -45,12 +45,12 @@
 				$_SESSION['status_login'] = 1;
 
 				$url = INCLUDE_PATH.'area-do-usuario';
-				echo "<p class='mensagem-green'><a href='$url'>Logar!</a></p>";
+				echo "<div class='mensagem green'><p>Cadastro feito com sucesso!<a href='$url'>Clique aqui para logar</a></p></div>";
 
 			}
 		}
 		else
-			echo "<p class='mensagem-red'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</p>";
+			echo "<div class='mensagem red'><p>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</p></div>";
 	}
 
 ?>

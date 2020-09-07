@@ -1,4 +1,7 @@
 <main>
+	<?php
+	
+	?>
 	<section class="resolvendo-questoes">
 
 		<div class="center">

@@ -1,5 +1,6 @@
 <main>
 	<section class="cadastro">
+		<?php   include_once("php/user/cadastro_cadastrando.php");   ?>
 		<div class="center">
 			<h1>Fazer Cadastro</h1>
 			<form action="<?php echo INCLUDE_PATH; ?>cadastrar" method="POST">
@@ -47,7 +48,6 @@
 					<div class="clear"></div>
 				</div>
 			</form>
-			<?php   include_once("php/user/cadastro_cadastrando.php");   ?>
 		</div>
 	</section>
 </main>
