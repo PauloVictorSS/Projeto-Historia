@@ -26,8 +26,30 @@
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="nome-usuario">
-                    <p><?php echo $_SESSION['nome_admin']; ?></p>
-                    <p><?php echo Painel::pegaCargo($_SESSION['type_admin']); ?></p>
+                    <p><b>Nível: </b><?php echo Painel::pegaCargo($_SESSION['type_admin']); ?></p>
+                    <p><b>Nome: </b><?php echo $_SESSION['nome_admin']; ?></p>
+                </div>
+            </div>
+            <div class="box-links">
+                <div class="itens">
+                    <h2>Gestão</h2>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>">Home</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>relatorios">Exibir relatórios</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirQuestoes">Exibir questões</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirTemas">Exibir temas</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirVestibulares">Exibir vestibulares</a>
+                </div>
+                <div class="itens">
+                    <h2>Cadastrar</h2>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao">Cadastrar questão</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular">Cadastrar vestibular</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarTema">Cadastrar tema</a>
+                </div>
+                <div class="itens">
+                    <h2>Administração do Painel</h2>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>painelCMS">Painel CMS</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarUsuario">Cadastrar usuário</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários</a>
                 </div>
             </div>
         </div>
@@ -46,7 +68,7 @@
     </header>
 
     <section class="content">
-
+        <?php Painel::carregaPagina(); ?>
     </section>
 
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
