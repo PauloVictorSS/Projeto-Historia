@@ -1,11 +1,13 @@
 .center{
-    padding:0 2%;
-    margin:0 auto;
+    padding: 0 2%;
+    margin: 0 auto;
 }
 .menu-wraper{
     width:250px;
 }
-
+body{
+	background: rgb(225,225,225);
+}
 
 /* Menu CSS */
 
@@ -23,7 +25,7 @@ div.menu{
 }
 
 div.menu div.box-usuario{
-	padding: 8px;
+    padding: 8px 0;
 	text-align: center;
 }
 
@@ -56,6 +58,28 @@ div.menu div.box-usuario div.nome-usuario p{
 	font-size: 15px;
 }
 
+div.menu div.box-links{
+	margin: 10px 0;
+}
+
+div.menu div.box-links div.itens h2{
+	background: #2F3D42;
+}
+
+div.menu div.box-links div.itens a{
+	text-decoration: none;
+	border-bottom: 1px solid #2F3D42;
+}
+
+div.menu div.box-links div.itens h2,
+div.menu div.box-links div.itens a{
+	font-weight: normal;
+	font-size: 15px;
+	color: white;
+	padding: 5px;
+	display: block;
+}
+
 
 /* HEADER CSS */
 
@@ -82,9 +106,62 @@ header a.loggout{
 	font-size: 16px;
 }
 
+
+/* Content CSS */
+
 section.content{
 	width: calc(100% - 250px);
 	position: relative;
 	left: 250px;
 	padding: 2%;
+	background-color: white;
+}
+
+section.content h2{
+	font-weight: normal;
+}
+
+section.content div.box-infs{
+	width: 100%;
+	margin: 10px 0;
+}
+
+section.content div.box-infs div.infs{
+	display: inline-block;
+	width: calc(100% / 3 - 10px);
+	color: white;
+	padding: 10px;
+	background: #F4B03E;
+} 
+section.content div.box-infs div.infs:nth-of-type(2){
+background: #E05C4E;
+}
+section.content div.box-infs div.infs:nth-of-type(3){
+background: #0091ea;
+}
+
+section.content div.box-infs div.infs+div.infs{
+	margin-left: 11px;
+}
+
+
+@media screen and (max-width: 768px){
+	.content{
+		width: 100%;
+		left: 0;
+	}
+	header{
+		left: 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px){
+	section.content div.box-infs div.infs{
+		width: 100%;
+	}
+	section.content div.box-infs div.infs+div.infs{
+		margin-left: 0;
+		margin-top: 10px;
+	}
 }

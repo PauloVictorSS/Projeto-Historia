@@ -5,7 +5,6 @@ $(function(){
 
 	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
 	
-
 	if(windowSize <= 768){
 		$('.menu').css('width','0').css('padding','0');
 		open = false;
