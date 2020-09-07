@@ -1,8 +1,6 @@
 <?php 
     include_once("config.php");
     include_once("include/start_conexao.php");
-    include_once("include/conexao_session.php");
-    include_once("php/clear.php");   
 ?>
 
 <!DOCTYPE html>
