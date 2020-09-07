@@ -12,7 +12,6 @@
         public static function pegaCargo($type){
 
             $cargos = [
-                0 => 'Normal',
                 1 => 'Sub Administrador',
                 2 => 'Administrador'
             ];

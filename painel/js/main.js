@@ -7,6 +7,7 @@ $(function(){
 	
 	if(windowSize <= 768){
 		$('.menu').css('width','0').css('padding','0');
+		$('.content,header').css('width','100%').css('left','0');
 		open = false;
 	}
 
