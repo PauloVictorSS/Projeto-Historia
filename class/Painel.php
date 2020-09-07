@@ -4,7 +4,7 @@
 
         public static function loggout(){
 
-            unset($_SESSION['admin'], $_SESSION['type_usuario']);
+            session_destroy();
 
             header("location: ".INCLUDE_PATH);
         }
