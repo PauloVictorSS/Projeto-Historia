@@ -1,6 +1,9 @@
 <?php 
     include_once("config.php");
     include_once("include/start_conexao.php");
+    
+    Site::updateUsuarioOnline();
+    Site::contador();
 ?>
 
 <!DOCTYPE html>

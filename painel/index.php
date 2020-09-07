@@ -68,7 +68,9 @@
     </header>
 
     <section class="content">
+
         <?php Painel::carregaPagina(); ?>
+
     </section>
 
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>

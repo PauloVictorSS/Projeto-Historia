@@ -114,7 +114,13 @@ section.content{
 	position: relative;
 	left: 250px;
 	padding: 2%;
-	background-color: white;
+}
+
+.box-content{
+	background: white;
+	padding: 30px;
+	margin-bottom: 25px;
+	width: 100%;
 }
 
 section.content h2{
@@ -127,11 +133,13 @@ section.content div.box-infs{
 }
 
 section.content div.box-infs div.infs{
-	display: inline-block;
 	width: calc(100% / 3 - 10px);
 	color: white;
 	padding: 10px;
 	background: #F4B03E;
+	height: 90px;
+	float: left;
+	position: relative;
 } 
 section.content div.box-infs div.infs:nth-of-type(2){
 background: #E05C4E;
@@ -140,8 +148,38 @@ section.content div.box-infs div.infs:nth-of-type(3){
 background: #0091ea;
 }
 
+section.content div.box-infs div.infs h2,
+section.content div.box-infs div.infs p{
+	text-align: center;
+}
+
 section.content div.box-infs div.infs+div.infs{
 	margin-left: 11px;
+}
+
+/* Tabela responsiva */
+
+.table-responsive{
+	margin:20px auto;
+	font-weight: 300;
+}
+
+.table-responsive .row:nth-of-type(1){
+	font-weight: normal;
+	background: #00bfa5;
+	padding: 10px;
+	color: white;
+}
+
+.table-responsive .row{
+	color: #777;
+	padding: 8px;
+	border-bottom: 1px solid #ccc;
+}
+
+.col{
+	float: left;
+	width: 50%;
 }
 
 
