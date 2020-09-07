@@ -4,6 +4,7 @@ $(function(){
 	var windowSize = $(window)[0].innerWidth;
 
 	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+	
 
 	if(windowSize <= 768){
 		$('.menu').css('width','0').css('padding','0');
@@ -32,6 +33,7 @@ $(function(){
 				open = true;
 			});
 		}
+		$('.box-usuario').css('width', targetSizeMenu);
 	})
 
 	$(window).resize(function(){
@@ -45,7 +47,6 @@ $(function(){
 			$('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'},function(){
 				open = true;
 			});
-
 			$('.content,header').css('width','calc(100% - 250px)');
 			$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
 			open = true;
