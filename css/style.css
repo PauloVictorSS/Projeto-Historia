@@ -139,14 +139,14 @@ section.login form div.buttons{
 }
 
 section.login form div.buttons input{
-    padding: 5px 7px;
+    width: 48%;
+    padding: 7px;
     cursor: pointer;
-    border-radius: 5px;
-    background-color: #019c01;
+    background-color: #37b937;
 }
 
 section.login form div.buttons input[value=Apagar]{
-    background-color: #a80202;
+    background-color: #ce3232;
 }
 
 
@@ -246,7 +246,7 @@ section.area-de-questoes form#form #tema-input{
 
 section.area-de-questoes form#form input[type=submit]{
     border: none;
-    background-color: #019c01;
+    background-color: #37b937;
     padding: 3px 3px;
     cursor: pointer;
     min-width: 150px;
@@ -257,7 +257,7 @@ section.area-de-questoes form button[type=submit]{
     margin: 0 auto;
     margin-top: 10px;
     border: none;
-    background-color: #a80202;
+    background-color: #ce3232;
     padding: 3px 3px;
     cursor: pointer;
     min-width: 150px;
@@ -350,7 +350,7 @@ section.resolvendo-questoes form#form_alternativas button{
     border: none;
     margin-top: 13px;
     margin-bottom: 15px;
-    background-color: #019c01;
+    background-color: #37b937;
     cursor: pointer;
 }
 
@@ -395,38 +395,22 @@ section.cadastro form div.text-box{
     width: 80%;
 }
 
-section.cadastro form div.text-box i{
-    width: 5%;
-    font-size: 120%;
-    text-align: center;
-}
-
 section.cadastro form div.text-box input,
 section.cadastro form div.text-box select{
-    width: 94%;
-    padding: 5px;
-    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    color: #666;
     border: none;
 }
 
-section.cadastro form div.buttons{
-    width: 80%;
-    padding: 20px 0;
-}
-
-section.cadastro form div.buttons input,
-section.cadastro form div.buttons button{
-    padding: 5px 5px;
+section.cadastro form button{
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
     cursor: pointer;
     border: none;
-}
-
-section.cadastro form div.buttons input.left{
-    background-color: #a80202;
-}
-
-section.cadastro form div.buttons button.right{
-    background-color: #019c01;
+    background-color: #37b937;
 }
 
 
@@ -476,10 +460,10 @@ section.erro404 {
 }
 
 section.erro404 h1{
-    border-top: 2px solid #a31300be;
+    border-top: 2px solid #ce3232;
     margin-top: 50px;
     font-size: 40px;
-    color: #a31300be;
+    color: #ce3232;
 }
 
 section.erro404 p{
