@@ -1,9 +1,15 @@
 <?php
     include_once("../config.php");
     include_once("../include/start_conexao.php");
+
 	if(isset($_GET['loggout'])){
 		Painel::loggout();
-	}
+    }
+    
+    if(!isset($_SESSION['login_admin'])){
+        header("Location:".INCLUDE_PATH);
+    }
+
 ?>
 <!DOCTYPE html>
 <html>

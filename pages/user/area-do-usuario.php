@@ -1,3 +1,10 @@
+<?php
+
+	if(!isset($_SESSION['status_login'])){
+		header("Location:".INCLUDE_PATH);
+	}
+
+?>
 <main>
 	<section class="area-usuario">
 		<div class="center">
