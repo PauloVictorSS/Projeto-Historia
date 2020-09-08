@@ -8,7 +8,7 @@
 html, body{
     overflow-x: hidden; /* Retirando a barra de bolagem da horizontal (caso apareça) */
     height: 100%;
-    background: #ccc;
+    background: #eee;
 }
 input{
     border:0;
