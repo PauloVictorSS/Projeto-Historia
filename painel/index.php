@@ -42,21 +42,18 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>">Home</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>relatorios">Exibir relatórios</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirQuestoes">Exibir questões</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirTemas">Exibir temas</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirVestibulares">Exibir vestibulares</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirVestibulares_Temas">Exibir vestibulares / temas</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários cadastrados</a>
                 </div>
                 <div class="itens">
                     <h2>Cadastrar</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao">Cadastrar questão</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular">Cadastrar vestibular</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarTema">Cadastrar tema</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular_Tema">Cadastrar vestibular / tema</a>
                 </div>
                 <div class="itens">
                     <h2>Administração do Painel</h2>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>painelCMS">Painel CMS</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarUsuario">Cadastrar usuário</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirAdms">Exibir usuários</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm">Cadastrar administradores</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirAdms">Exibir administradores</a>
                 </div>
             </div>
         </div>
