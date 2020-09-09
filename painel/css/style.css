@@ -205,13 +205,21 @@ div.box-content form{
 	left: 50%;
 	transform: translate(-50%);
 	padding: 20px;
-	background: #E05C4E;
+	background: #F4B03E;
 	color: white;
+}
+
+div.box-content form#form-disser{
+	background: #E05C4E;
 }
 
 div.box-content form div.box-category{
 	width: 100%;
 	margin: 30px 0;
+}
+
+div.box-content form#form-disser div.box-category:nth-of-type(3){
+	text-align: center;
 }
 
 div.box-content form div.box-category h2{
