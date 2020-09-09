@@ -1,3 +1,11 @@
+<?php
+
+
+    $temas = Questao::selectTemas();
+    $vestibulares = Questao::selectVestibulares();
+
+?>
+
 <div class="box-content">
     <h1>Cadastrar Questão Objetiva</h1>
     <form enctype="multipart/form-data" action="insere.php" method="POST" id="form-objet">
@@ -47,10 +55,24 @@
 
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
+                <?php
+                    foreach ($temas as $key => $value) { 
+                ?>
+                    
+                    <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
+
+                <?php } ?>
             </select><span> *</span>
 
             <select name="vest" required>
                 <option value="">Vestibular da Questão</option>
+                <?php
+                    foreach ($vestibulares as $key => $value) { 
+                ?>
+                    
+                    <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
+
+                <?php } ?>
             </select><span> *</span>
 
             <input type="number" name="ano" placeholder="Ano da Questão" required><span> *</span>
