@@ -178,6 +178,7 @@ section.content div.box-infs div.infs+div.infs{
 	width: 50%;
 }
 
+
 /* Usuários cadastrados CSS */
 
 section.content div.box-infs div.infs.userCad{
@@ -193,7 +194,90 @@ section.content div.box-infs div.infs.userCad:nth-of-type(3){
 }
 
 
+/* Cadastrar Questões CSS */
+
+div.box-content form{
+	margin: 10px 0;
+	width: 100%;
+	max-width: 800px;
+	border: 1px solid black;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	padding: 20px;
+	background: #E05C4E;
+	color: white;
+}
+
+div.box-content form div.box-category{
+	width: 100%;
+	margin: 30px 0;
+}
+
+div.box-content form div.box-category h2{
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+div.box-content form div.box-category input{
+	margin: 5px 0;
+	width: 98%;
+	padding: 7px;
+}
+
+div.box-content form div.box-category span{
+	font-size: 12px;
+}
+
+div.box-content form div.box-category label{
+	padding-top: 10px;
+}
+
+div.box-content form div.box-category input[type=file]{
+	width: 100%;
+	max-width: 500px;
+}
+
+div.box-content form div.box-category input[type=number],
+div.box-content form div.box-category select{
+	width: 47.5%;
+	padding: 5px;
+	border: none;
+}
+
+div.box-content form div.buttons{
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+}
+
+div.box-content form div.buttons button{
+	margin-top: 10px;
+	width: 95%;
+	max-width: 275px;
+    padding: 7px;
+    cursor: pointer;
+	background-color: #37b937;
+	border: none;
+}
+
+
+@media screen and (max-width: 1023px){
+
+	div.box-content form div.box-category input[type=number],
+	div.box-content form div.box-category select{
+		width: 98%;
+		padding: 7px;
+	}
+	div.box-content form div.box-category select{
+		margin: 5px 0;
+	}
+}
+
 @media screen and (max-width: 768px){
+	.box-content{
+		padding: 10px;
+	}
 	.content{
 		width: 100%;
 		left: 0;
@@ -201,6 +285,14 @@ section.content div.box-infs div.infs.userCad:nth-of-type(3){
 	header{
 		left: 0;
 		width: 100%;
+	}
+	div.box-content form{
+		padding: 2px;
+	}
+	div.box-content form div.box-category input[type=number],
+	div.box-content form div.box-category select,
+	div.box-content form div.box-category input{
+		width: 96%;
 	}
 }
 
