@@ -16,7 +16,7 @@
     <h2><i class="fa fa-home" aria-hidden="true"></i> Informações do site</h2>
     <div class="box-infs">
         <div class="infs">
-            <h2>Usuários online agora</h2>
+            <h2>Usuários online agora</h2><br>
             <p><?php echo count($usuariosOnline); ?></p>
         </div>
         <div class="infs">

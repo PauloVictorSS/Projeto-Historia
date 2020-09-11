@@ -1,6 +1,5 @@
 <?php
 
-
     $temas = Questao::selectTemas();
     $vestibulares = Questao::selectVestibulares();
 

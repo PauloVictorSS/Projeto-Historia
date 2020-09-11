@@ -209,6 +209,11 @@ div.box-content form{
 	color: white;
 }
 
+div.box-content form h2{
+	text-align: center;
+	padding-bottom: 5px;
+}
+
 div.box-content form#form-disser{
 	background: #E05C4E;
 }
@@ -220,11 +225,6 @@ div.box-content form div.box-category{
 
 div.box-content form#form-disser div.box-category:nth-of-type(3){
 	text-align: center;
-}
-
-div.box-content form div.box-category h2{
-	text-align: center;
-	padding-bottom: 5px;
 }
 
 div.box-content form div.box-category input{
@@ -270,6 +270,28 @@ div.box-content form div.buttons button{
 }
 
 
+/* Cadastro de Vestibular e Temas */
+
+div.box-content form#form-temas{
+	background: #0091ea;
+}
+
+div.box-content form#form-temas div.box-category p{
+	display: inline-block;
+	width: 100%;
+	max-width: 340px;
+	font-size: 17px;
+}
+
+div.box-content form#form-temas div.box-category:nth-of-type(1){
+	background-color: #00426B;
+	text-align: center;
+	padding: 6px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+
 @media screen and (max-width: 1023px){
 
 	div.box-content form div.box-category input[type=number],
@@ -302,9 +324,6 @@ div.box-content form div.buttons button{
 	div.box-content form div.box-category input{
 		width: 96%;
 	}
-}
-
-@media screen and (max-width: 550px){
 	section.content div.box-infs div.infs{
 		width: 100% !important;
 	}
