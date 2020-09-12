@@ -9,7 +9,7 @@
             header("location: ".INCLUDE_PATH);
         }
 
-        public static function pegaCargo($type){
+        public static function getOffice($type){
 
             $cargos = [
                 1 => 'Sub Administrador',
@@ -20,7 +20,7 @@
 
         }
 
-        public static function carregaPagina(){
+        public static function loadPageAdmin(){
             if(isset($_GET['url'])){
 
                 if(file_exists("pages/".$_GET['url'].".php")){
@@ -34,19 +34,19 @@
             }
         }
 
-        public static function listarUsuariosOnline(){
-			self::limparUsuariosOnline();
+        public static function onlineUsers(){
+			self::cleanOnlineUsers();
 			$sql = MySql::conectar()->prepare("SELECT * FROM `admin.online`");
 			$sql->execute();
 			return $sql->fetchAll();
 		}
 
-		public static function limparUsuariosOnline(){
+		public static function cleanOnlineUsers(){
 			$date = date('Y-m-d H:i:s');
 			$sql = MySql::conectar()->exec("DELETE FROM `admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
 		}
 
-        public static function listarUsuariosCadastrados(){
+        public static function registeredUsers(){
             $sql = MySql::conectar()->prepare("SELECT * FROM `usuarios`");
 			$sql->execute();
 			return $sql->fetchAll();

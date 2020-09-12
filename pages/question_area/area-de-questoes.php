@@ -20,8 +20,6 @@
 
 			<div class="clear"></div>
 			<div class="center resultados">
-				<h2>Resultados</h2>
-
 				<?php   include_once("php/question_area/filtrando.php");   ?>
 				<?php 	include_once("php/question_area/resultado_questoes.php");	?>
 			</div>

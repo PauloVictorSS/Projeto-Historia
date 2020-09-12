@@ -1,7 +1,7 @@
 <?php
 
-    $temas = Questao::selectTemas();
-    $vestibulares = Questao::selectVestibulares();
+    $themes = Questao::selectThemes();
+    $exams = Questao::selectExams();
 
 ?>
 
@@ -41,7 +41,7 @@
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
                 <?php
-                    foreach ($temas as $key => $value) { 
+                    foreach ($themes as $key => $value) { 
                 ?>
                     
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
@@ -52,7 +52,7 @@
             <select name="vest" required>
                 <option value="">Vestibular da Questão</option>
                 <?php
-                    foreach ($vestibulares as $key => $value) { 
+                    foreach ($exams as $key => $value) { 
                 ?>
                     
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
@@ -112,7 +112,7 @@
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
                 <?php
-                    foreach ($temas as $key => $value) { 
+                    foreach ($themes as $key => $value) { 
                 ?>
                     
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
@@ -123,7 +123,7 @@
             <select name="vest" required>
                 <option value="">Vestibular da Questão</option>
                 <?php
-                    foreach ($vestibulares as $key => $value) { 
+                    foreach ($exams as $key => $value) { 
                 ?>
                     
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>

@@ -32,7 +32,7 @@
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="nome-usuario">
-                    <p><b>Nível: </b><?php echo Painel::pegaCargo($_SESSION['type_admin']); ?></p>
+                    <p><b>Nível: </b><?php echo Painel::getOffice($_SESSION['type_admin']); ?></p>
                     <p><b>Nome: </b><?php echo $_SESSION['nome_admin']; ?></p>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
     <section class="content">
 
-        <?php Painel::carregaPagina(); ?>
+        <?php Painel::loadPageAdmin(); ?>
 
     </section>
 

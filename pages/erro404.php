@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="palavbra-chave, do meu, site">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="../estilos/style.css" rel="stylesheet">
     

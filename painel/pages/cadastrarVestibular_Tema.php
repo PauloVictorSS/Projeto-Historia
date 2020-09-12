@@ -1,7 +1,7 @@
 <?php
 
-    $temas = Questao::selectTemas();
-    $vestibulares = Questao::selectVestibulares();
+    $themes = Questao::selectThemes();
+    $exams = Questao::selectExams();
 
 ?>
 
@@ -13,7 +13,7 @@
             <h2>Vestibulares já cadastrados</h2>
 
             <?php
-                foreach ($vestibulares as $key => $value) { 
+                foreach ($exams as $key => $value) { 
             ?>
                     
                 <p><?php echo $value["descricao"]; ?></p>
@@ -47,7 +47,7 @@
             
 
             <?php
-                foreach ($temas as $key => $value) { 
+                foreach ($themes as $key => $value) { 
             ?>
                     
                 <p><?php echo $value["descricao"]; ?></p>

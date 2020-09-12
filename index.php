@@ -2,8 +2,8 @@
     include_once("config.php");
     include_once("include/start_conexao.php");
     
-    Site::updateUsuarioOnline();
-    Site::contador();
+    Site::updateOnlineUsers();
+    Site::counter();
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +62,13 @@
         else
             $pagina = 1;
         
+        if($explode[0] != 'area-de-questoes'){
+            $_SESSION['partenome'] = '';
+            $_SESSION['vestibular'] = '';
+            $_SESSION['ano'] = '';
+            $_SESSION['tema'] = '';
+        }
+    
         //Verificando se a url escolhida existe
         if(file_exists('pages/'.$explode[0].'.php'))
             include_once('pages/'.$explode[0].'.php');
@@ -76,6 +83,7 @@
             include_once('pages/user/'.$explode[0].'.php'); 
         else
             header("Location: pages/erro404.php");
+
         
     ?>
 

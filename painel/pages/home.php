@@ -1,15 +1,15 @@
 <?php
-	$usuariosOnline = Painel::listarUsuariosOnline();
+	$onlineUsers = Painel::onlineUsers();
 
-	$pegarVisitasTotais = MySql::conectar()->prepare("SELECT * FROM `admin.visitas`");
-	$pegarVisitasTotais->execute();
+	$totalVisits = MySql::getConnect()->prepare("SELECT * FROM `admin.visitas`");
+	$totalVisits->execute();
 
-	$pegarVisitasTotais = $pegarVisitasTotais->rowCount();
+	$totalVisits = $totalVisits->rowCount();
 
-	$pegarVisitasHoje = MySql::conectar()->prepare("SELECT * FROM `admin.visitas` WHERE dia = ?");
-	$pegarVisitasHoje->execute(array(date('Y-m-d')));
+	$todayVisits = MySql::getConnect()->prepare("SELECT * FROM `admin.visitas` WHERE dia = ?");
+	$todayVisits->execute(array(date('Y-m-d')));
 
-	$pegarVisitasHoje = $pegarVisitasHoje->rowCount();
+	$todayVisits = $todayVisits->rowCount();
 
 ?>
 <div class="box-content">
@@ -17,15 +17,15 @@
     <div class="box-infs">
         <div class="infs">
             <h2>Usuários online agora</h2><br>
-            <p><?php echo count($usuariosOnline); ?></p>
+            <p><?php echo count($onlineUsers); ?></p>
         </div>
         <div class="infs">
             <h2>Total de visitas</h2><br>
-            <p><?php echo $pegarVisitasTotais; ?></p>
+            <p><?php echo $totalVisits; ?></p>
         </div>
         <div class="infs">
             <h2>Visitas hoje</h2><br>
-            <p><?php echo $pegarVisitasHoje; ?></p>
+            <p><?php echo $todayVisits; ?></p>
         </div>
         <div class="clear"></div>
     </div>
@@ -46,7 +46,7 @@
 		</div><!--row-->
 
 		<?php
-			foreach ($usuariosOnline as $key => $value) {
+			foreach ($onlineUsers as $key => $value) {
 
 		?>
 		<div class="row">

@@ -17,11 +17,3 @@
 	</section>
 </main>
 
-<?php  
-
-	$_SESSION['partenome'] = '';
-	$_SESSION['vestibular'] = '';
-	$_SESSION['ano'] = '';
-	$_SESSION['tema'] = '';  
-	  
-?>

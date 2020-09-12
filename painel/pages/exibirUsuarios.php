@@ -1,21 +1,21 @@
 <?php  
 
-    $users = Painel::listarUsuariosCadastrados();
+    $users = Painel::registeredUsers();
 
-    $publica = 0;
-    $privada = 0;
+    $public = 0;
+    $private = 0;
 
     $fund1 = 0;
     $fund2 = 0;
-    $ensmed = 0;
-    $super = 0;
+    $ensinoMedio = 0;
+    $superior = 0;
 
     foreach ($users as $key => $value) {
 
         if($value['id_rede'] == 1)
-            $publica ++;
+            $public ++;
         else
-            $privada ++;
+            $private ++;
 
         switch ($value['id_escolaridade']) {
             case 1:
@@ -25,10 +25,10 @@
                 $fund2++;
                 break;
             case 3:
-                $ensmed++;
+                $ensinoMedio++;
                 break;
             case 4:
-                $super++;
+                $superior++;
                 break;
         }
     }
@@ -44,15 +44,15 @@
         </div>
         <div class="infs userCad">
             <h2>Cadastros p/ instituição</h2>
-            <p>Pública: <?php echo $publica; ?></p>
-            <p>Privada: <?php echo $privada; ?></p>
+            <p>Pública: <?php echo $public; ?></p>
+            <p>Privada: <?php echo $private; ?></p>
         </div>
         <div class="infs userCad">
             <h2>Cadastros p/ escolaridade</h2>
             <p>Fundamental I: <?php echo $fund1; ?></p>
             <p>Fundamental II: <?php echo $fund2; ?></p>
-            <p>Ensino Médio: <?php echo $ensmed; ?></p>
-            <p>Superior: <?php echo $super; ?></p>
+            <p>Ensino Médio: <?php echo $ensinoMedio; ?></p>
+            <p>Superior: <?php echo $superior; ?></p>
         </div>
         <div class="clear"></div>
     </div>
