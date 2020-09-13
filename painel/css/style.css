@@ -1,10 +1,8 @@
-.center{
-    padding: 0 2%;
-    margin: 0 auto;
-}
-.menu-wraper{
-    width:250px;
-}
+.center{  padding: 0 2%;  margin: 0 auto; }
+.menu-wraper{  width:250px;  }
+.blue{  background: #0091ea;  }
+.yellow{  background: #F4B03E;  }
+.red{  background: #E05C4E;  }
 
 /* Menu CSS */
 
@@ -133,47 +131,16 @@ section.content div.box-infs div.infs{
 	width: calc(100% / 3 - 10px);
 	color: white;
 	padding: 10px;
-	background: #F4B03E;
 	min-height: 95px;
 	height: 100%;
 	float: left;
 	text-align: center;
-} 
-section.content div.box-infs div.infs:nth-of-type(2){
-	background: #E05C4E;
-}
-section.content div.box-infs div.infs:nth-of-type(3){
-	background: #0091ea;
 }
 
 section.content div.box-infs div.infs+div.infs{
 	margin-left: 11px;
 }
 
-/* Tabela responsiva */
-
-.table-responsive{
-	margin:20px auto;
-	font-weight: 300;
-}
-
-.table-responsive .row:nth-of-type(1){
-	font-weight: normal;
-	background: #00bfa5;
-	padding: 10px;
-	color: white;
-}
-
-.table-responsive .row{
-	color: #777;
-	padding: 8px;
-	border-bottom: 1px solid #ccc;
-}
-
-.col{
-	float: left;
-	width: 50%;
-}
 
 /* Painel do Adm CSS Geral*/
 
@@ -188,37 +155,35 @@ div.box-content form{
 	padding: 20px;
 	color: white;
 }
-div.box-content form.blue{
-	background: #0091ea;
-}
-div.box-content form.yellow{
-	background: #F4B03E;
-}
-div.box-content form.red{
-	background: #E05C4E;
-}
+
 div.box-content form h2{
 	text-align: center;
 	padding-bottom: 5px;
 }
+
 div.box-content form div.box-category{
 	width: 100%;
 	margin: 30px 0;
 }
+
 div.box-content form#form-disser div.box-category:nth-of-type(3){
 	text-align: center;
 }
+
 div.box-content form div.box-category input{
 	margin: 5px 0;
 	width: 98%;
 	padding: 7px;
 }
+
 div.box-content form div.box-category span{
 	font-size: 12px;
 }
+
 div.box-content form div.box-category label{
 	padding-top: 10px;
 }
+
 div.box-content form div.buttons{
 	width: 100%;
 	text-align: center;
@@ -233,6 +198,14 @@ div.box-content form div.buttons button{
     cursor: pointer;
 	background-color: #37b937;
 	border: none;
+}
+
+
+/* Home Painel CSS*/
+
+div.box-content table.home tr th,
+div.box-content table.home tr td{
+	text-align: start;
 }
 
 
@@ -286,7 +259,7 @@ div.box-content form#form-temas div.box-category:nth-of-type(1){
 
 /* Cadastrar Administrador CSS */
 
-div.box-content form div.box-category table{
+div.box-content table{
 	width: 100%;
 	text-align: center;
 	border-spacing: 0;
@@ -294,19 +267,35 @@ div.box-content form div.box-category table{
 	margin-top: 20px;
 }
 
-div.box-content form div.box-category table tr:nth-of-type(1){
+div.box-content table tr:nth-of-type(1){
 	background: #00bfa5;
 	color: white;
 }
 
-div.box-content form div.box-category table tr td,
-div.box-content form div.box-category table tr th{
+div.box-content table tr td,
+div.box-content table tr th{
 	padding: 8px;
 }
 
-div.box-content form div.box-category table tr td{
+div.box-content table tr td{
 	border-bottom: 1px solid #ccc;
 } 
+
+
+/* Gerar Relatórios */
+
+div.box-content div.reports div.infs{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}
+
+div.box-content div.reports div.infs.red,
+div.box-content div.reports div.infs.blue{
+	margin-left: 11px;
+}
+
 
 
 /* Media para telas de diferentes tamanhos */
@@ -349,5 +338,10 @@ div.box-content form div.box-category table tr td{
 	section.content div.box-infs div.infs+div.infs {
 		margin: 0 !important;
 		margin-top: 10px !important;
+	}
+	div.box-content div.reports div.infs.red,
+	div.box-content div.reports div.infs.blue{
+		margin: 0 ;
+		margin-top: 10px;
 	}
 }

@@ -38,16 +38,16 @@
 <div class="box-content left">
     <h2><i class="fa fa-user" aria-hidden="true"></i> Usuários Cadastrados no Site</h2>
     <div class="box-infs">
-        <div class="infs userCad">
+        <div class="infs userCad yellow">
             <h2>Total de Cadastros</h2><br>
             <p><?php echo count($users); ?></p>
         </div>
-        <div class="infs userCad">
+        <div class="infs userCad blue">
             <h2>Cadastros p/ instituição</h2>
             <p>Pública: <?php echo $public; ?></p>
             <p>Privada: <?php echo $private; ?></p>
         </div>
-        <div class="infs userCad">
+        <div class="infs userCad red">
             <h2>Cadastros p/ escolaridade</h2>
             <p>Fundamental I: <?php echo $fund1; ?></p>
             <p>Fundamental II: <?php echo $fund2; ?></p>
@@ -59,34 +59,26 @@
 </div>
 <div class="clear"></div>
 
-<div class="box-content left">
+<div class="box-content">
+
     <h2><i class="fa fa-user" aria-hidden="true"></i> Todos os usuário cadastrados</h2>
 
-	<div class="table-responsive">
-		<div class="row">
-			<div class="col">
-				<span>Nome</span>
-			</div><!--col-->
-			<div class="col">
-				<span>Data de nascimento</span>
-			</div><!--col-->
-			<div class="clear"></div>
-		</div><!--row-->
+    <table class="home">
+        <tr>
+            <th>Nome</th>
+            <th>Aniversário</th>
+        </tr>
 
 		<?php
 			foreach ($users as $key => $value) {
+        ?>
 
-		?>
-		<div class="row">
-			<div class="col">
-				<span><?php echo $value['nome']; ?></span>
-			</div>
-			<div class="col">
-				<span><?php echo date('d/m/Y',strtotime($value['aniversario'])) ?></span>
-			</div>
-			<div class="clear"></div>
-		</div>
+        <tr>
+            <td><?php echo $value['nome']; ?></td>
+            <td><?php echo date('d/m/Y',strtotime($value['aniversario'])) ?></td>
+        </tr>
+
 		<?php } ?>
-	</div>
+    </table>
+
 </div>
-<div class="clear"></div>

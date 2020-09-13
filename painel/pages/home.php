@@ -15,15 +15,15 @@
 <div class="box-content">
     <h2><i class="fa fa-home" aria-hidden="true"></i> Informações do site</h2>
     <div class="box-infs">
-        <div class="infs">
+        <div class="infs yellow">
             <h2>Usuários online agora</h2><br>
             <p><?php echo count($onlineUsers); ?></p>
         </div>
-        <div class="infs">
+        <div class="infs red">
             <h2>Total de visitas</h2><br>
             <p><?php echo $totalVisits; ?></p>
         </div>
-        <div class="infs">
+        <div class="infs blue">
             <h2>Visitas hoje</h2><br>
             <p><?php echo $todayVisits; ?></p>
         </div>
@@ -31,33 +31,24 @@
     </div>
 </div>
 
-<div class="box-content left">
+<div class="box-content">
     <h2><i class="fa fa-globe" aria-hidden="true"></i> Pessoas Online no Site</h2>
 
-	<div class="table-responsive">
-		<div class="row">
-			<div class="col">
-				<span>IP</span>
-			</div><!--col-->
-			<div class="col">
-				<span>Última Ação</span>
-			</div><!--col-->
-			<div class="clear"></div>
-		</div><!--row-->
+	<table class="home">
+        <tr>
+            <th>IP</th>
+            <th>Última Ação</th>
+        </tr>
 
 		<?php
 			foreach ($onlineUsers as $key => $value) {
 
 		?>
-		<div class="row">
-			<div class="col">
-				<span><?php echo $value['ip'] ?></span>
-			</div>
-			<div class="col">
-				<span><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao'])) ?></span>
-			</div>
-			<div class="clear"></div>
-		</div>
+		<tr>
+			<td><?php echo $value['ip'] ?></td>
+			<td><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao'])) ?></td>
+		</tr>
+
 		<?php } ?>
-	</div>
+	</table>
 </div>
