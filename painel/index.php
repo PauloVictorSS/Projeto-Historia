@@ -32,7 +32,7 @@
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="nome-usuario">
-                    <p><b>Nível: </b><?php echo Painel::getOffice($_SESSION['type_admin']); ?></p>
+                    <p><b>Nível: </b><?php echo Adm::getOffice($_SESSION['type_admin']); ?></p>
                     <p><b>Nome: </b><?php echo $_SESSION['nome_admin']; ?></p>
                 </div>
             </div>
@@ -42,7 +42,6 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>">Home</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>relatorios">Exibir relatórios</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirQuestoes">Exibir questões</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirVestibulares_Temas">Exibir vestibulares / temas</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários cadastrados</a>
                 </div>
                 <div class="itens">
@@ -53,7 +52,6 @@
                 <div class="itens">
                     <h2>Administração do Painel</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm">Cadastrar administradores</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirAdms">Exibir administradores</a>
                 </div>
             </div>
         </div>

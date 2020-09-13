@@ -9,17 +9,6 @@
             header("location: ".INCLUDE_PATH);
         }
 
-        public static function getOffice($type){
-
-            $cargos = [
-                1 => 'Sub Administrador',
-                2 => 'Administrador'
-            ];
-
-            return $cargos[$type];
-
-        }
-
         public static function loadPageAdmin(){
             if(isset($_GET['url'])){
 
@@ -36,18 +25,18 @@
 
         public static function onlineUsers(){
 			self::cleanOnlineUsers();
-			$sql = MySql::conectar()->prepare("SELECT * FROM `admin.online`");
+			$sql = MySql::getConnect()->prepare("SELECT * FROM `admin.online`");
 			$sql->execute();
 			return $sql->fetchAll();
 		}
 
 		public static function cleanOnlineUsers(){
 			$date = date('Y-m-d H:i:s');
-			$sql = MySql::conectar()->exec("DELETE FROM `admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
+			$sql = MySql::getConnect()->exec("DELETE FROM `admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
 		}
 
         public static function registeredUsers(){
-            $sql = MySql::conectar()->prepare("SELECT * FROM `usuarios`");
+            $sql = MySql::getConnect()->prepare("SELECT * FROM `usuarios`");
 			$sql->execute();
 			return $sql->fetchAll();
         }
