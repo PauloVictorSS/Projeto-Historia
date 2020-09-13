@@ -45,9 +45,10 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários cadastrados</a>
                 </div>
                 <div class="itens">
-                    <h2>Cadastrar</h2>
+                    <h2>Cadastrar e Excluir</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao">Cadastrar questão</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular_Tema">Cadastrar vestibular / tema</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>excluirVestibular_Tema">Excluir vestibular / tema</a>
                 </div>
                 <div class="itens">
                     <h2>Administração do Painel</h2>

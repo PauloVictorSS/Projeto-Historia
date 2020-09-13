@@ -39,7 +39,7 @@
 
 
 <div class="box-content">
-    <h1>Cadastrar um vestibular</h1>
+    <h1>Cadastrar um tema</h1>
     <form action="" method="POST" id="form-temas" class="blue">
 
         <h2>Temas já cadastrados</h2>
