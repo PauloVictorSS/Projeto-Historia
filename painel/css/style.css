@@ -298,6 +298,45 @@ div.box-content div.reports div.infs.blue{
 
 
 
+
+/* Relatórios CSS */
+
+div.box-content.box-graphi{
+	padding: 0;
+}
+
+div.box-content.box-graphi div.graphis{
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+}
+
+div.box-content.box-graphi div.graphis div.element{
+	width: 49%;
+	display: inline-block;
+}
+
+div.box-content.box-graphi div.graphis div.element h2{
+	padding-top: 30px;
+}
+
+
+/* Excluir Vest/Tema CSS*/
+
+div.box-content form#form-vestib div.box-category div.element{
+	border-bottom: 1px solid #c0954b;
+	margin-top: 20px;
+}
+
+div.box-content form#form-vestib div.box-category div.element button{
+	border: none;
+	background: none;
+	color: #E05C4E;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+
 /* Media para telas de diferentes tamanhos */
 
 @media screen and (max-width: 1023px){
@@ -343,5 +382,9 @@ div.box-content div.reports div.infs.blue{
 	div.box-content div.reports div.infs.blue{
 		margin: 0 ;
 		margin-top: 10px;
+	}
+	div.box-content.box-graphi div.graphis div.element{
+		width: 100%;
+		display: block;
 	}
 }
