@@ -7,7 +7,7 @@
 
 <div class="box-content">
     <h1>Cadastrar Questão Objetiva</h1>
-    <form enctype="multipart/form-data" action="" method="POST" id="form-objet">
+    <form enctype="multipart/form-data" action="" method="POST" id="form-objet" class="yellow">
 
         <div class="box-category">
             <h2>Corpo da questão</h2>
@@ -83,7 +83,7 @@
 
 <div class="box-content">
     <h1>Cadastrar Questão Dissertativa</h1>
-    <form enctype="multipart/form-data" action="" method="POST" id="form-disser">
+    <form enctype="multipart/form-data" action="" method="POST" id="form-disser" class="red">
 
         <div class="box-category">
             <h2>Corpo da questão</h2>

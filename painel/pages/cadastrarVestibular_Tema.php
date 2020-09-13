@@ -7,7 +7,7 @@
 
 <div class="box-content">
     <h1>Cadastrar um vestibular</h1>
-    <form action="" method="POST" id="form-vestib">
+    <form action="" method="POST" id="form-vestib" class="yellow">
 
         <div class="box-category">
             <h2>Vestibulares já cadastrados</h2>
@@ -40,7 +40,7 @@
 
 <div class="box-content">
     <h1>Cadastrar um vestibular</h1>
-    <form action="" method="POST" id="form-temas">
+    <form action="" method="POST" id="form-temas" class="blue">
 
         <h2>Temas já cadastrados</h2>
         <div class="box-category">
