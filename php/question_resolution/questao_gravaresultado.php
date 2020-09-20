@@ -11,7 +11,6 @@
     if(mysqli_num_rows($result) < 1){
 
         setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-		date_default_timezone_set('America/Sao_Paulo');
 		$data = date('d-m-Y');
 		$hora = date('H:i');
 
