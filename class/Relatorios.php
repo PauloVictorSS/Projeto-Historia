@@ -15,7 +15,14 @@
         public static function getColors($cont){
 
             while ($cont > 0) {
-                self::$cores[$cont] = sprintf('%06X', mt_Rand(0, 0xFFFFFF));
+
+                self::$cores[$cont] = sprintf('%01X', mt_Rand(0, 0xF));
+                self::$cores[$cont] = self::$cores[$cont].sprintf('%01X', mt_Rand(0, 0xF));
+                self::$cores[$cont] = self::$cores[$cont].sprintf('%01X', mt_Rand(0, 0xF));
+                self::$cores[$cont] = self::$cores[$cont].sprintf('%01X', mt_Rand(0, 0xF));
+                self::$cores[$cont] = self::$cores[$cont].sprintf('%01X', mt_Rand(0, 0xF));
+                self::$cores[$cont] = self::$cores[$cont].sprintf('%01X', mt_Rand(0, 0xF));
+
                 $cont--;
             }
 
@@ -60,7 +67,7 @@
             
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT vestibular.descricao as 'vestibular', COUNT(vestibular.descricao) as 'qtd' FROM resolucao, questoes, vestibular WHERE resolucao.id_questao = questoes.id and questoes.id_vestibular = vestibular.id GROUP BY vestibular.descricao");
+            $sql = MySql::getConnect()->prepare("SELECT vestibular.descricao as 'vestibular', COUNT(*) as 'qtd' FROM questoes, vestibular WHERE questoes.id_vestibular = vestibular.id GROUP BY vestibular.descricao");
 
             $sql->execute();
 
@@ -126,7 +133,7 @@
 
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(*) FROM questoes, sub_tema WHERE questoes.id_sub_tema = sub_tema.id GROUP BY questoes.id_sub_tema");
+            $sql = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(*) as 'qtd' FROM questoes, sub_tema WHERE questoes.id_sub_tema = sub_tema.id GROUP BY questoes.id_sub_tema");
 
             $sql->execute();
 
