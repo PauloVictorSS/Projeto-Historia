@@ -439,6 +439,17 @@ section.resolvendo-questoes form#navegation-bar button{
     cursor: pointer;
 }
 
+section.resolvendo-questoes p.resposta{
+    text-align: center;
+    font-size: 20px;
+}
+
+section.resolvendo-questoes p.resposta.green{
+    color: #37b937;
+}
+section.resolvendo-questoes p.resposta.red{
+    color: red;
+}
 
 /** Entrar em contato **/
 

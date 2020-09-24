@@ -8,9 +8,9 @@
 	echo "<hr>";
 
 	if($gabarito == $resposta)
-		echo "<p class='mensagem-green'>Parabéns! Você acertou!</p>";
+		echo "<p class='resposta green'>Parabéns! Você acertou!</p>";
 	else
-		echo "<p class='mensagem-red'>Infelizmente você errou, a alternativa correta era a letra <strong>$gabarito</strong></p>"; 
+		echo "<p class='resposta red'>Infelizmente você errou, a alternativa correta era a letra <strong>$gabarito</strong></p>"; 
 
 	if(isset($_SESSION['status_login'])){
 

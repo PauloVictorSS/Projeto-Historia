@@ -83,7 +83,6 @@
             include_once('pages/user/'.$explode[0].'.php'); 
         else
             header("Location: pages/erro404.php");
-
         
     ?>
 
