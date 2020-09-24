@@ -62,7 +62,7 @@
         else
             $pagina = 1;
         
-        if($explode[0] != 'area-de-questoes'){
+        if($explode[0] != 'area-de-questoes' and $explode[0] != 'resolucao-de-questoes'){
             $_SESSION['partenome'] = '';
             $_SESSION['vestibular'] = '';
             $_SESSION['ano'] = '';
