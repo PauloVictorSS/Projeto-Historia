@@ -9,20 +9,6 @@
             header("location: ".INCLUDE_PATH);
         }
 
-        public static function loadPageAdmin(){
-            if(isset($_GET['url'])){
-
-                if(file_exists("pages/".$_GET['url'].".php")){
-                    include("pages/".$_GET['url'].".php");
-                }else{
-                    header("location: ".INCLUDE_PATH_PAINEL);
-                }
-
-            }else{
-                include("pages/home.php");
-            }
-        }
-
         public static function onlineUsers(){
 			self::cleanOnlineUsers();
 			$sql = MySql::getConnect()->prepare("SELECT * FROM `admin.online`");

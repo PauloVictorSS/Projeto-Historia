@@ -77,7 +77,37 @@
 
     <section class="content">
 
-        <?php Painel::loadPageAdmin(); ?>
+        <?php 
+            
+            if(isset($_GET['url'])){
+
+                //Recuperando a url selecionada
+
+                //Separando a url de possíveis parâmetros
+                $explode = explode(".", $_GET['url']);
+
+                //Verificando de há algum parâmetro na
+                if(count($explode) > 1)
+                    $pagina =  $explode[1];
+                else
+                    $pagina = 1;
+
+                if($explode[0] != 'exibirQuestoes' or $explode[0] != 'analiseQuestao'){
+                    $_SESSION['partenome'] = '';
+                    $_SESSION['vestibular'] = '';
+                    $_SESSION['ano'] = '';
+                    $_SESSION['tema'] = '';
+                }
+
+                if(file_exists("pages/".$explode[0].".php"))
+                    include("pages/".$explode[0].".php");
+                else
+                    include("pages/home.php");
+
+            }else
+                include("pages/home.php");
+        
+        ?>
 
     </section>
 
