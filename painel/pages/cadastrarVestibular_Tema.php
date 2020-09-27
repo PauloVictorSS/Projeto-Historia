@@ -3,6 +3,20 @@
     $themes = Questao::selectThemes();
     $exams = Questao::selectExams();
 
+    if(isset($_POST["action"])){
+
+        if($_POST["action"] == 1)
+            $result = Painel::addVestibular($_POST["name"]);
+        else
+            $result = Painel::addTema($_POST["name"]);
+
+        if($result == 1)
+            echo "<div class='mensagem green'>Inserção feita com sucesso!</div>";
+        else
+            echo "<div class='mensagem red'>Algo na inserção deu errado!</div>";
+        
+    }
+
 ?>
 
 <div class="box-content">
@@ -25,13 +39,13 @@
         <div class="box-category">
             <h2>Cadastrar um vestibular</h2>
 
-            <input type="text" name="alter_a" placeholder="Nome do Vestibular" required><span> *</span>
+            <input type="text" name="name" placeholder="Nome do Vestibular" required><span> *</span>
 
         </div>
 
         <div class="buttons">
-            <p>* Preenchimento Obrigatório</p>
-            <button type="submit" value="1"  name="action1" form="form-vestib">Adicionar</button>
+            <p>* Preenchimento Obrigatório<br>*Não utilizar nenhum caracter especial (@, º, ª, etc...)</p>
+            <button type="submit" value="1"  name="action" form="form-vestib">Adicionar</button>
         </div>
 
     </form>
@@ -59,13 +73,13 @@
         <div class="box-category">
             <h2>Cadastrar um tema</h2>
 
-            <input type="text" name="alter_a" placeholder="Nome do Vestibular" required><span> *</span>
+            <input type="text" name="name" placeholder="Nome do tema" required><span> *</span>
 
         </div>
 
         <div class="buttons">
-            <p>* Preenchimento Obrigatório</p>
-            <button type="submit" value="1"  name="action1" form="form-temas">Adicionar</button>
+            <p>* Preenchimento Obrigatório<br>*Não utilizar nenhum caracter especial (@, º, ª)</p>
+            <button type="submit" value="2"  name="action" form="form-temas">Adicionar</button>
         </div>
 
     </form>

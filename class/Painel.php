@@ -41,6 +41,19 @@
 			return $sql->fetchAll();
         }
 
+        public static function addVestibular($name){
+            $sql = MySql::getConnect()->prepare("INSERT  INTO vestibular VALUES (null, ?)");
+            $sql->execute(array($name));
+
+            return $sql->rowCount();
+        }
+
+        public static function addTema($name){
+            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, null)");
+            $sql->execute(array($name));
+
+            return $sql->rowCount();
+        }
     }
     
 
