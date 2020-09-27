@@ -62,29 +62,18 @@
 			echo "<p><br><b><i>(...)</i></b></p>";
 
 			$resolucao = INCLUDE_PATH.'resolucao-de-questoes';
+			$analise = INCLUDE_PATH_PAINEL.'analiseQuestao';
 
-			echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
-
+			if($explode[0] == 'area-de-questoes') 
+				echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
+			else
+				echo "<form class='right entrar_questao' action='$analise' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Dados da questão <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
 		}
 				
 		$anterior = $pc - 1;
 		$proximo = $pc + 1;
 		
-		if($anterior > 1)
-			$anterior = INCLUDE_PATH.'area-de-questoes_'.$anterior;
-		else
-			$anterior = INCLUDE_PATH.'area-de-questoes';
-
-		$proximo = 	INCLUDE_PATH.'area-de-questoes_'.$proximo;
-		$inicio = 	INCLUDE_PATH.'area-de-questoes';
-
-		if ($pc > 1)
-			echo "<a href='$anterior' id='paginacao-anterior' class='left'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
-				
-		if ($pc < $tp)
-			echo "<a href='$proximo' id='paginacao-proxima' class='right'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
-
-		echo "<a href='$inicio' id='paginacao-inicio'>INÍCIO</a><div class='clear'></div>";
+		
 	}
 	else
 		echo "<p class='mensagem-red'>Nenhum resultado encontrado</p>";

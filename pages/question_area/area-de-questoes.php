@@ -22,6 +22,27 @@
 			<div class="center resultados">
 				<?php   include_once("php/question_area/filtrando.php");   ?>
 				<?php 	include_once("php/question_area/resultado_questoes.php");	?>
+
+				<?php
+				
+					if($anterior > 1)
+						$anterior = INCLUDE_PATH.'area-de-questoes_'.$anterior;
+					else
+						$anterior = INCLUDE_PATH.'area-de-questoes';
+			
+					$proximo = 	INCLUDE_PATH.'area-de-questoes_'.$proximo;
+					$inicio = 	INCLUDE_PATH.'area-de-questoes';
+			
+					if ($pc > 1)
+						echo "<a href='$anterior' id='paginacao-anterior' class='left'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
+							
+					if ($pc < $tp)
+						echo "<a href='$proximo' id='paginacao-proxima' class='right'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
+			
+					echo "<a href='$inicio' id='paginacao-inicio'>INÍCIO</a><div class='clear'></div>";
+				
+				
+				?>
 			</div>
 		</div>
 		<div class="clear"></div>

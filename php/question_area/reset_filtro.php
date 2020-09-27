@@ -14,7 +14,10 @@
 	$_SESSION['tema'] = '';
 
 	$url = INCLUDE_PATH.'area-de-questoes';
+	$url2 = INCLUDE_PATH_PAINEL.'exibirQuestoes';
 			
-	header("location: $url");
-
+	if($_POST["btn-reset-filtro"] == 1)
+		header("location: $url");
+	else
+		header("location: $url2");
 ?>
