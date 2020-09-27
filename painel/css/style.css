@@ -176,6 +176,13 @@ div.box-content form div.box-category input{
 	padding: 7px;
 }
 
+div.box-content form div.box-category textarea{
+	margin: 5px 0;
+	width: 98%;
+	padding: 7px;
+	resize: vertical;
+}
+
 div.box-content form div.box-category span{
 	font-size: 12px;
 }
@@ -297,8 +304,6 @@ div.box-content div.reports div.infs.blue{
 }
 
 
-
-
 /* Relatórios CSS */
 
 div.box-content.box-graphi{
@@ -321,7 +326,7 @@ div.box-content.box-graphi div.graphis div.element h2{
 }
 
 
-/* Excluir Vest/Tema CSS*/
+/* Excluir Vestibular ou Tema CSS*/
 
 div.box-content form#form-vestib div.box-category div.element{
 	border-bottom: 1px solid #c0954b;
