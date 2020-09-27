@@ -54,7 +54,7 @@
 ?>
 <div class="box-content">
     <h1>Cadastrar um Sub Administrador</h1>
-    <form action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm" method="POST" class="blue" id="form-cadastrar">
+    <form action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm" method="POST" class="blue formulario" id="form-cadastrar">
 
         <div class="box-category">
             <h2>Administradores já cadastrados</h2>
