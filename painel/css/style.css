@@ -288,6 +288,22 @@ div.box-content table tr td{
 	border-bottom: 1px solid #ccc;
 } 
 
+div.box-content table tr td button{
+	background: none;
+	border: none;
+	color: #E05C4E;
+	cursor: pointer;
+	font-size: 22px;
+}
+
+div.box-content table tr td form.form_delete_adm{
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+
+
 
 /* Gerar Relatórios */
 

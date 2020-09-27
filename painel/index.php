@@ -50,10 +50,15 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular_Tema">Cadastrar vestibular / tema</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>excluirVestibular_Tema">Excluir vestibular / tema</a>
                 </div>
-                <div class="itens">
-                    <h2>Administração do Painel</h2>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm">Cadastrar administradores</a>
-                </div>
+
+                <?php if($_SESSION['type_admin'] == 2){ ?>
+
+                    <div class="itens">
+                        <h2>Administração do Painel</h2>
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm">Cadastrar administradores</a>
+                    </div>
+
+                <?php } ?>    
             </div>
         </div>
     </div>
