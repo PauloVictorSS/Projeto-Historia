@@ -1,8 +1,5 @@
 <?php
 
-    $themes = Questao::selectThemes();
-    $exams = Questao::selectExams();
-
     if(isset($_POST["action"])){
 
         if($_POST["action"] == 1)
@@ -17,11 +14,15 @@
         
     }
 
+    $themes = Questao::selectThemes();
+    $exams = Questao::selectExams();
+
+
 ?>
 
 <div class="box-content">
     <h1>Cadastrar um vestibular</h1>
-    <form action="" method="POST" id="form-vestib" class="yellow">
+    <form action="<?php echo INCLUDE_PATH_PAINEL?>cadastrarVestibular_Tema" method="POST" id="form-vestib" class="yellow">
 
         <div class="box-category">
             <h2>Vestibulares já cadastrados</h2>
@@ -54,7 +55,7 @@
 
 <div class="box-content">
     <h1>Cadastrar um tema</h1>
-    <form action="" method="POST" id="form-temas" class="blue">
+    <form action="<?php echo INCLUDE_PATH_PAINEL?>cadastrarVestibular_Tema" method="POST" id="form-temas" class="blue">
 
         <h2>Temas já cadastrados</h2>
         <div class="box-category">
