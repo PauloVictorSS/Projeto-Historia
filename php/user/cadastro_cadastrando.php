@@ -50,7 +50,7 @@
 			}
 		}
 		else
-			echo "<div class='mensagem red'><p>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</p></div>";
+			echo "<div class='mensagem red'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguaisOs campos 'Senha' e 'Confirmar Senha' devem ser iguais</div>";
 	}
 
 ?>
