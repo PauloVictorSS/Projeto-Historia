@@ -3,18 +3,76 @@
     $themes = Questao::selectThemes();
     $exams = Questao::selectExams();
 
+    if(isset($_POST["action"])){
+
+        $tipo = $_POST["action"];
+
+        if(!empty($_POST["texto"]))
+            $enunciado = str_replace("\n", "<br>", str_replace("'", "`", $_POST["texto"]));
+        else
+            $enunciado = "";
+        
+        $pergunta = str_replace("'", "`", $_POST["enunciado"]);
+
+        $imagem = $_FILES['image']['tmp_name'];
+        $tamanho = $_FILES['image']['size'];
+        $tipoImg = $_FILES['image']['type'];
+        $nome = $_FILES['image']['name'];
+
+        if(!empty($imagem)){
+            $fp = fopen($imagem, "rb");
+            $conteudo = fread($fp, $tamanho);
+            $conteudo = addslashes($conteudo);
+        }
+        else
+            $conteudo = "";
+
+        $ano = $_POST["ano"];
+        $tema = $_POST["tema"];
+        $vest = $_POST["vest"];
+
+        if($tipo == 1){
+
+            $alter_a = str_replace("'", "`", $_POST["alter_a"]);
+            $alter_b = str_replace("'", "`", $_POST["alter_b"]);
+            $alter_c = str_replace("'", "`", $_POST["alter_c"]);
+            $alter_d = str_replace("'", "`", $_POST["alter_d"]);
+            $alter_e = str_replace("'", "`", $_POST["alter_e"]);
+
+            $gabarito = $_POST["gabarito"];
+            $explic = str_replace("'", "`", $_POST["explic"]);
+
+            $result = Questao::addQuestObj($enunciado, $pergunta, $alter_a, $alter_b, $alter_c, $alter_d, $alter_e, $gabarito, $explic, $tema, $vest, $ano, $tipo, $conteudo);
+
+        }else{
+            $quest_a = str_replace("'", "`", $_POST["quest_a"]);
+            $quest_b = str_replace("'", "`", $_POST["quest_b"]);
+            $quest_c = str_replace("'", "`", $_POST["quest_c"]);
+            $resp_a = str_replace("'", "`", $_POST["resp_a"]);
+            $resp_b = str_replace("'", "`", $_POST["resp_b"]);
+            $resp_c = str_replace("'", "`", $_POST["resp_c"]);
+
+            $result = Questao::addQuestDissert($enunciado, $pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $tema, $vest, $ano, $tipo, $conteudo);
+
+        }
+
+        if($result == 1)
+            echo "<div class='mensagem green'>Questão inserida com sucesso!</div>";
+        else
+            echo "<div class='mensagem red'>Algo na inserção deu errado!</div>";
+        
+    }
 ?>
 
 <div class="box-content">
     <h1>Cadastrar Questão Objetiva</h1>
-    <form enctype="multipart/form-data" action="" method="POST" id="form-objet" class="yellow">
+    <form enctype="multipart/form-data" action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao" method="POST" id="form-objet" class="yellow">
 
         <div class="box-category">
             <h2>Corpo da questão</h2>
 
-            <input type="text" name="texto" placeholder="Texto inicial da questão" required><span> *</span>
-            <input type="text" name="enunciado" placeholder="Comando/Pergunta da questão" required><span> *</span>
-            <input type="text" name="especial" placeholder="Poema ou afins">
+            <textarea name="texto" placeholder="Texto inicial da questão"></textarea>
+            <input type="text" name="enunciado" placeholder="Comando/Pergunta da questão">
         </div>
 
         <div class="box-category">
@@ -74,7 +132,7 @@
 
         <div class="buttons">
             <p>* Preenchimento Obrigatório</p>
-            <button type="submit" value="1"  name="action1" form="form-objet">Adicionar</button>
+            <button type="submit" value="1"  name="action" form="form-objet">Adicionar</button>
         </div>
 
     </form>
@@ -83,14 +141,13 @@
 
 <div class="box-content">
     <h1>Cadastrar Questão Dissertativa</h1>
-    <form enctype="multipart/form-data" action="" method="POST" id="form-disser" class="red">
+    <form enctype="multipart/form-data" action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao" method="POST" id="form-disser" class="red">
 
         <div class="box-category">
             <h2>Corpo da questão</h2>
 
-            <input type="text" name="texto" placeholder="Texto inicial da questão" required><span> *</span>
-            <input type="text" name="enunciado" placeholder="Comando/Pergunta da questão" required><span> *</span>
-            <input type="text" name="especial" placeholder="Poema ou afins">
+            <textarea name="texto" placeholder="Texto inicial da questão"></textarea>
+            <input type="text" name="enunciado" placeholder="Comando/Pergunta da questão">
         </div>
 
         <div class="box-category">
@@ -145,7 +202,7 @@
 
         <div class="buttons">
             <p>* Preenchimento Obrigatório</p>
-            <button type="submit" value="2"  name="action2" form="form-disser">Adicionar</button>
+            <button type="submit" value="2"  name="action" form="form-disser">Adicionar</button>
         </div>
 
     </form>
