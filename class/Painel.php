@@ -54,6 +54,21 @@
 
             return $sql->rowCount();
         }
+
+        public static function deleteVestibular($id){
+            $sql = MySql::getConnect()->prepare("DELETE FROM vestibular WHERE id = ?");
+            $sql->execute(array($id));
+
+            return $sql->rowCount();
+        }
+
+        public static function deleteTema($name){
+            $sql = MySql::getConnect()->prepare("DELETE FROM sub_tema WHERE descricao = ?");
+            $sql->execute(array($name));
+
+            return $sql->rowCount();
+        }
+
     }
     
 
