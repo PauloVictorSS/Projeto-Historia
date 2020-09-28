@@ -22,7 +22,7 @@
 	$ano = $_SESSION['ano'];
 	$vestibular = $_SESSION['vestibular'];
 	$tema = $_SESSION['tema'];
-			
+
 	$consulta1 = "SELECT * FROM `questoes_filtro` WHERE (enunciado like '%$enunciado%' or especial like '%$enunciado%' or pergunta like '%$enunciado%') and (ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%') LIMIT $inicio,$total_reg";
 
 	$consulta2 = "SELECT * FROM `questoes_filtro` WHERE (enunciado like '%$enunciado%' or especial like '%$enunciado%' or pergunta like '%$enunciado%') and (ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%')";

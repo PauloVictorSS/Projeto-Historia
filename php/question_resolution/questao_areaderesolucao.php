@@ -6,7 +6,7 @@
 */
 	
 	if(!empty($_POST["id_questao"]))
-		$_SESSION["id_questao"] = clear($_POST["id_questao"]);
+		$_SESSION["id_questao"] = $_POST["id_questao"];
 
 	if(!empty($_POST["lettler"])){
 		$_SESSION["resposta"] = clear($_POST["lettler"]);

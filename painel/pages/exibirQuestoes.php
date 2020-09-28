@@ -1,10 +1,3 @@
-<?php
-
-
-
-
-?>
-
 <div class="box-content area-de-questoes">
 
     <h1>Questões Cadastradas</h1>
@@ -26,6 +19,7 @@
 
     <div class="clear"></div>
     <div class="resultados">
+        
         <?php   include_once("../php/question_area/filtrando.php");   ?>
         <?php 	include_once("../php/question_area/resultado_questoes.php");	?>
 
