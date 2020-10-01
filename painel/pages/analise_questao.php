@@ -9,9 +9,18 @@
 
         $id = $_SESSION["id_questao"];
 
-        $consulta = "SELECT * FROM `questoes_filtro` where questoes_filtro.id = $id group by questoes_filtro.id";
+        $consulta = "SELECT vestibular.`descricao` AS `vestibular`, questoes.`ano`, questoes.`especial`, questoes.`imagem`, sub_tema.`descricao` AS `subtema`, questoes.`enunciado`, questoes.`alternativa_a`, questoes.`alternativa_b`, questoes.`alternativa_c`, questoes.`alternativa_d`,questoes.`alternativa_e`, questoes.`alternativa_certa`, questoes.`explicacao`, questoes.`pergunta`, questoes.`id`, questoes.`tipo` FROM ((questoes join sub_tema) JOIN vestibular) WHERE questoes.`id_vestibular` = vestibular.`id` and questoes.`id_sub_tema` = sub_tema.`id` AND questoes.id = $id";
+
+        $consulta2 = "SELECT * from resolucao where resolucao.id_questao = $id";
+        $consulta3 = "SELECT * from resolucao where resolucao.id_questao = $id and resolucao.acertou = 's'";
 
         $questao = mysqli_query($conexao, $consulta);
+
+        $total = mysqli_query($conexao, $consulta2);
+        $acertos = mysqli_query($conexao, $consulta3);
+
+        $total = mysqli_num_rows($total);
+        $acertos = mysqli_num_rows($acertos);
 
         while($p = mysqli_fetch_array($questao)){
 
@@ -58,7 +67,8 @@
                     echo "<p><b>E) </b> $alternativa_E</p><br>";	
                 }
                 
-                echo "<br><p><b>Gabarito:</b> $gabarito</p><br>";
+                echo "<br><p class='right'><b>Acertos:</b> $acertos/$total</p>";
+                echo "<p><b>Gabarito:</b> $gabarito</p>";
 
             }
             elseif($tipo == 2){

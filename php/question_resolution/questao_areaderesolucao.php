@@ -20,7 +20,7 @@
 
 	$id = $_SESSION["id_questao"];
 
-	$consulta = "SELECT * FROM `questoes_filtro` where questoes_filtro.id = $id group by questoes_filtro.id";
+	$consulta = "SELECT vestibular.`descricao` AS `vestibular`, questoes.`ano`, questoes.`especial`, questoes.`imagem`, sub_tema.`descricao` AS `subtema`, questoes.`enunciado`, questoes.`alternativa_a`, questoes.`alternativa_b`, questoes.`alternativa_c`, questoes.`alternativa_d`,questoes.`alternativa_e`, questoes.`alternativa_certa`, questoes.`explicacao`, questoes.`pergunta`, questoes.`id`, questoes.`tipo` FROM ((questoes join sub_tema) JOIN vestibular) WHERE questoes.`id_vestibular` = vestibular.`id` and questoes.`id_sub_tema` = sub_tema.`id` AND questoes.id = $id";
 
 	$questao = mysqli_query($conexao, $consulta);
 
