@@ -40,22 +40,22 @@
                 <div class="itens">
                     <h2>Gestão</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>">Home</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>relatorios">Exibir relatórios</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirQuestoes">Exibir questões</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>exibirUsuarios">Exibir usuários cadastrados</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Relatorios">Exibir relatórios</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes">Exibir questões</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Usuarios">Exibir usuários cadastrados</a>
                 </div>
                 <div class="itens">
                     <h2>Cadastrar e Excluir</h2>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarQuestao">Cadastrar questão</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarVestibular_Tema">Cadastrar vestibular / tema</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>excluirVestibular_Tema">Excluir vestibular / tema</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Questao">Cadastrar questão</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Vestibular-Tema">Cadastrar vestibular / tema</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Excluir-Vestibular-Tema">Excluir vestibular / tema</a>
                 </div>
 
                 <?php if($_SESSION['type_admin'] == 2){ ?>
 
                     <div class="itens">
                         <h2>Administração do Painel</h2>
-                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm">Cadastrar administradores</a>
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm">Cadastrar administradores</a>
                     </div>
 
                 <?php } ?>    
@@ -81,10 +81,10 @@
             
             if(isset($_GET['url'])){
 
-                //Recuperando a url selecionada
+                $url = strtolower(str_replace("-", "_", $_GET['url']));
 
                 //Separando a url de possíveis parâmetros
-                $explode = explode(".", $_GET['url']);
+                $explode = explode(".", $url);
 
                 //Verificando de há algum parâmetro na
                 if(count($explode) > 1)
@@ -92,7 +92,7 @@
                 else
                     $pagina = 1;
 
-                if($explode[0] != 'exibirQuestoes' or $explode[0] != 'analiseQuestao'){
+                if($explode[0] != 'Exibir-Questoes' or $explode[0] != 'Analise-Questao'){
                     $_SESSION['partenome'] = '';
                     $_SESSION['vestibular'] = '';
                     $_SESSION['ano'] = '';

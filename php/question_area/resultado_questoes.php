@@ -28,10 +28,13 @@
 	$consulta2 = "SELECT * FROM `questoes_filtro` WHERE (enunciado like '%$enunciado%' or especial like '%$enunciado%' or pergunta like '%$enunciado%') and (ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%')";
 
 	$limite = mysqli_query($conexao, $consulta1);
-			
+		
 	$todos = mysqli_query($conexao, $consulta2);
 			
 	$tr = mysqli_num_rows($todos); // verifica o número total de registros
+
+	echo "<p class='total_resultados right'>$tr resultados encontrados</p><div class='clear'></div>";
+
 	$tp = $tr / $total_reg; // verifica o número total de páginas
 		
 	if(mysqli_num_rows($limite) > 0){
@@ -62,7 +65,7 @@
 			echo "<p><br><b><i>(...)</i></b></p>";
 
 			$resolucao = INCLUDE_PATH.'resolucao-de-questoes';
-			$analise = INCLUDE_PATH_PAINEL.'analiseQuestao';
+			$analise = INCLUDE_PATH_PAINEL.'Analise-Questao';
 
 			if($explode[0] == 'area-de-questoes') 
 				echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
