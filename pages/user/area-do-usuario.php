@@ -9,11 +9,11 @@
 	<section class="area-usuario">
 		<div class="center">
 			<h1>Dados Pessoais</h1>
-			<div class="dados-pessoais">				
+			<table class="dados-pessoais">				
 
 				<?php  include_once("php/user/usuario_dadospessoais.php");		?>
 
-			</div>
+			</table>
 			<h1>Dados sobre as Questões</h1>
 			<div class="dados-questoes">
 

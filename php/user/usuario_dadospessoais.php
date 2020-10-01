@@ -19,10 +19,10 @@
 		$escolaridade = $n[4];
 	}
 
-	echo "<p><b>Nome:</b> $nome</p>";
-	echo "<p><b>E-mail:</b> $email</p>";
-	echo "<p><b>Aniversário:</b> $aniversario</p>";
-	echo "<p><b>Rede:</b> $rede</p>";
-	echo "<p><b>Escolariedade:</b> $escolaridade</p>";
+	echo "<tr><th>Nome</th><td>$nome</td></tr>";
+	echo "<tr><th>E-mail</th><td>$email</td></tr>";
+	echo "<tr><th>Aniversário</th><td>$aniversario</td></tr>";
+	echo "<tr><th>Rede</th><td>$rede</td></tr>";
+	echo "<tr><th>Escolariedade</th><td>$escolaridade</td></tr>";
 
 ?>
