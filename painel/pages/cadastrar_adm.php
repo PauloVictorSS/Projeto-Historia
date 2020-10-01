@@ -54,7 +54,7 @@
 ?>
 <div class="box-content">
     <h1>Cadastrar um Sub Administrador</h1>
-    <form action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm" method="POST" class="blue formulario" id="form-cadastrar">
+    <form action="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm" method="POST" class="blue formulario" id="form-cadastrar">
 
         <div class="box-category">
             <h2>Administradores já cadastrados</h2>
@@ -76,7 +76,7 @@
 
                     <td>
 
-                    <form action="<?php echo INCLUDE_PATH_PAINEL ?>cadastrarAdm" method="post" class="form_delete_adm">
+                    <form action="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm" method="post" class="form_delete_adm">
 
                         <?php if($value["type"] != 2){ ?>
                             <button type="submit" class="right" value="<?php echo $value["id"]; ?>" name="action"><i class="fa fa-trash" aria-hidden="true"></i></button>

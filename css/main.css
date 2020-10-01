@@ -89,3 +89,9 @@ div.green{
 div.red{
     background: #eb3c3c;
 }
+div.box-content.area-de-questoes p.total_resultados,
+section.area-de-questoes div.resultados p.total_resultados{
+	background-color: white;
+	padding: 5px;
+	margin: 15px 0;
+}
