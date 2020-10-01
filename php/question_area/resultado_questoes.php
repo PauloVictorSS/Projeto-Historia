@@ -23,9 +23,9 @@
 	$vestibular = $_SESSION['vestibular'];
 	$tema = $_SESSION['tema'];
 
-	$consulta1 = "SELECT * FROM `questoes_filtro` WHERE (enunciado like '%$enunciado%' or especial like '%$enunciado%' or pergunta like '%$enunciado%') and (ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%') LIMIT $inicio,$total_reg";
+	$consulta1 = "SELECT vestibular.`descricao` AS `vestibular`, questoes.`ano`, questoes.`especial`, questoes.`imagem`, sub_tema.`descricao` AS `subtema`, questoes.`enunciado`, questoes.`alternativa_a`, questoes.`alternativa_b`, questoes.`alternativa_c`, questoes.`alternativa_d`,questoes.`alternativa_e`, questoes.`alternativa_certa`, questoes.`explicacao`, questoes.`pergunta`, questoes.`id`, questoes.`tipo` FROM ((questoes join sub_tema) JOIN vestibular) WHERE questoes.`id_vestibular` = vestibular.`id` and questoes.`id_sub_tema` = sub_tema.`id` AND (questoes.enunciado LIKE '%$enunciado%' or questoes.pergunta LIKE '%enunciado%') AND (questoes.ano LIKE '%$ano%' AND vestibular.descricao LIKE '%$vestibular%' AND sub_tema.descricao LIKE '%$tema%') LIMIT $inicio, $total_reg";
 
-	$consulta2 = "SELECT * FROM `questoes_filtro` WHERE (enunciado like '%$enunciado%' or especial like '%$enunciado%' or pergunta like '%$enunciado%') and (ano like '%$ano%' and vestibular like '%$vestibular%' and subtema like '%$tema%')";
+	$consulta2 = "SELECT vestibular.`descricao` AS `vestibular`, questoes.`ano`, questoes.`especial`, questoes.`imagem`, sub_tema.`descricao` AS `subtema`, questoes.`enunciado`, questoes.`alternativa_a`, questoes.`alternativa_b`, questoes.`alternativa_c`, questoes.`alternativa_d`,questoes.`alternativa_e`, questoes.`alternativa_certa`, questoes.`explicacao`, questoes.`pergunta`, questoes.`id`, questoes.`tipo` FROM ((questoes join sub_tema) JOIN vestibular) WHERE questoes.`id_vestibular` = vestibular.`id` and questoes.`id_sub_tema` = sub_tema.`id` AND (questoes.enunciado LIKE '%$enunciado%' or questoes.pergunta LIKE '%enunciado%') AND (questoes.ano LIKE '%$ano%' AND vestibular.descricao LIKE '%$vestibular%' AND sub_tema.descricao LIKE '%$tema%')";
 
 	$limite = mysqli_query($conexao, $consulta1);
 		
