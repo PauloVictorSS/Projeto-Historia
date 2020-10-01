@@ -13,10 +13,10 @@
 		$login = clear($_POST['login']); 
 		$senha = clear($_POST['senha']); 
 
-		$senhamd5 = md5($senha);
+		$senhacod = hash("sha512", $senha);
 
-		$consulta1 = "SELECT login, senha, id FROM usuarios WHERE login = '$login' AND senha = '$senhamd5'";
-		$consulta2 = "SELECT * FROM `admin.usuarios` WHERE login = '$login' AND senha = '$senha'";
+		$consulta1 = "SELECT login, senha, id FROM usuarios WHERE login = '$login' AND senha = '$senhacod'";
+		$consulta2 = "SELECT * FROM `admin.usuarios` WHERE login = '$login' AND senha = '$senhacod'";
 
 		$result1 = mysqli_query($conexao, $consulta1);
 		$result2 = mysqli_query($conexao, $consulta2);

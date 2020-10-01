@@ -33,10 +33,10 @@
 			if($cont == 1)
 				echo "<div class='mensagem red'><p>Já existe um usuário com essse login</p></div>";
 			else{
-				
-				$senhamd5 = md5($senha);
 
-				$insert1 = "insert into usuarios (login, senha, nome, email, aniversario, id_rede, id_escolaridade) values('$login', '$senhamd5', '$nome', '$email', '$aniversario', $rede, $escolar)";
+				$senhacod = hash("sha512", $senha);
+
+				$insert1 = "insert into usuarios (login, senha, nome, email, aniversario, id_rede, id_escolaridade) values('$login', '$senhacod', '$nome', '$email', '$aniversario', $rede, $escolar)";
 
 				$query = mysqli_query($conexao, $insert1);
 

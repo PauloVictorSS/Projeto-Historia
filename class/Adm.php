@@ -24,7 +24,7 @@
 
         public static function addAdms($name, $login, $pass){
             $sql = MySql::getConnect()->prepare("INSERT  INTO `admin.usuarios` VALUES (null, ?, ?, 1, ?)");
-            $sql->execute(array($login, $pass, $name));
+            $sql->execute(array($login, hash("sha512", $pass), $name));
 
             return $sql->rowCount();
         }
