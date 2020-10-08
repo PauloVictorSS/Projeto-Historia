@@ -6,8 +6,6 @@
 	caso seja igual, entra na área do usuário
 */
 
-	
-
 	if(!empty($_POST['login']) and !empty($_POST['senha'])){
 
 		$login = clear($_POST['login']); 
