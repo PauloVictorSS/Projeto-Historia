@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Out-2020 às 00:01
--- Versão do servidor: 10.4.13-MariaDB
--- versão do PHP: 7.4.7
+-- Tempo de geração: 19-Out-2020 às 22:47
+-- Versão do servidor: 10.4.14-MariaDB
+-- versão do PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `admin.online` (
 --
 
 INSERT INTO `admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(54, '::1', '2020-10-01 18:59:04', '5f76511de467a');
+(64, '::1', '2020-10-19 17:46:30', '5f8df93722921');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `admin.usuarios` (
 --
 
 INSERT INTO `admin.usuarios` (`id`, `login`, `senha`, `type`, `nome`) VALUES
-(1, 'admin', 'admin', 2, 'Paulo Victor');
+(1, 'admin', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 2, 'Bernardo');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,10 @@ INSERT INTO `admin.visitas` (`id`, `ip`, `dia`) VALUES
 (1, '::1', '2020-09-07'),
 (2, '::1', '2020-09-15'),
 (3, '::1', '2020-09-21'),
-(4, '::1', '2020-09-28');
+(4, '::1', '2020-09-28'),
+(5, '::1', '2020-10-08'),
+(6, '::1', '2020-10-18'),
+(7, '::1', '2020-10-18');
 
 -- --------------------------------------------------------
 
@@ -302,13 +305,11 @@ CREATE TABLE `resolucao` (
 --
 
 INSERT INTO `resolucao` (`id`, `id_usuario`, `id_questao`, `resp_escolh`, `acertou`, `data_envio`, `hora_envio`) VALUES
-(4, 3, 2, 'D', 'n', '30-08-2020', '06:53'),
 (6, 2, 2, 'C', 'n', '30-08-2020', '07:05'),
 (7, 2, 3, 'E', 'n', '30-08-2020', '07:05'),
 (8, 2, 5, 'A', 'n', '30-08-2020', '07:06'),
 (9, 2, 20, '1', 's', '30-08-2020', '07:06'),
 (10, 2, 33, 'D', 'n', '30-08-2020', '07:07'),
-(11, 3, 3, 'A', 's', '13-09-2020', '14:58'),
 (12, 2, 8, 'A', 'n', '21-09-2020', '18:10');
 
 -- --------------------------------------------------------
@@ -436,9 +437,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`login`, `senha`, `nome`, `email`, `aniversario`, `id_rede`, `id_escolaridade`, `id_mestre`, `id`) VALUES
-('Usuario01', '1f6162b4e9d1e38073d5b24804c53708', 'Usuario 01', 'usuario@usuario', '25/06/2003', 1, 3, 1, 2),
-('Usuario02', '8296021f139369e6b446e3de35a509c4', 'Usuario 02', 'usuario@usuario', '21/05/2010', 2, 1, 1, 3),
-('paulo123', 'e7d80ffeefa212b7c5c55700e4f7193e', 'Paulo Victor', 'paulo@email.com', '2020-09-26', 2, 4, NULL, 6);
+('Usuario01', '3bee41c07a66948effcf3af64abf791159524a534d866583435937ee0a6f8df01c56315ec15160b0a33d47da409202878643bac41c7dca3e7fd1fe0ac2fdcd6a', 'Usuario 01', 'usuario@usuario', '25/06/2003', 1, 3, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -545,7 +544,7 @@ ALTER TABLE `vestibular`
 -- AUTO_INCREMENT de tabela `admin.online`
 --
 ALTER TABLE `admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de tabela `admin.usuarios`
@@ -557,7 +556,7 @@ ALTER TABLE `admin.usuarios`
 -- AUTO_INCREMENT de tabela `admin.visitas`
 --
 ALTER TABLE `admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `escolaridade`
@@ -581,7 +580,7 @@ ALTER TABLE `rede`
 -- AUTO_INCREMENT de tabela `resolucao`
 --
 ALTER TABLE `resolucao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `sub_tema`
@@ -599,7 +598,7 @@ ALTER TABLE `tema`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `vestibular`
