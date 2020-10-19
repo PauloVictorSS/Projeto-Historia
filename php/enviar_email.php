@@ -39,12 +39,12 @@
 
             //Recipients
             $mail->setFrom("$email", "$nome");
-            $mail->addAddress('paulovictorsantos0@gmail.com');
+            $mail->addAddress('testedemail.paulovictor@gmail.com');
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Sugestão ou dúvida de '.$nome;
-            $mail->Body    = "<br>Nome: $nome<br>Email: $email<hr>$mens";
+            $mail->Body    = "<br>Nome: $nome<br>Email: $email<br><br>$mens";
             $mail->AltBody = "$mens";
 
             $mail->send();
