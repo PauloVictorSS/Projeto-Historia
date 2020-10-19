@@ -27,6 +27,10 @@ nav.desktop li{
     display: inline-block;
 }
 
+nav.desktop li:hover{
+    font-weight: bolder;
+}
+
 nav.desktop a{
     color: white;
     text-decoration: none;
@@ -77,6 +81,9 @@ section.banner-principal #cadastro button{
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+section.banner-principal #cadastro button:hover{
+    font-weight: bold;
 }
 
 section.banner-principal #cadastro button i{
@@ -151,6 +158,9 @@ section.cadastro form button{
     border: none;
     background-color: #37b937;
 }
+section.cadastro form button:hover{
+    font-weight: bold;
+}
 
 
 /** Login **/
@@ -207,6 +217,10 @@ section.login form div.buttons input{
     padding: 7px;
     cursor: pointer;
     background-color: #37b937;
+}
+
+section.login form div.buttons input:hover{
+    font-weight: bolder;
 }
 
 section.login form div.buttons input[value=Apagar]{
@@ -335,6 +349,11 @@ section.area-de-questoes form button[type=submit]{
     min-width: 150px;
 }
 
+section.area-de-questoes form button[type=submit]:hover,
+section.area-de-questoes form#form input[type=submit]:hover{
+    font-weight: bolder;
+}
+
 section.area-de-questoes div.resultados{
     margin-top: 20px;
     max-width: 1000px;
@@ -362,16 +381,26 @@ section.area-de-questoes div.resultados form.entrar_questao button{
     border: none;
     cursor: pointer;
 }
+section.area-de-questoes div.resultados form.entrar_questao button:hover{
+    text-decoration: underline;
+}
 
 section.area-de-questoes a{
     text-decoration: none;
     color: black;
 	font-style: italic;
 }
+section.area-de-questoes a:hover{
+    text-decoration: underline;
+}
+
 section.area-de-questoes #paginacao-inicio{
     display: block; 
     text-align: center;
     margin-bottom: 20px; 
+}
+section.area-de-questoes #paginacao-inicio:hover{
+    text-decoration: underline;
 }
 
 
@@ -496,9 +525,20 @@ section.contato form textarea{
 
 section.contato form textarea{
     min-height: 200px;
-    margin-bottom: 40px;
     resize: vertical;
     border: none;
+}
+
+section.contato form button{
+    padding: 5px;
+    border: none;
+    background: none;
+    background: #59d859;
+    margin: 10px 0 40px;
+    cursor: pointer;
+}
+section.contato form button:hover{
+    font-weight: bold;
 }
 
 
