@@ -42,10 +42,15 @@
 
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;
-				$_SESSION['status_login'] = 1;
+        $_SESSION['status_login'] = 1;
 
+        $select = "select id from usuarios where login = '$login'";
+        $result = mysqli_query($conexao, $select);
+        $n = mysqli_fetch_array($result);
+        $_SESSION['id_usuario'] = $n['id'];
+        
 				$url = INCLUDE_PATH.'area-do-usuario';
-				echo "<div class='mensagem green'><p>Cadastro feito com sucesso!<a href='$url'>Clique aqui para logar</a></p></div>";
+				echo "<div class='mensagem green'><p>Cadastro feito com sucesso!<a href='$url'> Clique aqui para logar</a></p></div>";
 
 			}
 		}
