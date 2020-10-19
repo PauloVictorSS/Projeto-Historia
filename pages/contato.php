@@ -9,7 +9,7 @@
 					<input type="text" name="nome" placeholder="Nome...">
 					<input type="text" name="email" placeholder="E-mail...">
 					<textarea name="sugestao" placeholder="Sua sugestão aqui..."></textarea>
-          <button name="action" value="1" type="submit">Enviar</button>
+                    <button name="action" value="1" type="submit">Enviar</button>
 				</form>
 			</div>
 		</div>
