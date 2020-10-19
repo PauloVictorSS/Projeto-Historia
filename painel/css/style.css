@@ -515,3 +515,10 @@ div.box-content form#form-vestib div.box-category div.element button{
 		display: block;
 	}
 }
+
+@media screen and (max-width: 475px){
+    
+    div.box-content form.formulario{
+        padding: 2px;
+    }
+}

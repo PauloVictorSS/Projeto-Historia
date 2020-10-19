@@ -104,7 +104,9 @@ section.sobre-site h1{
 }
 
 section.sobre-site p{
+    margin: 0 auto;
     padding: 20px 100px;
+    max-width: 900px;
 }
 
 
@@ -636,7 +638,7 @@ section.erro404 p a:hover{
         margin-top: 10px;
     }
     section.sobre-site p{
-        padding: 20px 30px;
+        padding: 20px;
     }
     section.contato form{
         width: 80%;
@@ -674,6 +676,7 @@ section.erro404 p a:hover{
         width: 200px;
         margin: 10px auto 0;
     }
+    
 }
 
 
@@ -688,5 +691,15 @@ section.erro404 p a:hover{
 
     section.area-de-questoes form#form select+select.w33{
         margin-left: 0;
+    }
+
+    div.box-content.area-de-questoes p.total_resultados,
+    section.area-de-questoes div.resultados p.total_resultados{
+        float: unset;
+        text-align: center;
+    }
+
+    section.contato form{
+        width: 100%;
     }
 }

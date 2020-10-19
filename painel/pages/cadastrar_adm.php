@@ -63,7 +63,6 @@
                 <tr>
                     <th>Nome</th>
                     <th>Login</th>
-                    <th>Cargo</th>
                     <th></th>
                 </tr>
             <?php
@@ -72,7 +71,6 @@
                 <tr>        
                     <td><?php echo $value["nome"]; ?></td>
                     <td><?php echo $value["login"]; ?></td>
-                    <td><?php echo Adm::getOffice($value["type"]); ?></td>
 
                     <td>
 
