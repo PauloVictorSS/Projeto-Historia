@@ -71,7 +71,7 @@ div.menu div.box-links div.itens a{
 	font-weight: normal;
 	font-size: 15px;
 	color: white;
-	padding: 5px;
+	padding: 8px;
 	display: block;
 }
 
@@ -89,7 +89,8 @@ header{
 header div.menu-btn{
 	cursor: pointer;
 	font-size: 23px;
-	color: white;
+    color: white;
+    padding: 0 20px;
 }
 
 header a.loggout{
@@ -520,5 +521,12 @@ div.box-content form#form-vestib div.box-category div.element button{
     
     div.box-content form.formulario{
         padding: 2px;
+    }
+}
+
+@media screen and (min-height: 850px){
+    div.menu div.box-links div.itens h2, 
+    div.menu div.box-links div.itens a{
+        padding: 15px;
     }
 }

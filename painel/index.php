@@ -64,51 +64,49 @@
     </div>
 
     <header>
-        <div class="center">
-            <div class="menu-btn left">
-                <i class="fa fa-bars"></i>
-            </div>
-
-            <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout" class="loggout right"> <i class="fa fa-sign-out"></i> Sair</a>
-
-            <div class="clear"></div>
+        <div class="menu-btn left">
+            <i class="fa fa-bars"></i>
         </div>
+
+        <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout" class="loggout right"> <i class="fa fa-sign-out"></i> Sair</a>
+
+        <div class="clear"></div>
     </header>
 
     <section class="content">
+        <div class="center">
+            <?php 
+                
+                if(isset($_GET['url'])){
 
-        <?php 
-            
-            if(isset($_GET['url'])){
+                    $url = strtolower(str_replace("-", "_", $_GET['url']));
 
-                $url = strtolower(str_replace("-", "_", $_GET['url']));
+                    //Separando a url de possíveis parâmetros
+                    $explode = explode(".", $url);
 
-                //Separando a url de possíveis parâmetros
-                $explode = explode(".", $url);
+                    //Verificando de há algum parâmetro na
+                    if(count($explode) > 1)
+                        $pagina =  $explode[1];
+                    else
+                        $pagina = 1;
 
-                //Verificando de há algum parâmetro na
-                if(count($explode) > 1)
-                    $pagina =  $explode[1];
-                else
-                    $pagina = 1;
+                    if($explode[0] != 'Exibir-Questoes' or $explode[0] != 'Analise-Questao'){
+                        $_SESSION['partenome'] = '';
+                        $_SESSION['vestibular'] = '';
+                        $_SESSION['ano'] = '';
+                        $_SESSION['tema'] = '';
+                    }
 
-                if($explode[0] != 'Exibir-Questoes' or $explode[0] != 'Analise-Questao'){
-                    $_SESSION['partenome'] = '';
-                    $_SESSION['vestibular'] = '';
-                    $_SESSION['ano'] = '';
-                    $_SESSION['tema'] = '';
-                }
+                    if(file_exists("pages/".$explode[0].".php"))
+                        include("pages/".$explode[0].".php");
+                    else
+                        include("pages/home.php");
 
-                if(file_exists("pages/".$explode[0].".php"))
-                    include("pages/".$explode[0].".php");
-                else
+                }else
                     include("pages/home.php");
-
-            }else
-                include("pages/home.php");
-        
-        ?>
-
+            
+            ?>
+        </div>
     </section>
 
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>

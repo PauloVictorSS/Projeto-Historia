@@ -1,4 +1,4 @@
-<main id="cadastro">
+<main id="cadastro" class="main">
 	<section class="cadastro">
 		<?php   include_once("php/user/cadastro_cadastrando.php");   ?>
 		<div class="box-cadastro">

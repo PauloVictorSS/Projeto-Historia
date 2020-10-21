@@ -1,4 +1,4 @@
-<main>
+<main class="main">
 	<section class="banner-principal">
 		<div class="banner"></div>
       <div class="center">

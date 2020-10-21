@@ -1,4 +1,4 @@
-<main>
+<main class="main">
 	<section class="contato">
     <?php  include "php/enviar_email.php";  ?>
 		<div class="box-contato">

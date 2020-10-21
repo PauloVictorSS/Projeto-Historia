@@ -1,6 +1,6 @@
 <?php   include_once("php/user/usuario_verificalogado.php");  ?>
 
-<main>
+<main class="main">
 
 	<section class="login">
 		

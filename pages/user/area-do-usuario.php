@@ -5,7 +5,7 @@
 	}
 
 ?>
-<main>
+<main class="main">
 	<section class="area-usuario">
 		<div class="center">
 			<h1>Dados Pessoais</h1>
