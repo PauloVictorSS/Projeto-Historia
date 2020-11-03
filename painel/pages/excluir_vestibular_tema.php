@@ -22,7 +22,7 @@
 
 <div class="box-content">
     <h1>Excluir um vestibular</h1>
-    <form action="<?php echo INCLUDE_PATH_PAINEL?>excluirVestibular_Tema" method="POST" id="form-vestib" class="yellow formulario">
+    <form action="<?php echo INCLUDE_PATH_PAINEL?>Excluir-Vestibular-Tema" method="POST" id="form-vestib" class="yellow formulario">
 
         <div class="box-category">
             <h2>Vestibulares cadastrados</h2>
@@ -49,7 +49,7 @@
 
 <div class="box-content">
     <h1>Excluir um tema</h1>
-    <form action="<?php echo INCLUDE_PATH_PAINEL?>excluirVestibular_Tema" method="POST" id="form-temas" class="blue formulario">
+    <form action="<?php echo INCLUDE_PATH_PAINEL?>Excluir-Vestibular-Tema" method="POST" id="form-temas" class="blue formulario">
 
         <h2>Temas cadastrados</h2>
         <div class="box-category">       

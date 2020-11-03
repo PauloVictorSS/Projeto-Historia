@@ -39,7 +39,7 @@
 
             //Recipients
             $mail->setFrom("$email", "$nome");
-            $mail->addAddress('testedemail.paulovictor@gmail.com');
+            $mail->addAddress('paulovictorsantos0@gmail.com');
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
