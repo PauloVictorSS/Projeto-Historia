@@ -8,7 +8,6 @@
 html, body{
     overflow-x: hidden; /* Retirando a barra de bolagem da horizontal (caso apareça) */
     height: 100%;
-    background: #eee;
 }
 input{
     border:0;
@@ -37,8 +36,7 @@ hr{
 /** Boot CSS **/
 
 .center{
-    max-width: 1680px;
-    padding: 0 2%;
+    max-width: 1280px;
     margin: 0 auto;
 }
 .w66{
@@ -93,6 +91,28 @@ section.area-de-questoes div.resultados p.total_resultados{
 	background-color: white;
 	padding: 5px;
 	margin: 15px 0;
+}
+
+
+/** Página de Erro **/
+section.erro404 {
+    text-align: center;
+}
+
+section.erro404 h1{
+    border-top: 2px solid #ce3232;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #ce3232;
+}
+
+section.erro404 p{
+    margin-top: 30px;
+    color: black;
+}
+
+section.erro404 p a:hover{
+    text-decoration: underline;
 }
 
 
