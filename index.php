@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
-    <link href="<?php echo INCLUDE_PATH; ?>css/style.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH; ?>css/menu_rodape.css" rel="stylesheet">
     <?php
 
         //Recuperando a url selecionada
@@ -28,8 +28,8 @@
         $explode = explode("-", $url);
 
         //Importar o CSS da página caso exista
-        if(file_exists('css/page-'.$explode[0].'.css'))
-            echo'<link href="'.INCLUDE_PATH.'css/page-'.$explode[0].'.css" rel="stylesheet">';
+        if(file_exists('css/page_'.$explode[0].'.css'))
+            echo'<link href="'.INCLUDE_PATH.'css/page_'.$explode[0].'.css" rel="stylesheet">';
 
     ?>
 

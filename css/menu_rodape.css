@@ -1,0 +1,168 @@
+/** Menu CSS **/
+
+header{
+    padding: 3px 0;
+    background: #3D437A;
+}
+
+header .logo{
+    font-size: 23px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.mobile{
+    display: none; /* Fazendo o menu do mobile sumir */
+}
+
+nav.desktop ul{
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+nav.desktop li{
+    font-size: 17px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav.desktop li:hover{
+    font-weight: bolder;
+}
+
+nav.desktop a{
+    color: white;
+    text-decoration: none;
+}
+
+.logo img{
+    width: 75px;
+}
+
+
+/** Rodapé e Erro404 CSS **/
+
+footer{
+    background: #313462;
+    padding: 15px 0;
+}
+
+footer p{
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+section.erro404 {
+    text-align: center;
+}
+
+section.erro404 h1{
+    border-top: 2px solid #ce3232;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #ce3232;
+}
+
+section.erro404 p{
+    margin-top: 30px;
+    color: black;
+}
+
+section.erro404 p a:hover{
+    text-decoration: underline;
+}
+
+
+/** Media para mudar o CSS**/
+
+@media screen and (max-width: 1000px){
+
+    header{
+        padding: 0;
+    }
+    .logo img{
+        margin-top: 7px;
+        width: 50px;
+    }
+
+    nav.desktop{
+        display: none;
+    }
+    nav.mobile{
+        display: block;
+    }
+    nav.mobile .botao-menu-mobile{
+        position: relative;
+        z-index: 3;
+        margin-top: 0;
+    }
+    nav.mobile ul{
+        z-index: 2;
+        list-style-type: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        text-align: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        height: 100%;
+    }
+    nav.mobile li{
+        width: 100%;
+        padding: 20px 0;
+        font-size: 17px; 
+    }
+    nav.mobile li{
+        width: 100%;
+        padding: 20px 0;
+        font-size: 17px;
+    }
+    nav.mobile li:first-child{
+        margin-top: 75px;
+    }
+    nav.mobile li a {
+        display: block;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.87);
+    }
+    .botao-menu-mobile{
+        cursor: pointer;
+        color: white;
+        font-size: 50px;
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (min-height: 850px){
+    
+    main.main{
+        height: calc(100% - 170px);
+    }
+    section.banner-principal{
+        height: 50%;
+    }
+    section.sobre-site{
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (min-height: 850px) and (max-width: 1000px){
+    nav.desktop ul{
+        margin-top: 30px;
+    }
+    nav.desktop li{
+        font-size: 17px;
+        padding: 0 30px;
+    }
+    .logo img{
+        width: 75px;
+    }
+}

@@ -95,3 +95,10 @@ section.area-de-questoes div.resultados p.total_resultados{
 	padding: 5px;
 	margin: 15px 0;
 }
+
+
+@media screen and (max-width: 475px){
+    .w33{
+        width: 100%;
+    }
+}

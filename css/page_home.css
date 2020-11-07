@@ -1,0 +1,73 @@
+/** Banner CSS **/
+
+section.banner-principal{
+    width: 100%;
+    height: 400px;
+    background-size: cover; /*Fazendo o background esticar até cobrir todo o container*/
+    position: relative;
+}
+
+section.banner-principal .banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+section.banner-principal #cadastro{
+    width: 93%;
+    max-width: 600px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+section.banner-principal #cadastro button{
+    padding: 14px 0;
+    width: 100%;
+    background: #00C59E;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+section.banner-principal #cadastro button:hover{
+    font-weight: bold;
+}
+
+section.banner-principal #cadastro button i{
+    margin-right: 20px;
+    margin-top: 4px;
+    font-size: 25px;
+}
+
+/** Sobre Nós CSS **/
+
+section.sobre-site{
+    background: #ccc;
+}
+
+section.sobre-site h1{
+    padding-top: 20px;
+}
+
+section.sobre-site p{
+    margin: 0 auto;
+    padding: 20px 100px;
+    max-width: 900px;
+}
+
+@media screen and (max-width: 1000px){
+    
+    section.sobre-site p{
+        padding: 20px;
+    }
+}

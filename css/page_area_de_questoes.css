@@ -1,0 +1,120 @@
+
+/** Área de Questões **/
+
+section.area-de-questoes{
+    background: #ccc;
+    min-height: 500px;
+}
+
+section.area-de-questoes form#form{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+section.area-de-questoes form#form input{
+    padding: 5px 5px;
+}
+
+section.area-de-questoes form#form select{
+    margin-top: 10px;
+    padding: 5px 5px;
+    border: none;
+    background: white;
+}
+
+section.area-de-questoes form#form select+select.w33{
+    margin-left: 0.5%;
+}
+
+section.area-de-questoes form#form #pesquisar-input,
+section.area-de-questoes form#form #tema-input{
+    width: 100%;
+}
+
+section.area-de-questoes form#form input[type=submit]{
+    border: none;
+    background-color: #37b937;
+    padding: 3px 3px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+section.area-de-questoes form button[type=submit]{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: none;
+    background-color: #ce3232;
+    padding: 3px 3px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+section.area-de-questoes form button[type=submit]:hover,
+section.area-de-questoes form#form input[type=submit]:hover{
+    font-weight: bolder;
+}
+
+section.area-de-questoes div.resultados{
+    margin-top: 20px;
+    max-width: 1000px;
+}
+
+section.area-de-questoes div.resultados h2{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+section.area-de-questoes div.resultados img{
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+section.area-de-questoes div.resultados form.entrar_questao{
+    margin-top: 20px;
+}
+
+section.area-de-questoes div.resultados form.entrar_questao button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+section.area-de-questoes div.resultados form.entrar_questao button:hover{
+    text-decoration: underline;
+}
+
+section.area-de-questoes a{
+    text-decoration: none;
+    color: black;
+	font-style: italic;
+}
+section.area-de-questoes a:hover{
+    text-decoration: underline;
+}
+
+section.area-de-questoes #paginacao-inicio{
+    display: block; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+section.area-de-questoes #paginacao-inicio:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 475px){
+
+    section.area-de-questoes form#form select+select.w33{
+        margin-left: 0;
+    }
+
+    div.box-content.area-de-questoes p.total_resultados,
+    section.area-de-questoes div.resultados p.total_resultados{
+        float: unset;
+        text-align: center;
+    }
+}
