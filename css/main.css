@@ -1,34 +1,47 @@
+:root{
+    --color-background-basic: #eee;
+
+    --color-red:  #ce3232;
+    --color-green:  #59d859;
+    --color-text-basic: rgb(36, 41, 46);
+
+    --color-classic-button: #C7A83C;
+    --color-classic-button-secundary: #AD9334;
+    --color-alternative-button: #00C59E;
+    --color-alternative-button-secundary: #10b191;
+
+    --color-menu: #505BC7;
+    --color-footer:  #2C225E;
+    --color-footer-secundary:  #1c1f3d; 
+
+    font: 300 105% 'Arial', sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans";
-    font-size: 100%;
 }
+
 html, body{
-    overflow-x: hidden; /* Retirando a barra de bolagem da horizontal (caso apareça) */
+    overflow-x: hidden;
     height: 100%;
 }
-input{
-    border:0;
-}
-img{
-    max-width: 100%;
-}
-p{
-    font-size: 19px;
-}
+
+input{  border:0;  }
+img{  max-width: 100%;  }
+hr{  margin: 25px 0;  }
+
+a,p{  font-size: 100%;  }
+
 a{
     text-decoration: none;
-    font-size: 19px;
     color: black;
 }
+
 h1{
-    font-size: 25px;
+    font-size: 2rem;
     text-align: center;
-}
-hr{
-    margin: 25px 0;
 }
 
 
@@ -37,14 +50,6 @@ hr{
 .center{
     max-width: 1280px;
     margin: 0 auto;
-}
-.w66{
-    padding: 0 10px;
-    width: 66%;
-}
-.w50{
-    padding: 0 10px;
-    width: 50%;
 }
 .w33{
     width: 33%;
@@ -80,40 +85,11 @@ div.mensagem a:hover{
     text-decoration: underline;
 }
 div.green{
-    background: #59d859;
+    background: var(--color-green);
 }
 div.red{
-    background: #eb3c3c;
+    background: var(--color-red);
 }
-div.box-content.area-de-questoes p.total_resultados,
-section.area-de-questoes div.resultados p.total_resultados{
-	background-color: white;
-	padding: 5px;
-	margin: 15px 0;
-}
-
-
-/** Página de Erro **/
-section.erro404 {
-    text-align: center;
-}
-
-section.erro404 h1{
-    border-top: 2px solid #ce3232;
-    margin-top: 50px;
-    font-size: 40px;
-    color: #ce3232;
-}
-
-section.erro404 p{
-    margin-top: 30px;
-    color: black;
-}
-
-section.erro404 p a:hover{
-    text-decoration: underline;
-}
-
 
 @media screen and (max-width: 475px){
     .w33{

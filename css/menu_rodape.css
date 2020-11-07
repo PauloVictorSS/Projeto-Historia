@@ -2,7 +2,7 @@
 
 header{
     padding: 3px 0;
-    background: #505BC7;
+    background: var(--color-menu);
 }
 
 header .center{
@@ -27,7 +27,6 @@ nav.desktop ul{
 }
 
 nav.desktop li{
-    font-size: 17px;
     padding: 0 30px;
     text-transform: uppercase;
     display: inline-block;
@@ -50,7 +49,7 @@ nav.desktop a{
 /** Rodapé e Erro404 CSS **/
 
 footer{
-    background-color: #2C225E;
+    background-color: var(--color-footer);
     padding: 50px 0 15px;
 }
 
@@ -66,7 +65,6 @@ footer p{
 }
 
 footer p a{
-    font-weight: 400;
     color: white;
     font-size: 100%;
 }
@@ -90,18 +88,17 @@ div.palavras_chaves div.bola{
     height: 10px;
     margin: 0 5px;
 
-    background-color: #1c1f3d;
+    background-color: var(--color-footer-secundary);
     border-radius: 50%;
 }
 
 div.contato form{
     text-align: right;
-    font-size: 85%;
     color: white;
     max-width: 200px;
 }
 
-div.contato form h2{
+div.contato form p{
     width: 100%;
     max-width: 200px;
 }
@@ -145,17 +142,15 @@ div.contato form button:hover{
         padding: 0;
     }
 
-    nav.desktop{
-        display: none;
-    }
-    nav.mobile{
-        display: block;
-    }
+    nav.desktop{  display: none;  }
+    nav.mobile{  display: block;  }
+
     nav.mobile .botao-menu-mobile{
         position: relative;
         z-index: 3;
         margin-top: 0;
     }
+
     nav.mobile ul{
         z-index: 2;
         list-style-type: none;
@@ -168,19 +163,20 @@ div.contato form button:hover{
         background: rgba(0, 0, 0, 0.95);
         height: 100%;
     }
+
     nav.mobile li{
         width: 100%;
         padding: 20px 0;
-        font-size: 17px; 
     }
-    nav.mobile li:first-child{
-        margin-top: 75px;
-    }
+
+    nav.mobile li:first-child{  margin-top: 75px;  }
+
     nav.mobile li a {
         display: block;
         text-decoration: none;
         color: rgba(255, 255, 255, 0.87);
     }
+
     .botao-menu-mobile{
         cursor: pointer;
         color: white;
@@ -196,13 +192,14 @@ div.contato form button:hover{
         float: unset;
         text-align: center;
     }
-    div.contato form{
-        margin: 0 auto;
-    }
-    div.contato form h2{
+
+    div.contato form{  margin: 0 auto;  }
+
+    div.contato form p{
         float: unset;
         text-align: center;
     }
+
     div.contato form button{
         float: unset;
         margin-bottom: 20px;
@@ -212,5 +209,4 @@ div.contato form button:hover{
         float: unset;
         text-align: center;
     }
-
 }

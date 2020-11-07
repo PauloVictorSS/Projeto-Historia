@@ -1,0 +1,19 @@
+/** Página de Erro **/
+section.erro404 {
+    text-align: center;
+}
+
+section.erro404 h1{
+    border-top: 2px solid var(--color-red);
+    margin-top: 50px;
+    color: var(--color-red);
+}
+
+section.erro404 p{
+    margin-top: 30px;
+    color: black;
+}
+
+section.erro404 p a:hover{
+    text-decoration: underline;
+}

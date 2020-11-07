@@ -31,19 +31,24 @@ section.banner-principal #cadastro{
 
 section.banner-principal #cadastro button{
     padding: 14px 0;
+
     width: 100%;
-    background: #00C59E;
+
+    background: var(--color-alternative-button);
     color: #fff;
-    font-size: 22px;
+    font-size: 110%;
+
     border: none;
-    cursor: pointer;
     border-radius: 5px;
 
+    cursor: pointer;
     transition: 0.2s;
 }
 section.banner-principal #cadastro button:hover{
     font-weight: bold;
     padding: 20px 0;
+    
+    background: var(--color-alternative-button-secundary);
 }
 
 section.banner-principal #cadastro button i{
@@ -55,7 +60,7 @@ section.banner-principal #cadastro button i{
 /** Sobre Nós CSS **/
 
 section.sobre-site{
-    background-color: #eee;
+    background-color: var(--color-background-basic);
     padding: 50px 0;
 }
 
@@ -63,11 +68,12 @@ section.sobre-site p{
     margin: 0 auto;
     padding: 20px;
     max-width: 760px;
+
+    font-size: 110%;
 }
 
 @media screen and (max-width: 1000px){
     
-    section.sobre-site p{
-        padding: 20px;
-    }
+    section.sobre-site p{  padding: 20px;  }
+    
 }

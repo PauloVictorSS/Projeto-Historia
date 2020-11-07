@@ -50,7 +50,6 @@ div.menu div.box-usuario div.nome-usuario{
 
 div.menu div.box-usuario div.nome-usuario p{
 	color: white;
-	font-size: 15px;
 }
 
 div.menu div.box-links{
@@ -69,7 +68,6 @@ div.menu div.box-links div.itens a{
 div.menu div.box-links div.itens h2,
 div.menu div.box-links div.itens a{
 	font-weight: normal;
-	font-size: 15px;
 	color: white;
 	padding: 8px;
 	display: block;
@@ -88,7 +86,6 @@ header{
 
 header div.menu-btn{
 	cursor: pointer;
-	font-size: 23px;
     color: white;
     padding: 0 20px;
 }
@@ -99,7 +96,6 @@ header a.loggout{
 	top: 4px;
 	text-decoration: none;
 	color: white;
-	font-size: 16px;
 }
 
 
@@ -185,7 +181,7 @@ div.box-content form div.box-category textarea{
 }
 
 div.box-content form div.box-category span{
-	font-size: 12px;
+	
 }
 
 div.box-content form div.box-category label{
@@ -256,7 +252,6 @@ div.box-content form#form-temas div.box-category p{
 	display: inline-block;
 	width: 100%;
 	max-width: 340px;
-	font-size: 17px;
 }
 
 div.box-content form#form-temas div.box-category:nth-of-type(1){
@@ -297,7 +292,6 @@ div.box-content table tr td button{
 	border: none;
 	color: #E05C4E;
 	cursor: pointer;
-	font-size: 22px;
 }
 
 div.box-content table tr td form.form_delete_adm{
@@ -370,7 +364,6 @@ div.box-content.area-de-questoes div.resultados{
 div.box-content.area-de-questoes div.resultados h2{
     text-align: center;
     padding-top: 10px;
-    font-size: 24px;
     padding-bottom: 20px;
 }
 
@@ -460,7 +453,6 @@ div.box-content form#form-vestib div.box-category div.element button{
 	border: none;
 	background: none;
 	color: #E05C4E;
-	font-size: 25px;
 	cursor: pointer;
 }
 

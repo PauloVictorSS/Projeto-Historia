@@ -16,7 +16,6 @@
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="palavbra-chave, do meu, site">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
     <link href="<?php echo INCLUDE_PATH; ?>css/menu_rodape.css" rel="stylesheet">
@@ -97,7 +96,7 @@
             </div>
             <div class="contato right">
 				<form action="#footer" method="POST">
-                    <h2 class="right">Entre em contato conosco</h2>
+                    <p class="right">Entre em contato conosco</p>
                     <div class="clear"></div>
 					<input type="text" name="email" placeholder="E-mail" required>
 					<textarea name="sugestao" placeholder="Escreva sua mensagem" required></textarea><br>

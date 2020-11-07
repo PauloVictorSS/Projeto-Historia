@@ -36,7 +36,7 @@ div.box p{
     margin: 0 auto 10px;
     padding: 2px;
 
-    background-color:  #ce3232;
+    background-color:  var(--color-red);
     text-align: center;
 }
 
@@ -86,12 +86,12 @@ form button{
 
     cursor: pointer;
 
-    background-color: #C7A83C;
+    background-color: var(--color-classic-button);
     color: white;
 
     transition: background 0.2s;
 }
 
 form button:hover{
-    background-color: #AD9334;
+    background-color: var(--color-classic-button-secundary);
 }

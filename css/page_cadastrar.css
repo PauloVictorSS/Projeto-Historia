@@ -1,6 +1,6 @@
 section.cadastro{
     width: 100%;
-    color: rgb(36, 41, 46);
+    color: var(--color-text-basic);
 }
 
 section.cadastro div.box{
@@ -24,7 +24,7 @@ div.box p{
     margin: 0 auto 10px;
     padding: 2px;
 
-    background-color:  #ce3232;
+    background-color:  var(--color-red);
     text-align: center;
 }
 
@@ -44,7 +44,7 @@ form div.text-box{
 }
 
 div.text-box span{
-    color: red;
+    color: var(--color-red);
 }
 
 div.text-box input,
@@ -83,12 +83,13 @@ form button{
 
     cursor: pointer;
 
-    background-color: #C7A83C;
+    background-color: var(--color-classic-button);
     color: white;
+    font-size: 110%;
 
     transition: background 0.2s;
 }
 
 form button:hover{
-    background-color: #AD9334;
+    background-color: var(--color-classic-button-secundary);
 }

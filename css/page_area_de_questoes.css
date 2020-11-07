@@ -33,24 +33,27 @@ section.area-de-questoes form#filtro #tema-input{
 
 section.area-de-questoes form#filtro input[type=submit]{
     border: none;
-    background-color: #37b937;
+    background-color: var(--color-green);
+
     padding: 3px;
-    cursor: pointer;
+    
     min-width: 150px;
 
+    cursor: pointer;
     transition: 0.2s;
 }
 
 section.area-de-questoes form button[type=submit]{
     display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    border: none;
-    background-color: #ce3232;
+    margin: 10px auto 0;
     padding: 3px;
-    cursor: pointer;
+
+    border: none;
+    background-color: var(--color-red);
+    
     min-width: 150px;
 
+    cursor: pointer;
     transition: 0.2s;
 }
 
@@ -69,7 +72,7 @@ section.area-de-questoes div.resultados{
 section.area-de-questoes div.resultados h2{
     text-align: center;
     padding-top: 10px;
-    font-size: 24px;
+    font-size: 100%;
     padding-bottom: 20px;
 }
 
@@ -107,12 +110,16 @@ section.area-de-questoes #paginacao-inicio:hover{
     text-decoration: underline;
 }
 
+div.box-content.area-de-questoes p.total_resultados,
+section.area-de-questoes div.resultados p.total_resultados{
+	background-color: white;
+	padding: 5px;
+    margin: 15px 0;
+}
 
 @media screen and (max-width: 475px){
 
-    .w33{
-        width: 100%;
-    }
+    .w33{  width: 100%;  }
 
     section.area-de-questoes form#form select+select.w33{
         margin-left: 0;
