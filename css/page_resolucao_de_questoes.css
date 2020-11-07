@@ -1,8 +1,9 @@
 /** Resolução de Questões **/
 
 section.resolvendo-questoes{
-    background: #ccc;
-    min-height: 500px;
+    padding: 60px 0 40px;
+    background: #eee;
+    min-height: 710px;
 }
 section.resolvendo-questoes h2{
     text-align: center;
@@ -20,6 +21,7 @@ section.resolvendo-questoes h2+p{
 
 section.resolvendo-questoes div.center{
     max-width: 1000px;
+    padding: 0 20px;
 }
 
 section.resolvendo-questoes div.center img{
@@ -30,8 +32,7 @@ section.resolvendo-questoes div.center img{
 
 section.resolvendo-questoes form#form_alternativas{
     display: block;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 30px auto;
 }
 
 section.resolvendo-questoes form#form_alternativas input[type=radio]{
@@ -40,13 +41,19 @@ section.resolvendo-questoes form#form_alternativas input[type=radio]{
 
 section.resolvendo-questoes form#form_alternativas button{
     display: block;
-    margin: 0 auto;
-    padding: 3px 3px;
+    margin: 50px auto 10px;
+    padding: 5px 20px;
     border: none;
-    margin-top: 13px;
-    margin-bottom: 15px;
     background-color: #37b937;
+
+    transition: 0.2s;
     cursor: pointer;
+}
+
+
+section.resolvendo-questoes form#form_alternativas button:hover{
+    padding: 8px 23px;
+    font-weight: bold;
 }
 
 section.resolvendo-questoes a{

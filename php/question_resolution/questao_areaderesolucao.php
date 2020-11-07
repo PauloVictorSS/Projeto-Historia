@@ -68,7 +68,6 @@
 		$areaquestoes = INCLUDE_PATH.'area_de_questoes';
 
 		echo "<h1>Questão sobre $sub_tema</h1>";
-		echo "<h2>Questão $id</h2>";
 
 		if(!empty($resolveu))
 			echo "<p class='right'>$resolveu</p>";
@@ -88,7 +87,7 @@
 		if(!empty($pergunta))
 			echo "<p><b>$pergunta</b></p>";
 
-		echo "<form action='$resolucao' method='POST' id='form_alternativas'>";
+		echo "<form action='#gabaritos' method='POST' id='form_alternativas'>";
 
 		if($tipo == 1){
 			

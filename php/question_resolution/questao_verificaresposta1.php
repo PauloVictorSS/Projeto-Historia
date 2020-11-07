@@ -5,7 +5,7 @@
 	feita. Quando é uma questão alternativa
 */
 
-	echo "<hr>";
+	echo "<hr id='gabaritos'>";
 
 	if($gabarito == $resposta)
 		echo "<p class='resposta green'>Parabéns! Você acertou!</p>";

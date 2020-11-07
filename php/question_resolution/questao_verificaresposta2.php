@@ -5,7 +5,7 @@
 	resolvida. Quando são questões dissertativas.
 */
 
-	echo "<hr>";
+	echo "<hr id='gabaritos'>";
 	echo "<p>Respostas esperadas:</p><br>";
 
 	if(!empty($alternativa_D))
