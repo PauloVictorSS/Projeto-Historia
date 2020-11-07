@@ -5,6 +5,13 @@ header{
     background: #505BC7;
 }
 
+header .center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
 header .logo{
     font-size: 23px;
     font-weight: 300;
@@ -17,7 +24,6 @@ header .logo{
 
 nav.desktop ul{
     list-style-type: none;
-    margin-top: 30px;
 }
 
 nav.desktop li{
@@ -37,7 +43,7 @@ nav.desktop a{
 }
 
 .logo img{
-    width: 75px;
+    width: 50px;
 }
 
 
@@ -138,10 +144,6 @@ div.contato form button:hover{
     header{
         padding: 0;
     }
-    .logo img{
-        margin-top: 7px;
-        width: 50px;
-    }
 
     nav.desktop{
         display: none;
@@ -170,11 +172,6 @@ div.contato form button:hover{
         width: 100%;
         padding: 20px 0;
         font-size: 17px; 
-    }
-    nav.mobile li{
-        width: 100%;
-        padding: 20px 0;
-        font-size: 17px;
     }
     nav.mobile li:first-child{
         margin-top: 75px;

@@ -40,8 +40,8 @@
 
     <header>
         <div class="center">
-            <div class="logo left"><a href="<?php echo INCLUDE_PATH; ?>"><img src="images/logo.ico"></a></div>
-            <nav class="desktop right">
+            <div class="logo"><a href="<?php echo INCLUDE_PATH; ?>"><img src="images/logo.ico"></a></div>
+            <nav class="desktop">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
@@ -49,7 +49,7 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Entrar</a></li>
                 </ul>
             </nav>
-            <nav class="mobile right">
+            <nav class="mobile">
                 <div class="botao-menu-mobile">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>
