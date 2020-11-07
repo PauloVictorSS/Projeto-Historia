@@ -29,13 +29,10 @@
                 <input type="password" name="senha" class="informacoes" maxlength="15" placeholder="Senha" required>
 
                 <br><br>
-                <a href="<?php echo INCLUDE_PATH; ?>pages/cadastrar.php">Não fez o cadastro ainda?</a>
+                <a href="<?php echo INCLUDE_PATH; ?>cadastrar">Não fez o cadastro ainda?</a>
                 <a href="<?php echo INCLUDE_PATH; ?>">Voltar para a home</a>
 
-                <div class="buttons">
-                    <input type="reset" value="Apagar" class="btn-apagar">
-                    <input type="submit" value="Entrar" class="btn-login">
-                </div>
+                <button type="submit" name="submit" value="Entrar">Entrar</button>
             </form>
         </div>
     </section>
