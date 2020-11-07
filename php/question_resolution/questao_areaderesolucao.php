@@ -64,8 +64,8 @@
 		$gabarito = $p['alternativa_certa'];
 		$explicacao = $p['explicacao'];
 
-		$resolucao = INCLUDE_PATH.'resolucao-de-questoes';
-		$areaquestoes = INCLUDE_PATH.'area-de-questoes';
+		$resolucao = INCLUDE_PATH.'resolucao_de_questoes';
+		$areaquestoes = INCLUDE_PATH.'area_de_questoes';
 
 		echo "<h1>Questão sobre $sub_tema</h1>";
 		echo "<h2>Questão $id</h2>";

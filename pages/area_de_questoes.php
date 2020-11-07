@@ -2,7 +2,7 @@
     <section class="area-de-questoes">
 		<div class="center">	
 			<h1>Área de Questões</h1>
-			<form method="POST" action="<?php echo INCLUDE_PATH; ?>area-de-questoes" id="form">
+			<form method="POST" action="<?php echo INCLUDE_PATH; ?>area_de_questoes" id="form">
 				<input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="100">
 				<select name="vestibular" id="vestibular-input" class="w33">
 					<option value="">Vestibular</option>
@@ -28,12 +28,12 @@
 					if(mysqli_num_rows($limite) > 0){
 
 						if($anterior > 1)
-							$anterior = INCLUDE_PATH.'area-de-questoes_'.$anterior;
+							$anterior = INCLUDE_PATH.'area_de_questoes-'.$anterior;
 						else
-							$anterior = INCLUDE_PATH.'area-de-questoes';
+							$anterior = INCLUDE_PATH.'area_de_questoes';
 				
-						$proximo = 	INCLUDE_PATH.'area-de-questoes_'.$proximo;
-						$inicio = 	INCLUDE_PATH.'area-de-questoes';
+						$proximo = 	INCLUDE_PATH.'area_de_questoes-'.$proximo;
+						$inicio = 	INCLUDE_PATH.'area_de_questoes';
 				
 						if ($pc > 1)
 							echo "<a href='$anterior' id='paginacao-anterior' class='left'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";

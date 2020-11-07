@@ -1,3 +1,7 @@
+<?php 
+    include_once("../config.php");
+?>
+
 <!DOCTYPE html>
 <html lang='pt-br'>
 <head>
@@ -6,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="palavbra-chave, do meu, site">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link href="../estilos/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     
 </head>
 <body>

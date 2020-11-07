@@ -13,7 +13,7 @@
 	$_SESSION['ano'] = '';
 	$_SESSION['tema'] = '';
 
-	$url = INCLUDE_PATH.'area-de-questoes';
+	$url = INCLUDE_PATH.'area_de_questoes';
 	$url2 = INCLUDE_PATH_PAINEL.'Exibir-Questoes';
 			
 	if($_POST["btn-reset-filtro"] == 1)

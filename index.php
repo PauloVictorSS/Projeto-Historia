@@ -15,10 +15,25 @@
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="palavbra-chave, do meu, site">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
     <link href="<?php echo INCLUDE_PATH; ?>css/style.css" rel="stylesheet">
+    <?php
+
+        //Recuperando a url selecionada
+        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+
+        //Separando a url de possíveis parâmetros
+        $explode = explode("-", $url);
+
+        //Importar o CSS da página caso exista
+        if(file_exists('css/page-'.$explode[0].'.css'))
+            echo'<link href="'.INCLUDE_PATH.'css/page-'.$explode[0].'.css" rel="stylesheet">';
+
+    ?>
+
+
 </head>
 <body>
 
@@ -28,7 +43,7 @@
             <nav class="desktop right">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>area-de-questoes">Área de Questões</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>login">Área do Usuário</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
                 </ul>
@@ -39,7 +54,7 @@
                 </div>
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>area-de-questoes">Área de Questões</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>login">Área do Usuário</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
                 </ul>
@@ -50,19 +65,13 @@
 
     <?php
 
-        //Recuperando a url selecionada
-        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
-
-        //Separando a url de possíveis parâmetros
-        $explode = explode("_", $url);
-
         //Verificando de há algum parâmetro na
         if(count($explode) > 1)
             $pagina =  $explode[1];
         else
             $pagina = 1;
         
-        if($explode[0] != 'area-de-questoes' and $explode[0] != 'resolucao-de-questoes'){
+        if($explode[0] != 'area_de_questoes' and $explode[0] != 'resolucao_de_questoes'){
             $_SESSION['partenome'] = '';
             $_SESSION['vestibular'] = '';
             $_SESSION['ano'] = '';
@@ -72,17 +81,8 @@
         //Verificando se a url escolhida existe
         if(file_exists('pages/'.$explode[0].'.php'))
             include_once('pages/'.$explode[0].'.php');
-
-        else if(file_exists('pages/admin/'.$explode[0].'.php'))
-            include_once('pages/admin/'.$explode[0].'.php');
-
-        else if(file_exists('pages/question_area/'.$explode[0].'.php'))
-            include_once('pages/question_area/'.$explode[0].'.php');
-
-        else if(file_exists('pages/user/'.$explode[0].'.php'))
-            include_once('pages/user/'.$explode[0].'.php'); 
         else
-            header("Location: pages/erro404.php");
+            echo $explode[0];
         
     ?>
 

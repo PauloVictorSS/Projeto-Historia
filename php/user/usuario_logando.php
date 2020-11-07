@@ -28,7 +28,7 @@
 				$_SESSION['status_login'] = 1;
 				$_SESSION['id_usuario'] = $n['id'];
 
-				$url = INCLUDE_PATH.'area-do-usuario';
+				$url = INCLUDE_PATH.'area_do_usuario';
 
 				header("location: $url");
 			}

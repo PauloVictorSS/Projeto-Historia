@@ -64,10 +64,10 @@
 
 			echo "<p><br><b><i>(...)</i></b></p>";
 
-			$resolucao = INCLUDE_PATH.'resolucao-de-questoes';
+			$resolucao = INCLUDE_PATH.'resolucao_de_questoes';
 			$analise = INCLUDE_PATH_PAINEL.'Analise-Questao';
 
-			if($explode[0] == 'area-de-questoes') 
+			if($explode[0] == 'area_de_questoes') 
 				echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
 			else
 				echo "<form class='right entrar_questao' action='$analise' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Dados da questão <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";

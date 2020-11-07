@@ -1,4 +1,4 @@
-<div class="box-content area-de-questoes">
+<div class="box-content area_de_questoes">
 
     <h1>Questões Cadastradas</h1>
     <form method="POST" action="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes" id="form">
