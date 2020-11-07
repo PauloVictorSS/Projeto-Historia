@@ -4,6 +4,7 @@
     
     Site::updateOnlineUsers();
     Site::counter();
+
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +45,8 @@
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Área do Usuário</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>#footer">Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Entrar</a></li>
                 </ul>
             </nav>
             <nav class="mobile right">
@@ -55,8 +56,8 @@
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Área do Usuário</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>#footer">Contato</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Entrar</a></li>
                 </ul>
             </nav>
         </div>
@@ -82,14 +83,36 @@
         if(file_exists('pages/'.$explode[0].'.php'))
             include_once('pages/'.$explode[0].'.php');
         else
-            echo $explode[0];
+            header("Location: pages/erro404.php");
         
     ?>
 
-    <footer>
+    <footer id="footer">
         <div class="center">
-            <p>© Copyright 2020<br>Todos os Direitos Reservados<br></p>
+            <div class="palavras_chaves">
+                <p>Ensino</p><div class="bola"></div>
+                <p>IFSP</p><div class="bola"></div>
+                <p>Vestibulares</p><div class="bola"></div>
+                <p>Resolução de exercícios</p>
+            </div>
+            <div class="contato right">
+				<form action="#footer" method="POST">
+                    <h2 class="right">Entre em contato conosco</h2>
+                    <div class="clear"></div>
+					<input type="text" name="email" placeholder="E-mail" required>
+					<textarea name="sugestao" placeholder="Escreva sua mensagem" required></textarea><br>
+                    <button name="contato" value="1" type="submit" class="right">Enviar</button>
+                    <div class="clear"></div>
+                </form>
+            </div> 
+            <div class="texto left">
+                <p>Desenvolvido por: <a href="#">Paulo Victor</a></p><br>
+                <p>© Copyright 2020-2021</p><p>Todos os direitos reservados</p>
+                <?php include "php/enviar_email.php";  ?>
+            </div>
+            <div class="clear"></div>
         </div>
+        <div class="clear"></div>
     </footer>
 
     <?php 	include_once("include/close_conexao.php");  ?>

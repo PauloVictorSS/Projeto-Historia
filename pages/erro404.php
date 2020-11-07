@@ -11,7 +11,7 @@
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="palavbra-chave, do meu, site">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
     
 </head>
 <body>

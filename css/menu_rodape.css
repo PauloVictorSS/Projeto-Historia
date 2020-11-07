@@ -2,7 +2,7 @@
 
 header{
     padding: 3px 0;
-    background: #3D437A;
+    background: #505BC7;
 }
 
 header .logo{
@@ -44,40 +44,96 @@ nav.desktop a{
 /** Rodapé e Erro404 CSS **/
 
 footer{
-    background: #313462;
-    padding: 15px 0;
+    background-color: #2C225E;
+    padding: 50px 0 15px;
+}
+
+footer div.center{
+    padding: 0 20px;
+    max-width: 760px;
 }
 
 footer p{
-    color: white;
     font-weight: 400;
+    color: white;
+    font-size: 85%;
+}
+
+footer p a{
+    font-weight: 400;
+    color: white;
+    font-size: 100%;
+}
+footer p a:hover{
+    text-decoration: underline;
+}
+
+div.palavras_chaves{
     text-align: center;
+    margin-bottom: 40px;
 }
 
-section.erro404 {
-    text-align: center;
+div.palavras_chaves p{
+    display: inline-block;
 }
 
-section.erro404 h1{
-    border-top: 2px solid #ce3232;
-    margin-top: 50px;
-    font-size: 40px;
-    color: #ce3232;
+div.palavras_chaves div.bola{
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+
+    background-color: #1c1f3d;
+    border-radius: 50%;
 }
 
-section.erro404 p{
-    margin-top: 30px;
-    color: black;
+div.contato form{
+    text-align: right;
+    font-size: 85%;
+    color: white;
+    max-width: 200px;
 }
 
-section.erro404 p a:hover{
+div.contato form h2{
+    width: 100%;
+    max-width: 200px;
+}
+
+div.contato form input,
+div.contato form textarea{
+    width: 100%;
+    max-width: 200px;
+
+    margin-top: 5px;
+    padding: 5px;
+
+    border: none;
+}
+
+div.contato form textarea{
+    resize: none;
+    height: 100px;
+}
+
+div.contato form button{
+    padding: 5px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: none;
+    color: white;
+
+    cursor: pointer;
+}
+
+div.contato form button:hover{
     text-decoration: underline;
 }
 
 
-/** Media para mudar o CSS**/
-
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 800px){
 
     header{
         padding: 0;
@@ -137,32 +193,27 @@ section.erro404 p a:hover{
 }
 
 
-@media screen and (min-height: 850px){
-    
-    main.main{
-        height: calc(100% - 170px);
-    }
-    section.banner-principal{
-        height: 50%;
-    }
-    section.sobre-site{
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-}
+@media screen and (max-width: 450px){
 
-@media screen and (min-height: 850px) and (max-width: 1000px){
-    nav.desktop ul{
-        margin-top: 30px;
+    footer div.contato{
+        float: unset;
+        text-align: center;
     }
-    nav.desktop li{
-        font-size: 17px;
-        padding: 0 30px;
+    div.contato form{
+        margin: 0 auto;
     }
-    .logo img{
-        width: 75px;
+    div.contato form h2{
+        float: unset;
+        text-align: center;
     }
+    div.contato form button{
+        float: unset;
+        margin-bottom: 20px;
+    }
+
+    footer div.texto{
+        float: unset;
+        text-align: center;
+    }
+
 }

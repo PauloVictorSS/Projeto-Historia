@@ -9,9 +9,8 @@
     // Load Composer's autoloader
     require 'vendor/autoload.php';
 
-    if(isset($_POST["action"])){
+    if(isset($_POST["contato"])){
 
-        $nome = $_POST["nome"];
         $email = $_POST["email"];
         $mens = str_replace("\n", "<br>",$_POST["sugestao"]);
 
@@ -38,19 +37,19 @@
             $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
             //Recipients
-            $mail->setFrom("$email", "$nome");
+            $mail->setFrom("$email");
             $mail->addAddress('paulovictorsantos0@gmail.com');
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Sugestão ou dúvida de '.$nome;
-            $mail->Body    = "<br>Nome: $nome<br>Email: $email<br><br>$mens";
+            $mail->Subject = 'Sugestão ou dúvida de '.$email;
+            $mail->Body    = "<br>Email: $email<br><hr><br>$mens";
             $mail->AltBody = "$mens";
 
             $mail->send();
-            echo "<div class='mensagem green'>E-mail enviado com sucesso</div>";
+            echo "<br><p style='color:#59d859;'>E-mail enviado com sucesso</p>";
         } catch (Exception $e) {
-            echo "<div class='mensagem red'>Erro ao enviar o e-mail, por favor tente mais tarde</div>";
+            echo "<br><p style='color:#ce3232;'>Erro ao enviar o e-mail, por favor tente mais tarde</p>";
         }
     }
 ?>
