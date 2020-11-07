@@ -19,6 +19,7 @@
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
     <link href="<?php echo INCLUDE_PATH; ?>css/menu_rodape.css" rel="stylesheet">
+
     <?php
 
         //Recuperando a url selecionada
@@ -33,7 +34,6 @@
 
     ?>
 
-
 </head>
 <body>
 
@@ -44,7 +44,7 @@
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>login">Área do Usuário</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Área do Usuário</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
                 </ul>
             </nav>
@@ -55,7 +55,7 @@
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>login">Área do Usuário</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Área do Usuário</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>contato">Entrar em Contato</a></li>
                 </ul>
             </nav>
@@ -92,7 +92,7 @@
         </div>
     </footer>
 
-    <?php 	include_once("include/close_conexao.php");?>
+    <?php 	include_once("include/close_conexao.php");  ?>
 
     <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>

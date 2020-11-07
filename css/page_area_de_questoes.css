@@ -108,6 +108,10 @@ section.area-de-questoes #paginacao-inicio:hover{
 
 @media screen and (max-width: 475px){
 
+    .w33{
+        width: 100%;
+    }
+
     section.area-de-questoes form#form select+select.w33{
         margin-left: 0;
     }
