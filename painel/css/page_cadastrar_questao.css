@@ -1,0 +1,23 @@
+/* Cadastrar Questões CSS */
+
+div.box-content form div.box-category input[type=file]{
+	width: 100%;
+	max-width: 500px;
+}
+
+div.box-content form div.box-category input[type=number],
+div.box-content form div.box-category select{
+	width: 49.5%;
+	padding: 5px;
+}
+
+
+@media screen and (max-width: 800px){
+
+    div.box-content form div.box-category input[type=number],
+    div.box-content form div.box-category select{
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px;
+    }
+}

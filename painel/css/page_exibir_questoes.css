@@ -1,0 +1,107 @@
+/* Exibir Questões */
+
+div.area-de-questoes{
+    background: #ddd;
+}
+
+div.area-de-questoes p.total_resultados{
+	background-color: white;
+	padding: 5px;
+    margin: 15px 0;
+}
+
+div.area-de-questoes form{
+    display: block;
+	text-align: center;
+	border: none;
+	padding: 0;
+}
+
+div.area-de-questoes form#form input{
+    padding: 5px;
+}
+
+div.area-de-questoes form#form select{
+    margin-top: 10px;
+    padding: 5px;
+}
+
+div.area-de-questoes form#form select+select.w33{
+    margin-left: 0.5%;
+}
+
+div.area-de-questoes form#form #pesquisar-input,
+div.area-de-questoes form#form #tema-input{
+    width: 100%;
+}
+
+div.area-de-questoes form#form input[type=submit]{
+    background-color: var(--color-green);
+    padding: 3px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+div.area-de-questoes form button[type=submit]{
+    display: block;
+    min-width: 150px;
+    
+    margin: 5px auto 0;
+    padding: 3px;
+
+    background-color: var(--color-red);
+    
+    cursor: pointer;
+}
+
+div.area-de-questoes form#form input[type=submit]:hover,
+div.area-de-questoes form button[type=submit]:hover{
+    font-weight: bold;
+    padding: 6px;
+}
+
+div.area-de-questoes div.resultados{
+    margin-top: 20px;
+}
+
+div.area-de-questoes div.resultados h2{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+div.area-de-questoes div.resultados img{
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+div.area-de-questoes div.resultados form.entrar_questao{
+	margin-top: 20px;
+}
+
+div.area-de-questoes div.resultados form.entrar_questao button{
+    background: none;
+    cursor: pointer;
+}
+div.area-de-questoes div.resultados form.entrar_questao button:hover{
+    text-decoration: underline;
+}
+
+div.area-de-questoes a{
+    text-decoration: none;
+    color: black;
+	font-style: italic;
+}
+div.area-de-questoes a:hover{
+    text-decoration: underline;
+}
+
+div.area-de-questoes #paginacao-inicio{
+    display: block; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+div.area-de-questoes #paginacao-inicio:hover{
+    text-decoration: underline;
+}

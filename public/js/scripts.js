@@ -1,6 +1,5 @@
 $(function(){
 
-
     //Função para abrir o menu quando clicar no botão (nav.mobile)
     $('nav.mobile').click(function(){
 

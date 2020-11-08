@@ -1,58 +1,28 @@
 $(function(){
 
-	var open  = true;
-	var windowSize = $(window)[0].innerWidth;
+    $('.botao-menu-mobile').click(function(){
 
-	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
-	
-	if(windowSize <= 768){
-		$('.menu').css('width','0').css('padding','0');
-		$('.content,header').css('width','100%').css('left','0');
-		open = false;
-	}
+        var listaMenu = $('div.box-links'); //Retornando o elemento que deve ser mostrado 
+        var icone = $('.botao-menu-mobile').find('i'); //Retornando o ícone do botão que foi clicado
 
-	$('.menu-btn').click(function(){
-		if(open){
-			//O menu está aberto, precisamos fechar e adaptar nosso conteudo geral do painel
-			$('.menu').animate({'width':0,'padding':0},function(){
-				open = false;
-			});
-			$('.content,header').css('width','100%');
-			$('.content,header').animate({'left':0},function(){
-				open = false;
-			});
-		}else{
-			//O menu está fechado
-			$('.menu').css('display','block');
-			$('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'},function(){
-				open = true;
-			});
-			if(windowSize > 768)
-				$('.content,header').css('width','calc(100% - 250px)');
-				$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
-				open = true;
-			});
-		}
-		$('.box-usuario').css('width', targetSizeMenu);
-	})
+        //Verificando se o menu está ou não aberto
+        if(listaMenu.is(':hidden')){ 
+            listaMenu.slideToggle(); //Fazendo o menu aparecer
 
-	$(window).resize(function(){
-		windowSize = $(window)[0].innerWidth;
-		targetSizeMenu = (windowSize <= 400) ? 200 : 250;
-		if(windowSize <= 768){
-			$('.menu').css('width','0').css('padding','0');
-			$('.content,header').css('width','100%').css('left','0');
-			open = false;
-		}else{
-			$('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'},function(){
-				open = true;
-			});
-			$('.content,header').css('width','calc(100% - 250px)');
-			$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
-			open = true;
-			});
-		}
+            //Trocando o ícone de 'abrir' para 'fechar'
+            icone.removeClass('fa-bars'); 
+            icone.addClass('fa-times');
+             
+        }
+        else{
+            listaMenu.slideToggle(); //Fazendo o menu desaparecer
 
-	})
+            //Trocando o ícone de 'fechar' para 'abrir'
+            icone.removeClass('fa-times');
+            icone.addClass('fa-bars');
+ 
+        }
+
+    });
 
 })

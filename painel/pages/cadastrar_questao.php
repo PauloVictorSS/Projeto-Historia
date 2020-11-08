@@ -78,10 +78,10 @@
         <div class="box-category">
             <h2>Alternativas da questão</h2>
 
-            <input type="text" name="alter_a" placeholder="Alternativa A" required><span> *</span>
-            <input type="text" name="alter_b" placeholder="Alternativa B" required><span> *</span>
-            <input type="text" name="alter_c" placeholder="Alternativa C" required><span> *</span>
-            <input type="text" name="alter_d" placeholder="Alternativa D" required><span> *</span>
+            <input type="text" name="alter_a" placeholder="Alternativa A" required>
+            <input type="text" name="alter_b" placeholder="Alternativa B" required>
+            <input type="text" name="alter_c" placeholder="Alternativa C" required>
+            <input type="text" name="alter_d" placeholder="Alternativa D" required>
             <input type="text" name="alter_e" placeholder="Alternativa E">
         </div>
 
@@ -94,7 +94,7 @@
                 <option value="C">Alternativa C</option>
                 <option value="D">Alternativa D</option>
                 <option value="E">Alternativa E</option>
-            </select><span> *</span>
+            </select>
 
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
@@ -105,7 +105,7 @@
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
 
                 <?php } ?>
-            </select><span> *</span>
+            </select>
 
             <select name="vest" required>
                 <option value="">Vestibular da Questão</option>
@@ -116,9 +116,9 @@
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
 
                 <?php } ?>
-            </select><span> *</span>
+            </select>
 
-            <input type="number" name="ano" placeholder="Ano da Questão" required><span> *</span>
+            <input type="number" name="ano" placeholder="Ano da Questão" required>
         </div>
 
         <div class="box-category">
@@ -153,11 +153,11 @@
         <div class="box-category">
             <h2>Itens e respostas da questão</h2>
 
-            <input type="text" name="quest_a" placeholder="Item A" required><span> *</span>
-            <input type="text" name="resp_a" placeholder="Resposta do item A"><span> *</span><br><br>
+            <input type="text" name="quest_a" placeholder="Item A" required>
+            <input type="text" name="resp_a" placeholder="Resposta do item A"><br><br>
 
-            <input type="text" name="quest_b" placeholder="Item B" required><span> *</span>
-            <input type="text" name="resp_b" placeholder="Resposta do item B" required><span> *</span><br><br>
+            <input type="text" name="quest_b" placeholder="Item B" required>
+            <input type="text" name="resp_b" placeholder="Resposta do item B" required><br><br>
 
             <input type="text" name="quest_c" placeholder="Item C" >
             <input type="text" name="resp_c" placeholder="Resposta do item C">
@@ -175,7 +175,7 @@
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
 
                 <?php } ?>
-            </select><span> *</span>
+            </select>
 
             <select name="vest" required>
                 <option value="">Vestibular da Questão</option>
@@ -186,9 +186,9 @@
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
 
                 <?php } ?>
-            </select><span> *</span>
+            </select>
 
-            <input type="number" name="ano" placeholder="Ano da Questão" required><span> *</span>
+            <input type="number" name="ano" placeholder="Ano da Questão" required>
         </div>
 
         <div class="box-category">

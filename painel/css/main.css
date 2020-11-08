@@ -1,0 +1,321 @@
+.blue{  background: #0091ea;  }
+.yellow{  background: #F4B03E;  }
+.red{  background: #E05C4E;  }
+
+/* Menu CSS */
+
+div.menu{
+	overflow-x:hidden;
+    overflow-y: auto;
+    
+	height: 100%;
+    width: 225px;
+    
+    padding:10px 0;
+	float: left;
+    
+	position: fixed;
+	left: 0;
+    top: 0;
+    
+	background: var(--color-menu);
+}
+
+div.menu div.box-usuario{
+    padding-bottom: 8px;
+	text-align: center;
+}
+
+div.box-usuario div.botao-menu-mobile{
+    display: none;
+}
+
+div.box-usuario div.botao-menu-mobile i{
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+div.box-usuario .logo img{
+    width: 80px;
+}
+
+div.box-usuario div.nome-usuario{
+	text-align: center;
+	margin-top: 10px;
+}
+
+div.box-usuario div.nome-usuario p{
+	color: white;
+}
+
+div.box-usuario div.nome-usuario p b{
+	color: var(--color-footer);
+}
+
+div.menu div.box-links{
+	margin-top: 10px;
+}
+
+div.box-links div.itens:first-child{
+	border-top: 2px solid var(--color-footer);
+}
+
+div.box-links div.itens a{
+    display: block;
+    
+    text-align: center;
+	text-decoration: none;
+	font-weight: normal;
+    color: white;
+    
+    border-bottom: 2px solid var(--color-footer);
+    
+	padding: 5px;
+}
+
+div.menu div.links{
+    margin-top: 15px;
+    padding: 0 5px;
+}
+
+div.menu div.links a,
+div.menu div.links i{
+    color: white;
+}
+
+
+/* Content CSS */
+
+section.content{
+    width: calc(100% - 225px);
+    min-height: 100%;
+    
+	position: relative;
+    left: 225px;
+    padding: 30px;
+
+	background: var(--color-background-basic);
+}
+
+.box-content{
+	padding: 30px;
+	margin-bottom: 25px;
+	width: 100%;
+    background-color: white;
+}
+
+section.content h2{
+	font-weight: 600;
+}
+
+section.content div.box-infs{
+	width: 100%;
+	margin: 10px 0;
+}
+
+section.content div.box-infs div.infs{
+	width: calc(100% / 2 - 10px);
+	min-height: 95px;
+    height: 100%;
+    
+    color: white;
+	text-align: center;
+    
+	padding: 10px;
+    float: left;
+}
+
+section.content div.box-infs div.infs+div.infs{
+	margin-left: 11px;
+}
+
+
+/* Painel do Adm CSS Geral*/
+
+div.box-content form.formulario{
+	width: 100%;
+    max-width: 800px;
+    
+	margin: 10px 0;
+    padding: 20px;
+    
+	color: white;
+    border: 1px solid black;
+    
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+div.box-content form h2{
+	text-align: center;
+}
+
+div.box-content form div.box-category{
+	width: 100%;
+	margin: 30px 0;
+}
+
+div.box-content form#form-disser div.box-category:nth-of-type(3){
+	text-align: center;
+}
+
+div.box-content form div.box-category input,
+div.box-content form div.box-category textarea{
+	margin: 5px 0;
+	width: 100%;
+	padding: 7px;
+}
+
+div.box-content form div.box-category textarea{
+	resize: vertical;
+}
+
+div.box-content form div.box-category label{
+	padding-top: 10px;
+}
+
+div.box-content form div.buttons{
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+}
+
+div.box-content form div.buttons button{
+	width: 95%;
+    max-width: 275px;
+    
+	margin-top: 10px;
+    padding: 7px;
+
+	background-color: var(--color-green);
+    
+    cursor: pointer;
+}
+div.box-content form div.buttons button:hover{
+    font-weight: bold;
+}
+div.box-content table{
+	width: 100%;
+	text-align: center;
+	border-spacing: 0;
+	border-collapse: unset;
+	margin-top: 20px;
+}
+
+div.box-content table tr:nth-of-type(1){
+	background: var(--color-alternative-button);
+	color: white;
+}
+
+div.box-content table tr td,
+div.box-content table tr th{
+	padding: 8px;
+}
+
+div.box-content table tr td{
+	border-bottom: 1px solid #ddd;
+} 
+
+div.box-content table tr td button{
+	background: none;
+	color: #E05C4E;
+	cursor: pointer;
+}
+
+div.box-content table tr td form.form_delete_adm{
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+
+/* Home Painel CSS*/
+
+div.box-content table.home tr th,
+div.box-content table.home tr td{
+	text-align: start;
+}
+
+
+/* Gerar Relatórios */
+
+div.box-content h2{
+    font-size: 100%;
+}
+
+div.box-content div.reports div.infs{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}
+
+div.box-content div.reports div.infs.red,
+div.box-content div.reports div.infs.blue{
+	margin-left: 11px;
+}
+
+
+@media screen and (max-width: 975px){
+
+    div.menu{
+        overflow-y: hidden;
+        
+        height: auto;
+        width: 100%;
+
+        float: unset;
+        
+        position: unset;
+    }
+
+    div.menu div.box-links{
+        display: none;
+    }
+
+    div.box-usuario div.botao-menu-mobile{
+        display: block;
+    }
+
+    section.content{
+        width: 100%;
+        height: auto;
+        
+        position: unset;
+    } 
+
+    section.content div.box-infs div.infs{
+        width: 100%;
+        min-height: auto;
+        height: auto;
+
+        float: unset;
+    }
+    section.content div.box-infs div.infs+div.infs{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 475px){
+
+    div.box-content form.formulario{
+        padding: 10px;
+    }
+    
+    section.content{
+        padding: 10px;
+    }
+
+    .box-content{
+        padding: 30px 10px;
+        margin-bottom: 25px;
+        width: 100%;
+        background-color: white;
+    }
+
+}

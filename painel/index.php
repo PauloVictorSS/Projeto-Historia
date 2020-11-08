@@ -9,8 +9,8 @@
     if(!isset($_SESSION['login_admin'])){
         header("Location:".INCLUDE_PATH);
     }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,32 +19,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>public/images/favicon.ico" type="image/x-icon">
-    <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
-	<link href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
+    <link href="<?php echo INCLUDE_PATH; ?>public/css/main.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH_PAINEL ?>css/main.css" rel="stylesheet">
+
+    <?php
+        if(isset($_GET['url'])){
+
+            $url = strtolower(str_replace("-", "_", $_GET['url']));
+
+            //Separando a url de possíveis parâmetros
+            $explode = explode(".", $url);
+
+            if(file_exists('css/page_'.$explode[0].'.css'))
+                echo'<link href="'.INCLUDE_PATH_PAINEL.'css/page_'.$explode[0].'.css" rel="stylesheet">';
+        }
+    ?>
+
 </head>
 <body>
 
     <div class="menu">
         <div class="menu-wraper">
             <div class="box-usuario">
-                <div class="avatar-usuario">
-                    <i class="fa fa-user"></i>
-                </div>
+                <div class="logo"><a href="<?php echo INCLUDE_PATH; ?>"><img src="<?php echo INCLUDE_PATH; ?>public/images/logo.ico"></a></div>
                 <div class="nome-usuario">
                     <p><b>Nível: </b><?php echo Adm::getOffice($_SESSION['type_admin']); ?></p>
                     <p><b>Nome: </b><?php echo $_SESSION['nome_admin']; ?></p>
                 </div>
+                <div class="botao-menu-mobile">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+                <div class="clear"></div>
             </div>
             <div class="box-links">
                 <div class="itens">
-                    <h2>Gestão</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>">Home</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Relatorios">Exibir relatórios</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes">Exibir questões</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Usuarios">Exibir usuários cadastrados</a>
-                </div>
-                <div class="itens">
-                    <h2>Cadastrar e Excluir</h2>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Questao">Cadastrar questão</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Vestibular-Tema">Cadastrar vestibular / tema</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Excluir-Vestibular-Tema">Excluir vestibular / tema</a>
@@ -53,35 +65,23 @@
                 <?php if($_SESSION['type_admin'] == 2){ ?>
 
                     <div class="itens">
-                        <h2>Administração do Painel</h2>
                         <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm">Cadastrar administradores</a>
                     </div>
 
                 <?php } ?>    
             </div>
+            <div class="links">
+                <a href="<?php echo INCLUDE_PATH ?>" class="loggout left"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout" class="loggout right">Sair <i class="fa fa-sign-out"></i></a>
+                <div class="clear"></div>
+            </div>
         </div>
     </div>
-
-    <header>
-        <div class="menu-btn left">
-            <i class="fa fa-bars"></i>
-        </div>
-
-        <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout" class="loggout right"> <i class="fa fa-sign-out"></i> Sair</a>
-
-        <div class="clear"></div>
-    </header>
-
     <section class="content">
         <div class="center">
             <?php 
                 
                 if(isset($_GET['url'])){
-
-                    $url = strtolower(str_replace("-", "_", $_GET['url']));
-
-                    //Separando a url de possíveis parâmetros
-                    $explode = explode(".", $url);
 
                     //Verificando de há algum parâmetro na
                     if(count($explode) > 1)
@@ -109,6 +109,6 @@
     </section>
 
     <script src="<?php echo INCLUDE_PATH ?>public/js/jquery.js"></script>
-    <script src="<?php echo INCLUDE_PATH_PAINEL ?>public/js/main.js"></script>
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 </body>
 </html>

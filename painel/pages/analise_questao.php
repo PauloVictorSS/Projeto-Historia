@@ -1,9 +1,6 @@
+<div class="box-content">
 
-
-<div class="box-content resolvendo-questoes">
-
-    <?php  
-    
+    <?php
         if(!empty($_POST["id_questao"]))
             $_SESSION["id_questao"] = $_POST["id_questao"];
 
@@ -98,6 +95,5 @@
             echo "<a href='$areaquestoes'>Voltar para a Área de Questões</a>";
 
         }
-    
     ?>
 </div>

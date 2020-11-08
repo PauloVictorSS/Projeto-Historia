@@ -66,12 +66,12 @@
 
         <div class="box-category">
 
-            <input type="text" name="vest" placeholder="Nome do Vestibular para excluílo" required><span> *</span>
+            <input type="text" name="vest" placeholder="Nome do Vestibular para excluílo" required>
 
         </div>
 
         <div class="buttons">
-            <p>* Copie o nome de forma identica ao que está escrito</p>
+            <p>Copie o nome de forma identica ao que está escrito</p>
             <button type="submit" value="0"  name="action" form="form-temas">Excluir</button>
         </div>
 

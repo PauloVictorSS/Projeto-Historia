@@ -1,0 +1,26 @@
+/* Excluir Vestibular ou Tema CSS*/
+
+div.box-content form#form-vestib div.box-category div.element{
+	border-bottom: 1px solid #c0954b;
+	margin-top: 20px;
+}
+
+div.box-content form#form-vestib div.box-category div.element button{
+	background: none;
+	color: #E05C4E;
+	cursor: pointer;
+}
+
+form#form-temas div.box-category p{
+	display: inline-block;
+	width: 100%;
+	max-width: 340px;
+}
+
+form#form-temas div.box-category:nth-of-type(1){
+	background-color: #00426B;
+	text-align: center;
+	padding: 6px;
+	margin-top: 10px;
+	border-radius: 5px;
+}

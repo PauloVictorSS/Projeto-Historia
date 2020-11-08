@@ -40,7 +40,7 @@
         <div class="box-category">
             <h2>Cadastrar um vestibular</h2>
 
-            <input type="text" name="name" placeholder="Nome do Vestibular" required><span> *</span>
+            <input type="text" name="name" placeholder="Nome do Vestibular" required>
 
         </div>
 
@@ -70,14 +70,12 @@
             <?php } ?>
             
         </div>
-
         <div class="box-category">
             <h2>Cadastrar um tema</h2>
 
-            <input type="text" name="name" placeholder="Nome do tema" required><span> *</span>
+            <input type="text" name="name" placeholder="Nome do tema" required>
 
         </div>
-
         <div class="buttons">
             <p>* Preenchimento Obrigatório<br>*Não utilizar nenhum caracter especial (@, º, ª)</p>
             <button type="submit" value="2"  name="action" form="form-temas">Adicionar</button>

@@ -1,5 +1,4 @@
 <?php
-
     if(isset($_POST["action"])){
 
         if($_POST["action"] == 0){
@@ -94,10 +93,10 @@
         <div class="box-category">
             <h2>Cadastrar um Sub Administrador</h2>
 
-            <input type="text" name="teste" placeholder="Nome" required><span> *</span>
-            <input type="text" name="login" placeholder="Login" required><span> *</span>
-            <input type="password" name="pass" placeholder="Senha" required><span> *</span>
-            <input type="password" name="conf_pass" placeholder="Confirmar a senha" required><span> *</span>
+            <input type="text" name="teste" placeholder="Nome" required>
+            <input type="text" name="login" placeholder="Login" required>
+            <input type="password" name="pass" placeholder="Senha" required>
+            <input type="password" name="conf_pass" placeholder="Confirmar a senha" required>
 
         </div>
 

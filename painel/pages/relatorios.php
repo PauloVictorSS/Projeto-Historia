@@ -22,7 +22,6 @@
 <div class="box-content box-graphi">
     
     <div class="graphis">
-        <h2>Gráficos</h2>
         <div class="element">
             <h2>Quantidade de questões cadastradas p/ vestibular</h2>
             <img src="<?php echo $urlGrafic1 ?>" alt="">

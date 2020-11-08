@@ -9,18 +9,6 @@
             header("location: ".INCLUDE_PATH);
         }
 
-        public static function onlineUsers(){
-			self::cleanOnlineUsers();
-			$sql = MySql::getConnect()->prepare("SELECT * FROM `admin.online`");
-			$sql->execute();
-			return $sql->fetchAll();
-		}
-
-		public static function cleanOnlineUsers(){
-			$date = date('Y-m-d H:i:s');
-			$sql = MySql::getConnect()->exec("DELETE FROM `admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
-		}
-
         public static function registeredUsers(){
             $sql = MySql::getConnect()->prepare("SELECT * FROM `usuarios`");
 			$sql->execute();

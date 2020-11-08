@@ -1,0 +1,33 @@
+/* Relatórios CSS */
+
+div.box-content.box-graphi{
+	padding: 0;
+}
+
+div.box-content.box-graphi div.graphis{
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+}
+
+div.box-content.box-graphi div.graphis div.element{
+	width: 49%;
+	display: inline-block;
+}
+
+div.box-content.box-graphi div.graphis div.element h2{
+	padding-top: 30px;
+}
+
+
+@media screen and (max-width: 800px){
+    
+    div.box-content.box-graphi div.graphis div.element{
+        width: 100%;
+        display: block;
+    }
+
+    div.box-content.box-graphi div.graphis div.element h2{
+        padding-top: 20px;
+    }
+}

@@ -1,6 +1,6 @@
-<div class="box-content area_de_questoes">
+<div class="box-content area-de-questoes">
 
-    <h1>Questões Cadastradas</h1>
+    <h1>Questões Cadastradas</h1><br>
     <form method="POST" action="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes" id="form">
         <input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="100">
         <select name="vestibular" id="vestibular-input" class="w33">
