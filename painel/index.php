@@ -18,8 +18,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>public/images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
 </head>
@@ -109,7 +108,7 @@
         </div>
     </section>
 
-    <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
-    <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
+    <script src="<?php echo INCLUDE_PATH ?>public/js/jquery.js"></script>
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>public/js/main.js"></script>
 </body>
 </html>

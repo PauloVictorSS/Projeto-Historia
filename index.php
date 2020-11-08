@@ -14,11 +14,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descrição do meu website">
-    <meta name="keywords" content="palavbra-chave, do meu, site">
+    <meta name="keywords" content="palavras-chave, do meu, site">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>images/favicon.ico" type="image/x-icon">
-    <link href="<?php echo INCLUDE_PATH; ?>css/main.css" rel="stylesheet">
-    <link href="<?php echo INCLUDE_PATH; ?>css/menu_rodape.css" rel="stylesheet">
+    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>public/images/favicon.ico" type="image/x-icon">
+    <link href="<?php echo INCLUDE_PATH; ?>public/css/main.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH; ?>public/css/menu_rodape.css" rel="stylesheet">
 
     <?php
 
@@ -29,8 +29,8 @@
         $explode = explode("-", $url);
 
         //Importar o CSS da página caso exista
-        if(file_exists('css/page_'.$explode[0].'.css'))
-            echo'<link href="'.INCLUDE_PATH.'css/page_'.$explode[0].'.css" rel="stylesheet">';
+        if(file_exists('public/css/page_'.$explode[0].'.css'))
+            echo'<link href="'.INCLUDE_PATH.'public/css/page_'.$explode[0].'.css" rel="stylesheet">';
 
     ?>
 
@@ -39,7 +39,7 @@
 
     <header>
         <div class="center">
-            <div class="logo"><a href="<?php echo INCLUDE_PATH; ?>"><img src="images/logo.ico"></a></div>
+            <div class="logo"><a href="<?php echo INCLUDE_PATH; ?>"><img src="public/images/logo.ico"></a></div>
             <nav class="desktop">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
@@ -116,8 +116,8 @@
 
     <?php 	include_once("include/close_conexao.php");  ?>
 
-    <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
-    <script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
+    <script src="<?php echo INCLUDE_PATH; ?>public/js/jquery.js"></script>
+    <script src="<?php echo INCLUDE_PATH; ?>public/js/scripts.js"></script>
 
 </body>
 </html>

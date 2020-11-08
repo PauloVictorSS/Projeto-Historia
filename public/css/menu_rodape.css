@@ -173,6 +173,8 @@ div.contato form button:hover{
 
     nav.mobile li a {
         display: block;
+
+        font-size: 110%;
         text-decoration: none;
         color: rgba(255, 255, 255, 0.87);
     }
