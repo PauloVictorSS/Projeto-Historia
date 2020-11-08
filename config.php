@@ -20,7 +20,7 @@
         return $var;
     }
 
-    define("INCLUDE_PATH", "http://Localhost/GitHub/Projetos%20Pessoais/Projeto-Historia/");
+    define("INCLUDE_PATH", "http://localhost/GitHub/Projetos%20Pessoais/Projeto-Historia/");
     define("INCLUDE_PATH_PAINEL", INCLUDE_PATH."painel/");
 
     define("HOST", "localhost");

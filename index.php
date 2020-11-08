@@ -4,7 +4,6 @@
     
     Site::updateOnlineUsers();
     Site::counter();
-
 ?>
 
 <!DOCTYPE html>
