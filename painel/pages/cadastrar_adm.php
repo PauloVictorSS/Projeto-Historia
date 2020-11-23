@@ -2,10 +2,11 @@
     if(isset($_POST["action"])){
 
         if($_POST["action"] == 0){
-            $nome = $_POST["teste"];
+            $nome = $_POST["nome"];
             $login = $_POST["login"];
             $pass = $_POST["pass"];
             $conf_pass = $_POST["conf_pass"];
+            $id_materia = $_POST["materia"];
 
             $cont = 0;
 
@@ -13,7 +14,7 @@
 
                 $adms = Adm::getAdms();
 
-                foreach ($adms as $key => $value) {
+                foreach ($adms as $value) {
                     
                     if($value["login"] == $login){
                         $cont = 1;
@@ -22,15 +23,15 @@
                 }
 
                 if($cont == 0){
-                    $result = Adm::addAdms($nome, $login, $pass);
+                    $result = Adm::addAdms($nome, $login, $pass, $id_materia);
 
                     if($result == 1)
-                        echo "<div class='mensagem green'>Administrador cadastrado com sucesso</div>";
+                        echo "<div class='mensagem green'>Professor cadastrado com sucesso</div>";
                     else
                         echo "<div class='mensagem red'>Algo deu errado no cadastro!</div>";
                 }
                 else
-                    echo "<div class='mensagem red'>Já exsite um administrador com esse login, tente outro</div>";
+                    echo "<div class='mensagem red'>Já exsite um professor com esse login, tente outro</div>";
 
             }
             else
@@ -52,11 +53,11 @@
 
 ?>
 <div class="box-content">
-    <h1>Cadastrar um Sub Administrador</h1>
+    <h1>Cadastrar um Professor</h1>
     <form action="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm" method="POST" class="blue formulario" id="form-cadastrar">
 
         <div class="box-category">
-            <h2>Administradores já cadastrados</h2>
+            <h2>Professores já cadastrados</h2>
 
             <table>
                 <tr>
@@ -93,10 +94,21 @@
         <div class="box-category">
             <h2>Cadastrar um Sub Administrador</h2>
 
-            <input type="text" name="teste" placeholder="Nome" required>
+            <input type="text" name="nome" placeholder="Nome" required>
             <input type="text" name="login" placeholder="Login" required>
             <input type="password" name="pass" placeholder="Senha" required>
             <input type="password" name="conf_pass" placeholder="Confirmar a senha" required>
+            <select name="materia" required>
+                <?php
+
+                    $materias = Adm::getSubject();
+
+                    foreach ($materias as $materia) {
+                        echo"<option value='".$materia['id']."'>".$materia['nome']."</option>";
+                    }
+                
+                ?>
+            </select>
 
         </div>
 

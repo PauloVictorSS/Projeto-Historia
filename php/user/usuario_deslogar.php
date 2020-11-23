@@ -9,8 +9,6 @@
 	include_once("../../config.php");
 	include_once("../../include/conexao_session.php");
 
-	$_SESSION['status_login'] = 0;
-
 	unset(
 		$_SESSION['usuario'],
 		$_SESSION['senha'],
