@@ -28,20 +28,21 @@
 
 		$resolveu = "";
 
-		if(isset($_SESSION['status_login'])){
-			$id_usuario = $_SESSION['id_usuario'];
-			$id_questao = $id;
-			
-			$sql = "select * from resolucao where id_usuario = $id_usuario and id_questao = $id_questao";
+		if(isset($_SESSION['status_login']))
+			if($_SESSION['status_login'] == 1){
+				$id_usuario = $_SESSION['id_usuario'];
+				$id_questao = $id;
+				
+				$sql = "select * from resolucao where id_usuario = $id_usuario and id_questao = $id_questao";
 
-			$result = mysqli_query($conexao, $sql);
+				$result = mysqli_query($conexao, $sql);
 
-			if(mysqli_num_rows($result) == 1)
-				$resolveu = "Questão já resolvida";
-			else
-				$resolveu = "Questão ainda não resolvida";
-			
-		}
+				if(mysqli_num_rows($result) == 1)
+					$resolveu = "Questão já resolvida";
+				else
+					$resolveu = "Questão ainda não resolvida";
+			}
+		
 
 		$tipo = $p['tipo'];
 		$id = $p['id'];
