@@ -63,11 +63,11 @@
 
         }
 
-        public static function qtdQuestVest(){
+        public static function qtdQuestVest($materia){
             
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT vestibular.descricao as 'vestibular', COUNT(*) as 'qtd' FROM questoes, vestibular WHERE questoes.id_vestibular = vestibular.id GROUP BY vestibular.descricao");
+            $sql = MySql::getConnect()->prepare("SELECT vestibular.descricao as 'vestibular', COUNT(*) as 'qtd' FROM questoes, vestibular WHERE questoes.id_vestibular = vestibular.id and questoes.id_materia = $materia GROUP BY vestibular.descricao");
 
             $sql->execute();
 
@@ -79,11 +79,11 @@
 
         }
 
-        public static function acertTotal(){
+        public static function acertTotal($materia){
 
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT acertou, count(*) FROM resolucao WHERE resp_escolh != 1 GROUP BY acertou");
+            $sql = MySql::getConnect()->prepare("SELECT acertou, count(*) FROM resolucao WHERE resp_escolh != 1 and resolucao.id_materia = $materia GROUP BY acertou");
 
             $sql->execute();
 
@@ -104,11 +104,11 @@
             return Relatorios::getUrlGrafic();
         }
 
-        public static function totalDissertObj(){
+        public static function totalDissertObj($materia){
 
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT questoes.tipo, count(*) FROM questoes GROUP BY questoes.tipo");
+            $sql = MySql::getConnect()->prepare("SELECT questoes.tipo, count(*) FROM questoes WHERE questoes.id_materia = $materia GROUP BY questoes.tipo");
 
             $sql->execute();
 
@@ -129,11 +129,11 @@
             return Relatorios::getUrlGrafic();
         }
 
-        public static function questPTema(){
+        public static function questPTema($materia){
 
             Relatorios::resetAtt();
 
-            $sql = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(*) as 'qtd' FROM questoes, sub_tema WHERE questoes.id_sub_tema = sub_tema.id GROUP BY questoes.id_sub_tema");
+            $sql = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(*) as 'qtd' FROM questoes, sub_tema WHERE questoes.id_sub_tema = sub_tema.id and questoes.id_materia = $materia GROUP BY questoes.id_sub_tema");
 
             $sql->execute();
 
@@ -144,10 +144,10 @@
             return Relatorios::getUrlGrafic();
         }
 
-        public static function acertPTema(){
+        public static function acertPTema($materia){
             Relatorios::resetAtt();
 
-            $sql = Mysql::getConnect()->prepare("SELECT sub_tema.descricao, resolucao.acertou, COUNT(*) FROM resolucao, questoes, sub_tema WHERE resolucao.resp_escolh != 1 and questoes.id = resolucao.id_questao and questoes.id_sub_tema = sub_tema.id GROUP BY sub_tema.descricao, resolucao.acertou ORDER BY sub_tema.descricao, resolucao.acertou desc");
+            $sql = Mysql::getConnect()->prepare("SELECT sub_tema.descricao, resolucao.acertou, COUNT(*) FROM resolucao, questoes, sub_tema WHERE resolucao.resp_escolh != 1 and questoes.id = resolucao.id_questao and questoes.id_sub_tema = sub_tema.id and questoes.id_materia = $materia GROUP BY sub_tema.descricao, resolucao.acertou ORDER BY sub_tema.descricao, resolucao.acertou desc");
 
             $sql->execute();
 

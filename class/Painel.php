@@ -22,9 +22,9 @@
             return $sql->rowCount();
         }
 
-        public static function addTema($name){
-            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, null)");
-            $sql->execute(array($name));
+        public static function addTema($name, $materia){
+            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, null, ?)");
+            $sql->execute(array($name, $materia));
 
             return $sql->rowCount();
         }
