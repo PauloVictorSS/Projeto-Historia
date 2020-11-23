@@ -42,7 +42,7 @@
 
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;
-        $_SESSION['status_login'] = 1;
+        		$_SESSION['status_login'] = 1;
 
         $select = "select id from usuarios where login = '$login'";
         $result = mysqli_query($conexao, $select);

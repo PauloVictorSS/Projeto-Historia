@@ -14,10 +14,11 @@
 	unset(
 		$_SESSION['usuario'],
 		$_SESSION['senha'],
-		$_SESSION['status_login']
+		$_SESSION['status_login'],
+		$_SESSION['login']
 	);
 
-	$url = INCLUDE_PATH.'login';
+	$url = INCLUDE_PATH.'pages/login.php';
 
 	header("location: $url");	
 

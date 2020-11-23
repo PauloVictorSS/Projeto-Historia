@@ -34,7 +34,9 @@
 			}
 		}
 		elseif(mysqli_num_rows($result2) == 1){
+
 			$_SESSION['login_admin'] = $login;
+			$_SESSION['status_login'] = 2;
 
 			while($infs = mysqli_fetch_array($result2)){
 
