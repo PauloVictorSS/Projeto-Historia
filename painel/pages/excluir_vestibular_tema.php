@@ -15,7 +15,7 @@
         
     }
 
-    $themes = Questao::selectThemes();
+    $themes = Questao::selectThemes($materia);
     $exams = Questao::selectExams();
 
 ?>

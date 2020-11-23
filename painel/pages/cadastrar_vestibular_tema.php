@@ -5,7 +5,7 @@
         if($_POST["action"] == 1)
             $result = Painel::addVestibular($_POST["name"]);
         else
-            $result = Painel::addTema($_POST["name"]);
+            $result = Painel::addTema($_POST["name"], $materia);
 
         if($result == 1)
             echo "<div class='mensagem green'>Inserção feita com sucesso!</div>";
@@ -14,7 +14,7 @@
         
     }
 
-    $themes = Questao::selectThemes();
+    $themes = Questao::selectThemes($materia);
     $exams = Questao::selectExams();
 
 

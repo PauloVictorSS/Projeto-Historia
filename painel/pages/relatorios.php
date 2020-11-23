@@ -2,12 +2,12 @@
 
     $dados = array();
 
-    $urlGrafic1 = Relatorios::qtdQuestVest();
-    $urlGrafic2 = Relatorios::questPTema();
-    $urlGrafic3 = Relatorios::totalDissertObj();
-    $urlGrafic4 = Relatorios::acertTotal();
+    $urlGrafic1 = Relatorios::qtdQuestVest($materia);
+    $urlGrafic2 = Relatorios::questPTema($materia);
+    $urlGrafic3 = Relatorios::totalDissertObj($materia);
+    $urlGrafic4 = Relatorios::acertTotal($materia);
 
-    foreach (Relatorios::acertPTema() as $key => $value) {
+    foreach (Relatorios::acertPTema($materia) as $key => $value) {
 
         if($value[1] == 's')
             $acert = 'Acertos';

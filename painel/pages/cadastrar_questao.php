@@ -1,6 +1,6 @@
 <?php
 
-    $themes = Questao::selectThemes();
+    $themes = Questao::selectThemes($materia);
     $exams = Questao::selectExams();
 
     if(isset($_POST["action"])){
@@ -42,7 +42,7 @@
             $gabarito = $_POST["gabarito"];
             $explic = str_replace("'", "`", $_POST["explic"]);
 
-            $result = Questao::addQuestObj($enunciado, $pergunta, $alter_a, $alter_b, $alter_c, $alter_d, $alter_e, $gabarito, $explic, $tema, $vest, $ano, $tipo, $conteudo);
+            $result = Questao::addQuestObj($enunciado, $pergunta, $alter_a, $alter_b, $alter_c, $alter_d, $alter_e, $gabarito, $explic, $tema, $vest, $ano, $tipo, $conteudo, $materia);
 
         }else{
             $quest_a = str_replace("'", "`", $_POST["quest_a"]);
@@ -52,7 +52,7 @@
             $resp_b = str_replace("'", "`", $_POST["resp_b"]);
             $resp_c = str_replace("'", "`", $_POST["resp_c"]);
 
-            $result = Questao::addQuestDissert($enunciado, $pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $tema, $vest, $ano, $tipo, $conteudo);
+            $result = Questao::addQuestDissert($enunciado, $pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $tema, $vest, $ano, $tipo, $conteudo, $materia);
 
         }
 
