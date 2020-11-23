@@ -13,27 +13,25 @@
 					$sql = MySql::getConnect()->prepare("UPDATE `admin.online` SET ultima_acao = ? WHERE token = ?");
 					$sql->execute(array($horarioAtual,$token));
 				}else{
-					$ip = $_SERVER['REMOTE_ADDR'];
 					$token = $_SESSION['online'];
 					$horarioAtual = date('Y-m-d H:i:s');
-					$sql = MySql::getConnect()->prepare("INSERT INTO `admin.online` VALUES (null,?,?,?)");
-					$sql->execute(array($ip,$horarioAtual,$token));
+					$sql = MySql::getConnect()->prepare("INSERT INTO `admin.online` VALUES (null,?,?)");
+					$sql->execute(array($horarioAtual,$token));
 				}
 			}else{
 				$_SESSION['online'] = uniqid();
-				$ip = $_SERVER['REMOTE_ADDR'];
 				$token = $_SESSION['online'];
 				$horarioAtual = date('Y-m-d H:i:s');
-				$sql = MySql::getConnect()->prepare("INSERT INTO `admin.online` VALUES (null,?,?,?)");
-				$sql->execute(array($ip,$horarioAtual,$token));
+				$sql = MySql::getConnect()->prepare("INSERT INTO `admin.online` VALUES (null,?,?)");
+				$sql->execute(array($horarioAtual,$token));
 			}
 		}
 
 		public static function counter(){
 			if(!isset($_COOKIE['visita'])){
 				setcookie('visita','true',time() + (60*60*24*7));
-				$sql = MySql::getConnect()->prepare("INSERT INTO `admin.visitas` VALUES (null,?,?)");
-				$sql->execute(array($_SERVER['REMOTE_ADDR'],date('Y-m-d')));
+				$sql = MySql::getConnect()->prepare("INSERT INTO `admin.visitas` VALUES (null,?)");
+				$sql->execute(array(date('Y-m-d')));
 			}
 		}
 
