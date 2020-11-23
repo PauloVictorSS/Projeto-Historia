@@ -44,7 +44,24 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>area_de_questoes">Área de Questões</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>#footer">Contato</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Entrar</a></li>
+
+                    <?php
+                        if(!isset($_SESSION['status_login'])){
+                    ?>
+                        <li><a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Entrar</a></li>
+                    <?php
+                        }
+                        elseif($_SESSION['status_login'] == 1){
+                    ?>
+                        <li><a href="<?php echo INCLUDE_PATH; ?>pages/area_do_usuario.php">Área do Usuário</a></li>
+                    <?php
+                        }
+                        else{
+                    ?>
+                        <li><a href="<?php echo INCLUDE_PATH_PAINEL; ?>">Área do Funcionário</a></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </nav>
             <nav class="mobile">
