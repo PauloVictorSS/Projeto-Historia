@@ -108,9 +108,46 @@ section.content h2{
 	font-weight: 600;
 }
 
+section.content div.dados-questoes{
+    padding-top: 30px;
+    text-align: center;
+}
+
+div.dados-questoes h3{
+    font-weight: 500;
+    padding-bottom: 30px;
+}
+
+div.dados-questoes p.temas{
+    display: inline-block;
+    
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+
+    background-color: rgb(203, 195, 226);
+    
+    min-width: 200px;
+}
+
+div.dados-questoes p.temas+p.temas{
+    margin-left: 10px;
+}
+
+div.dados-questoes a{
+    display: block;
+
+    margin: 0 auto;
+    padding-top: 30px;
+
+    max-width: 250px;
+}
+div.dados-questoes a:hover{
+    text-decoration: underline;
+}
 
 
-@media screen and (max-width: 775px){
+@media screen and (max-width: 800px){
 
     div.menu{
         overflow-y: hidden;

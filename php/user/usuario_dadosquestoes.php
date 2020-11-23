@@ -6,16 +6,10 @@
 
     $result = mysqli_query($conexao, $consulta);
 
-    echo "<p>Quantidade de questões resolvidas p/ tema</p>";
-
-    echo "<div class='qtdQuestResolv'>";
-
     while ($n = mysqli_fetch_array($result)){	
         
-        echo "<p class='p_text'><b>".$n['descricao'].":</b> ".$n['qtd']."</p>";
+        echo "<p class='temas'><b>".$n['descricao'].":</b> ".$n['qtd']."</p>";
 
     }
-    
-    echo "</div>";
 
 ?>

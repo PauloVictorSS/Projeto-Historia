@@ -58,7 +58,7 @@
                         }
                         else{
                     ?>
-                        <li><a href="<?php echo INCLUDE_PATH_PAINEL; ?>">Área do Funcionário</a></li>
+                        <li><a href="<?php echo INCLUDE_PATH_PAINEL; ?>">Área do Professor</a></li>
                     <?php
                         }
                     ?>
