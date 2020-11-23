@@ -5,23 +5,19 @@
 
 	$totalVisits = $totalVisits->rowCount();
 
-	$todayVisits = MySql::getConnect()->prepare("SELECT * FROM `admin.visitas` WHERE dia = ?");
-	$todayVisits->execute(array(date('Y-m-d')));
+    $result = mysqli_query($conexao, "select nome from materia where id = $materia");
+    $materia = mysqli_fetch_array($result);
 
-	$todayVisits = $todayVisits->rowCount();
+    $nome_materia = $materia[0];
 
 ?>
 <div class="box-content">
-    <h2 style="text-align: center;">Bem vindo a área administrativa</h2><br>
-    <h2><i class="fa fa-home" aria-hidden="true"></i> Informações do site</h2>
+    <h1>Bem vindo a área administrativa</h1><br><br>
+    <h3>Matéria de <?php echo $nome_materia; ?></h3>
     <div class="box-infs">
         <div class="infs red">
-            <h2>Total de visitas</h2><br>
+            <h4>Total de visitas no site</h4><br>
             <p><?php echo $totalVisits; ?></p>
-        </div>
-        <div class="infs blue">
-            <h2>Visitas hoje</h2><br>
-            <p><?php echo $todayVisits; ?></p>
         </div>
         <div class="clear"></div>
     </div>

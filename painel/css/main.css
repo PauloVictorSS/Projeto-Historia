@@ -117,7 +117,9 @@ section.content div.box-infs{
 }
 
 section.content div.box-infs div.infs{
-	width: calc(100% / 2 - 10px);
+    width: calc(100% / 2);
+    
+    margin: 0 auto;
 	min-height: 95px;
     height: 100%;
     
@@ -125,7 +127,6 @@ section.content div.box-infs div.infs{
 	text-align: center;
     
 	padding: 10px;
-    float: left;
 }
 
 section.content div.box-infs div.infs+div.infs{

@@ -35,6 +35,8 @@
 
             if(file_exists('css/page_'.$explode[0].'.css'))
                 echo'<link href="'.INCLUDE_PATH_PAINEL.'css/page_'.$explode[0].'.css" rel="stylesheet">';
+        }else{
+            echo'<link href="'.INCLUDE_PATH_PAINEL.'css/home.css" rel="stylesheet">';
         }
     ?>
 
