@@ -42,6 +42,7 @@
 
 				$_SESSION['type_admin'] = $infs['type'];
 				$_SESSION['nome_admin'] = $infs['nome'];
+				$_SESSION['materia'] = $infs['id_materia'];
 
 				header("location: ".INCLUDE_PATH_PAINEL);
 			}
