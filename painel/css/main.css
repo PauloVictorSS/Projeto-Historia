@@ -165,7 +165,8 @@ div.box-content form#form-disser div.box-category:nth-of-type(3){
 }
 
 div.box-content form div.box-category input,
-div.box-content form div.box-category textarea{
+div.box-content form div.box-category textarea,
+div.box-content form div.box-category select{
 	margin: 5px 0;
 	width: 100%;
 	padding: 7px;

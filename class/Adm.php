@@ -4,7 +4,7 @@
 
         public static function getAdms(){
 
-            $sql = MySql::getConnect()->prepare("SELECT * FROM `admin.usuarios`");
+            $sql = MySql::getConnect()->prepare("SELECT `admin.usuarios`.`login`, `admin.usuarios`.`nome`, `materia`.`nome` as 'materia', `admin.usuarios`.`type` FROM `admin.usuarios`, `materia` where `admin.usuarios`.`id_materia` = `materia`.`id`");
 
             $sql->execute();
             return $sql->fetchAll();

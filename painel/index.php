@@ -63,12 +63,12 @@
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes">Exibir questões</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Questao">Cadastrar questão</a>
                     <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Vestibular-Tema">Cadastrar vestibular / tema</a>
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>Excluir-Vestibular-Tema">Excluir vestibular / tema</a>
                 </div>
 
                 <?php if($_SESSION['type_admin'] == 2){ ?>
 
                     <div class="itens">
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>Excluir-Vestibular-Tema">Excluir vestibular / tema</a>
                         <a href="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Usuarios">Exibir usuários cadastrados</a>
                         <a href="<?php echo INCLUDE_PATH_PAINEL ?>Cadastrar-Adm">Cadastrar administradores</a>
                     </div>

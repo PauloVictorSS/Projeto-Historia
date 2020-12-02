@@ -63,6 +63,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Login</th>
+                    <th>Matéria</th>
                     <th></th>
                 </tr>
             <?php
@@ -71,6 +72,7 @@
                 <tr>        
                     <td><?php echo $value["nome"]; ?></td>
                     <td><?php echo $value["login"]; ?></td>
+                    <td><?php echo $value["materia"]; ?></td>
 
                     <td>
 
