@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 10:24 PM
+-- Generation Time: Dec 03, 2020 at 10:00 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,39 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `projeto_historia`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin.online`
---
-
-CREATE TABLE `admin.online` (
-  `id` int(11) NOT NULL,
-  `ip` varchar(255) NOT NULL,
-  `ultima_acao` datetime NOT NULL,
-  `token` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin.online`
---
-
-INSERT INTO `admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(64, '::1', '2020-10-19 17:46:30', '5f8df93722921'),
-(65, '::1', '2020-11-13 19:44:50', '5faefdf0ddcdc'),
-(66, '::1', '2020-11-23 17:03:32', '5fbc043753f5d'),
-(67, '::1', '2020-11-23 17:06:26', '5fbc0790dead4'),
-(68, '::1', '2020-11-23 17:10:17', '5fbc089022cd1'),
-(69, '::1', '2020-11-23 17:13:28', '5fbc091db430f'),
-(70, '::1', '2020-11-23 18:00:34', '5fbc09e3a92e9'),
-(71, '::1', '2020-11-23 18:00:37', '5fbc14e5168b9'),
-(72, '::1', '2020-11-23 18:00:51', '5fbc14f33b5c0'),
-(73, '::1', '2020-11-23 18:02:14', '5fbc15381dbd3'),
-(74, '::1', '2020-11-23 18:07:01', '5fbc166512f57'),
-(75, '::1', '2020-11-23 18:24:28', '5fbc18bf29f84'),
-(76, '::1', '2020-11-23 18:31:58', '5fbc1c22b9a6d'),
-(77, '::1', '2020-11-23 18:32:48', '5fbc1c7048f1a');
 
 -- --------------------------------------------------------
 
@@ -74,35 +41,7 @@ CREATE TABLE `admin.usuarios` (
 --
 
 INSERT INTO `admin.usuarios` (`id`, `login`, `senha`, `type`, `nome`, `id_materia`) VALUES
-(1, 'admin', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 2, 'Bernardo', 1),
-(10, 'paulo', 'b8458e9c1fca42e244000a9ec32b460c5dcad0a2318bb0e220117ba69bfdfd0e8e2af7897834a8f1899fde6a380ff2a757bdfd71ca58fb6b6d8bd588159eaff3', 1, 'Paulo', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin.visitas`
---
-
-CREATE TABLE `admin.visitas` (
-  `id` int(11) NOT NULL,
-  `ip` varchar(255) NOT NULL,
-  `dia` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin.visitas`
---
-
-INSERT INTO `admin.visitas` (`id`, `ip`, `dia`) VALUES
-(1, '::1', '2020-09-07'),
-(2, '::1', '2020-09-15'),
-(3, '::1', '2020-09-21'),
-(4, '::1', '2020-09-28'),
-(5, '::1', '2020-10-08'),
-(6, '::1', '2020-10-18'),
-(7, '::1', '2020-10-18'),
-(8, '::1', '2020-11-13'),
-(9, '::1', '2020-11-23');
+(1, 'admin', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 2, 'Bernardo', 1);
 
 -- --------------------------------------------------------
 
@@ -120,10 +59,11 @@ CREATE TABLE `escolaridade` (
 --
 
 INSERT INTO `escolaridade` (`id`, `descricao`) VALUES
-(1, 'Fundamental 1'),
-(2, 'Fundamental 2'),
-(3, 'Ensino Médio'),
-(4, 'Graduação');
+(1, 'Estou no fundamental 1'),
+(2, 'Estou no fundamental 2'),
+(3, 'Estou no ensino Médio'),
+(4, 'Estou na graduação'),
+(5, 'Só trabalho');
 
 -- --------------------------------------------------------
 
@@ -142,7 +82,10 @@ CREATE TABLE `materia` (
 
 INSERT INTO `materia` (`id`, `nome`) VALUES
 (1, 'História'),
-(2, 'Geografia');
+(2, 'Geografia'),
+(4, NULL),
+(5, NULL),
+(6, NULL);
 
 -- --------------------------------------------------------
 
@@ -319,7 +262,8 @@ CREATE TABLE `rede` (
 
 INSERT INTO `rede` (`id`, `descricao`) VALUES
 (1, 'Pública'),
-(2, 'Privada');
+(2, 'Privada'),
+(3, 'Só trabalho');
 
 -- --------------------------------------------------------
 
@@ -333,8 +277,6 @@ CREATE TABLE `resolucao` (
   `id_questao` int(11) DEFAULT NULL,
   `resp_escolh` char(1) DEFAULT NULL,
   `acertou` char(1) DEFAULT NULL,
-  `data_envio` varchar(10) DEFAULT NULL,
-  `hora_envio` varchar(10) DEFAULT NULL,
   `id_materia` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -342,14 +284,14 @@ CREATE TABLE `resolucao` (
 -- Dumping data for table `resolucao`
 --
 
-INSERT INTO `resolucao` (`id`, `id_usuario`, `id_questao`, `resp_escolh`, `acertou`, `data_envio`, `hora_envio`, `id_materia`) VALUES
-(6, 2, 2, 'C', 'n', '30-08-2020', '07:05', 1),
-(7, 2, 3, 'E', 'n', '30-08-2020', '07:05', 1),
-(8, 2, 5, 'A', 'n', '30-08-2020', '07:06', 1),
-(9, 2, 20, '1', 's', '30-08-2020', '07:06', 1),
-(10, 2, 33, 'D', 'n', '30-08-2020', '07:07', 1),
-(12, 2, 8, 'A', 'n', '21-09-2020', '18:10', 1),
-(24, 2, 9, 'B', 'n', '23-11-2020', '18:22', 1);
+INSERT INTO `resolucao` (`id`, `id_usuario`, `id_questao`, `resp_escolh`, `acertou`, `id_materia`) VALUES
+(6, 2, 2, 'C', 'n', 1),
+(7, 2, 3, 'E', 'n', 1),
+(8, 2, 5, 'A', 'n', 1),
+(9, 2, 20, '1', 's', 1),
+(10, 2, 33, 'D', 'n', 1),
+(12, 2, 8, 'A', 'n', 1),
+(24, 2, 9, 'B', 'n', 1);
 
 -- --------------------------------------------------------
 
@@ -360,7 +302,6 @@ INSERT INTO `resolucao` (`id`, `id_usuario`, `id_questao`, `resp_escolh`, `acert
 CREATE TABLE `sub_tema` (
   `id` int(11) NOT NULL,
   `descricao` varchar(50) DEFAULT NULL,
-  `id_tema` int(11) DEFAULT NULL,
   `id_materia` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -368,91 +309,49 @@ CREATE TABLE `sub_tema` (
 -- Dumping data for table `sub_tema`
 --
 
-INSERT INTO `sub_tema` (`id`, `descricao`, `id_tema`, `id_materia`) VALUES
-(1, 'Grécia', 2, 1),
-(2, 'Roma', 2, 1),
-(3, 'Outras', 2, 1),
-(4, 'Brasil: Indígenas', 3, 1),
-(5, 'Brasil: Colônia', 3, 1),
-(6, 'Brasil: Império', 3, 1),
-(7, 'Brasil: República Velha', 3, 1),
-(8, 'Brasil: Vargas', 3, 1),
-(9, 'Brasil: 1945 - 1964', 3, 1),
-(10, 'Brasil: Ditadura Civil-Militar', 3, 1),
-(11, 'Brasil: Atualidades', 3, 1),
-(12, 'Brasil: Independência', 3, 1),
-(13, 'Brasil: Outros', 3, 1),
-(14, 'Absolutismo', 1, 1),
-(15, 'EUA', 4, 1),
-(16, 'Facismo', 5, 1),
-(17, 'Guerra Fria', 6, 1),
-(18, 'Idade Média', 7, 1),
-(19, 'Iluminismo', 8, 1),
-(20, 'Imperialismo', 9, 1),
-(21, 'Renascimento', 10, 1),
-(22, 'Revolução Científica', 11, 1),
-(23, 'Revolução Francesa', 12, 1),
-(24, 'Atualidades', 13, 1),
-(25, '1º Guerra Mundial', 14, 1),
-(26, '2º Guerra Mundial', 15, 1),
-(27, 'Cristianismo', 16, 1),
-(28, 'Entreguerras', 17, 1),
-(29, 'Independência das Américas', 18, 1),
-(30, 'Colonização das Américas', 19, 1),
-(31, 'Ásia', 20, 1),
-(32, 'Ditadura na América Latina', 21, 1),
-(33, 'Expansão Marítima', 22, 1),
-(34, 'Revolução Industrial', 24, 1),
-(35, 'África', 25, 1),
-(36, 'América Espanhola: Indígenas', 23, 1),
-(37, 'América Espanhola: Colonização', 23, 1),
-(38, 'América Espanhola: Independência', 23, 1),
-(39, 'América Espanhola: República', 23, 1),
-(40, 'América Espanhola: Ditadura', 23, 1),
-(41, 'América Espanhola: Outros', 23, 1),
-(44, 'Antiga', NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tema`
---
-
-CREATE TABLE `tema` (
-  `id` int(11) NOT NULL,
-  `descricao` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tema`
---
-
-INSERT INTO `tema` (`id`, `descricao`) VALUES
-(1, 'Absolutismo'),
-(2, 'Antiguidade'),
-(3, 'Brasil'),
-(4, 'EUA'),
-(5, 'Facismo'),
-(6, 'Guerra Fria'),
-(7, 'Idade Média'),
-(8, 'Iluminismo'),
-(9, 'Imperialismo'),
-(10, 'Renascimento'),
-(11, 'Revolução Científica'),
-(12, 'Revolução Francesa'),
-(13, 'Tempo Presente'),
-(14, '1 Guerra Mundial'),
-(15, '2 Guerra Mundial'),
-(16, 'Cristianismo'),
-(17, 'Entreguerras'),
-(18, 'Independência das Américas'),
-(19, 'Colonização das Américas'),
-(20, 'Ásia'),
-(21, 'Ditadura na América Latina'),
-(22, 'Expansão Marítima'),
-(23, 'América Espanhola'),
-(24, 'Revolução Industrial'),
-(25, 'África');
+INSERT INTO `sub_tema` (`id`, `descricao`, `id_materia`) VALUES
+(1, 'Grécia', 1),
+(2, 'Roma', 1),
+(3, 'Outras', 1),
+(4, 'Brasil: Indígenas', 1),
+(5, 'Brasil: Colônia', 1),
+(6, 'Brasil: Império', 1),
+(7, 'Brasil: República Velha', 1),
+(8, 'Brasil: Vargas', 1),
+(9, 'Brasil: 1945 - 1964', 1),
+(10, 'Brasil: Ditadura Civil-Militar', 1),
+(11, 'Brasil: Atualidades', 1),
+(12, 'Brasil: Independência', 1),
+(13, 'Brasil: Outros', 1),
+(14, 'Absolutismo', 1),
+(15, 'EUA', 1),
+(16, 'Facismo', 1),
+(17, 'Guerra Fria', 1),
+(18, 'Idade Média', 1),
+(19, 'Iluminismo', 1),
+(20, 'Imperialismo', 1),
+(21, 'Renascimento', 1),
+(22, 'Revolução Científica', 1),
+(23, 'Revolução Francesa', 1),
+(24, 'Atualidades', 1),
+(25, '1º Guerra Mundial', 1),
+(26, '2º Guerra Mundial', 1),
+(27, 'Cristianismo', 1),
+(28, 'Entreguerras', 1),
+(29, 'Independência das Américas', 1),
+(30, 'Colonização das Américas', 1),
+(31, 'Ásia', 1),
+(32, 'Ditadura na América Latina', 1),
+(33, 'Expansão Marítima', 1),
+(34, 'Revolução Industrial', 1),
+(35, 'África', 1),
+(36, 'América Espanhola: Indígenas', 1),
+(37, 'América Espanhola: Colonização', 1),
+(38, 'América Espanhola: Independência', 1),
+(39, 'América Espanhola: República', 1),
+(40, 'América Espanhola: Ditadura', 1),
+(41, 'América Espanhola: Outros', 1),
+(44, 'Antiga', 1);
 
 -- --------------------------------------------------------
 
@@ -468,7 +367,6 @@ CREATE TABLE `usuarios` (
   `aniversario` varchar(25) DEFAULT NULL,
   `id_rede` int(11) DEFAULT NULL,
   `id_escolaridade` int(11) DEFAULT NULL,
-  `id_mestre` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -476,8 +374,8 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`login`, `senha`, `nome`, `email`, `aniversario`, `id_rede`, `id_escolaridade`, `id_mestre`, `id`) VALUES
-('Usuario01', '3bee41c07a66948effcf3af64abf791159524a534d866583435937ee0a6f8df01c56315ec15160b0a33d47da409202878643bac41c7dca3e7fd1fe0ac2fdcd6a', 'Usuario 01', 'usuario@usuario', '25/06/2003', 1, 3, 1, 2);
+INSERT INTO `usuarios` (`login`, `senha`, `nome`, `email`, `aniversario`, `id_rede`, `id_escolaridade`, `id`) VALUES
+('Usuario01', '3bee41c07a66948effcf3af64abf791159524a534d866583435937ee0a6f8df01c56315ec15160b0a33d47da409202878643bac41c7dca3e7fd1fe0ac2fdcd6a', 'Usuario 01', 'usuario@usuario', '25/06/2003', 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -504,23 +402,11 @@ INSERT INTO `vestibular` (`id`, `descricao`) VALUES
 --
 
 --
--- Indexes for table `admin.online`
---
-ALTER TABLE `admin.online`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `admin.usuarios`
 --
 ALTER TABLE `admin.usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_materia` (`id_materia`);
-
---
--- Indexes for table `admin.visitas`
---
-ALTER TABLE `admin.visitas`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `escolaridade`
@@ -563,14 +449,7 @@ ALTER TABLE `resolucao`
 --
 ALTER TABLE `sub_tema`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_tema` (`id_tema`),
   ADD KEY `id_materia` (`id_materia`);
-
---
--- Indexes for table `tema`
---
-ALTER TABLE `tema`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `usuarios`
@@ -591,46 +470,34 @@ ALTER TABLE `vestibular`
 --
 
 --
--- AUTO_INCREMENT for table `admin.online`
---
-ALTER TABLE `admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
-
---
 -- AUTO_INCREMENT for table `admin.usuarios`
 --
 ALTER TABLE `admin.usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `admin.visitas`
---
-ALTER TABLE `admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `escolaridade`
 --
 ALTER TABLE `escolaridade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `questoes`
 --
 ALTER TABLE `questoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `rede`
 --
 ALTER TABLE `rede`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `resolucao`
@@ -642,13 +509,7 @@ ALTER TABLE `resolucao`
 -- AUTO_INCREMENT for table `sub_tema`
 --
 ALTER TABLE `sub_tema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
---
--- AUTO_INCREMENT for table `tema`
---
-ALTER TABLE `tema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
@@ -692,7 +553,6 @@ ALTER TABLE `resolucao`
 -- Constraints for table `sub_tema`
 --
 ALTER TABLE `sub_tema`
-  ADD CONSTRAINT `sub_tema_ibfk_1` FOREIGN KEY (`id_tema`) REFERENCES `tema` (`id`),
   ADD CONSTRAINT `sub_tema_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id`);
 
 --
