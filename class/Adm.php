@@ -4,7 +4,7 @@
 
         public static function getAdms(){
 
-            $sql = MySql::getConnect()->prepare("SELECT `admin.usuarios`.`login`, `admin.usuarios`.`nome`, `materia`.`nome` as 'materia', `admin.usuarios`.`type` FROM `admin.usuarios`, `materia` where `admin.usuarios`.`id_materia` = `materia`.`id`");
+            $sql = MySql::getConnect()->prepare("SELECT `admin.usuarios`.`login`, `admin.usuarios`.`id`, `admin.usuarios`.`nome`, `materia`.`nome` as 'materia', `admin.usuarios`.`type` FROM `admin.usuarios`, `materia` where `admin.usuarios`.`id_materia` = `materia`.`id`");
 
             $sql->execute();
             return $sql->fetchAll();
@@ -39,6 +39,13 @@
         public static function deleteAdms($id){
             $sql = MySql::getConnect()->prepare("DELETE FROM `admin.usuarios` WHERE id = ?");
             $sql->execute(array($id));
+
+            return $sql->rowCount();
+        }
+
+        public static function addMateria($name){
+            $sql = MySql::getConnect()->prepare("INSERT  INTO materia VALUES (null, ?)");
+            $sql->execute(array($name));
 
             return $sql->rowCount();
         }
