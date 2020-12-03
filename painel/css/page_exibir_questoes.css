@@ -26,8 +26,8 @@ div.area-de-questoes form#form select{
     padding: 5px;
 }
 
-div.area-de-questoes form#form select+select.w33{
-    margin-left: 0.5%;
+div.area-de-questoes form#form select+select.w25{
+    margin-left: 1.33%;
 }
 
 div.area-de-questoes form#form #pesquisar-input,
@@ -104,4 +104,10 @@ div.area-de-questoes #paginacao-inicio{
 }
 div.area-de-questoes #paginacao-inicio:hover{
     text-decoration: underline;
+}
+
+@media screen and (max-width: 675px){
+    div.area-de-questoes form#form select+select.w25{
+        margin-left: 0;
+    }
 }

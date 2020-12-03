@@ -22,8 +22,8 @@ section.area-de-questoes form#filtro select{
     background: white;
 }
 
-section.area-de-questoes form#filtro select+select.w33{
-    margin-left: 0.5%;
+section.area-de-questoes form#filtro select+select.w25{
+    margin-left: 1.33%;
 }
 
 section.area-de-questoes form#filtro #pesquisar-input,
@@ -116,11 +116,11 @@ section.area-de-questoes div.resultados p.total_resultados{
     margin: 15px 0;
 }
 
-@media screen and (max-width: 475px){
+@media screen and (max-width: 675px){
 
-    .w33{  width: 100%;  }
+    .w25{  width: 100%;  }
 
-    section.area-de-questoes form#form select+select.w33{
+    section.area-de-questoes form#form select+select.w25{
         margin-left: 0;
     }
 

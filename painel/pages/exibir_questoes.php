@@ -3,7 +3,7 @@
     <h1>Questões Cadastradas</h1><br>
     <form method="POST" action="<?php echo INCLUDE_PATH_PAINEL ?>Exibir-Questoes" id="form">
         <input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="100">
-        <select name="vestibular" id="vestibular-input" class="w33">
+        <select name="vestibular" id="vestibular-input" class="w25">
             <option value="">Vestibular</option>
 
             <?php include_once("../php/question_area/formulario_filtro.php"); ?>
@@ -25,22 +25,23 @@
 
         <?php
         
-            if($anterior > 1)
-                $anterior = INCLUDE_PATH_PAINEL.'Exibir-Questoes.'.$anterior;
-            else
-                $anterior = INCLUDE_PATH_PAINEL.'Exibir-Questoes';
-    
-            $proximo = 	INCLUDE_PATH_PAINEL.'Exibir-Questoes.'.$proximo;
-            $inicio = 	INCLUDE_PATH_PAINEL.'Exibir-Questoes';
-    
-            if ($pc > 1)
-                echo "<a href='$anterior' id='paginacao-anterior' class='left'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
-                    
-            if ($pc < $tp)
-                echo "<a href='$proximo' id='paginacao-proxima' class='right'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
-    
-            echo "<a href='$inicio' id='paginacao-inicio'>INÍCIO</a><div class='clear'></div>";
+            if(mysqli_num_rows($limite) > 0){
+                if($anterior > 1)
+                    $anterior = INCLUDE_PATH_PAINEL.'Exibir-Questoes.'.$anterior;
+                else
+                    $anterior = INCLUDE_PATH_PAINEL.'Exibir-Questoes';
         
+                $proximo = 	INCLUDE_PATH_PAINEL.'Exibir-Questoes.'.$proximo;
+                $inicio = 	INCLUDE_PATH_PAINEL.'Exibir-Questoes';
+        
+                if ($pc > 1)
+                    echo "<a href='$anterior' id='paginacao-anterior' class='left'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
+                        
+                if ($pc < $tp)
+                    echo "<a href='$proximo' id='paginacao-proxima' class='right'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
+        
+                echo "<a href='$inicio' id='paginacao-inicio'>INÍCIO</a><div class='clear'></div>";
+            }
         ?>
     </div>
     <div class="clear"></div>

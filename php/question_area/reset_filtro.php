@@ -12,6 +12,7 @@
 	$_SESSION['vestibular'] = '';
 	$_SESSION['ano'] = '';
 	$_SESSION['tema'] = '';
+	$_SESSION['materia'] = '';
 
 	$url = INCLUDE_PATH.'area_de_questoes';
 	$url2 = INCLUDE_PATH_PAINEL.'Exibir-Questoes';

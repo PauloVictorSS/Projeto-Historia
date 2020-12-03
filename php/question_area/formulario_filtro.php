@@ -7,6 +7,7 @@
 
 	$consulta1 = "select vestibular.descricao from vestibular";
 	$consulta2 = "select sub_tema.descricao, sub_tema.id from sub_tema";
+	$consulta3 = "select * from materia";
 
 	$vestibular = mysqli_query($conexao, $consulta1);
 				
@@ -20,7 +21,7 @@
 	echo "<option value='UNICAMP'>UNICAMP Geral</option>";
 	echo "</select>";
 				
-	echo "<select name='ano' id='ano-input' class='w33'>
+	echo "<select name='ano' id='ano-input' class='w25'>
 				<option value=''>Ano</option>";
 
 	setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
@@ -34,8 +35,20 @@
 
 	echo"</select>";
 
+	echo "<select name='materia' id='materia-input' class='w25'><option value=''>Matéria</option>";
+				
+	$list_materia = mysqli_query($conexao, $consulta3);
+				
+	while($o = mysqli_fetch_array($list_materia)){
 
-	echo "<select name='qtd_quest' id='qtd_quest-input' class='w33'>
+		$materia = $o[1];
+		echo "<option value='$materia'>$materia</option>";
+		
+	}
+				
+	echo "</select>";
+
+	echo "<select name='qtd_quest' id='qtd_quest-input' class='w25'>
 				<option value=''>Mostrar</option>
 				<option value='4'>4 Questões</option>
 				<option value='6'>6 Questões</option>
@@ -55,5 +68,8 @@
 	}
 				
 	echo "</select>";
+
+	
+
 
 ?>

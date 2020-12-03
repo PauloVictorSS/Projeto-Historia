@@ -23,7 +23,7 @@
         }
 
         public static function addTema($name, $materia){
-            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, null, ?)");
+            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, ?)");
             $sql->execute(array($name, $materia));
 
             return $sql->rowCount();
