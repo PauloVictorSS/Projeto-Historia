@@ -16,14 +16,14 @@
 		$consulta1 = "SELECT login, senha, id FROM usuarios WHERE login = '$login' AND senha = '$senhacod'";
 		$consulta2 = "SELECT * FROM `admin.usuarios` WHERE login = '$login' AND senha = '$senhacod'";
 
-		$result1 = mysqli_query($conexao, $consulta1);
-		$result2 = mysqli_query($conexao, $consulta2);
+		$aluno = mysqli_query($conexao, $consulta1);
+		$prof = mysqli_query($conexao, $consulta2);
 
 		//Verifica se houve algum resultado com o login e senha iguais
-		if(mysqli_num_rows($result1) == 1){
+		if(mysqli_num_rows($aluno) == 1 and mysqli_num_rows($prof) != 1){
 			$_SESSION['login'] = $login;
 
-			while($n = mysqli_fetch_array($result1)){
+			while($n = mysqli_fetch_array($aluno)){
 
 				$_SESSION['status_login'] = 1;
 				$_SESSION['id_usuario'] = $n['id'];
@@ -33,16 +33,17 @@
 				header("location: $url");
 			}
 		}
-		elseif(mysqli_num_rows($result2) == 1){
+		elseif(mysqli_num_rows($prof) == 1 and mysqli_num_rows($aluno) != 1){
 
 			$_SESSION['login_admin'] = $login;
 			$_SESSION['status_login'] = 2;
 
-			while($infs = mysqli_fetch_array($result2)){
+			while($infs = mysqli_fetch_array($prof)){
 
 				$_SESSION['type_admin'] = $infs['type'];
 				$_SESSION['nome_admin'] = $infs['nome'];
-				$_SESSION['materia'] = $infs['id_materia'];
+				$_SESSION['materia_prof'] = $infs['id_materia'];
+				$_SESSION['id'] = $infs['id'];
 
 				header("location: ".INCLUDE_PATH_PAINEL);
 			}
