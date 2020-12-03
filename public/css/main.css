@@ -54,6 +54,9 @@ h1{
 .w33{
     width: 33%;
 }
+.w25{
+    width: 24%;
+}
 .left{
     float: left;
 }
@@ -89,6 +92,13 @@ div.green{
 }
 div.red{
     background: var(--color-red);
+}
+
+
+@media screen and (max-width: 675px){
+    .w25{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 475px){

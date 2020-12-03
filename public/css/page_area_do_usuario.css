@@ -98,14 +98,15 @@ section.content{
 }
 
 .box-content{
-	padding: 30px;
+	padding: 30px 7px;
 	margin-bottom: 25px;
 	width: 100%;
     background-color: white;
 }
 
 section.content h2{
-	font-weight: 600;
+    font-weight: 600;
+    text-align: center;
 }
 
 section.content div.dados-questoes{
@@ -176,17 +177,27 @@ div.dados-questoes a:hover{
     }
 }
 
-@media screen and (max-width: 475px){
+@media screen and (max-width: 500px){
 
     section.content{
         padding: 10px;
     }
 
     .box-content{
-        padding: 30px 10px;
         margin-bottom: 25px;
         width: 100%;
         background-color: white;
+    }
+
+    div.dados-questoes p.temas{
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    div.dados-questoes p.temas+p.temas{
+        margin: 0 auto;
+        margin-top: 10px;
     }
 
 }
