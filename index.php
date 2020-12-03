@@ -1,9 +1,6 @@
 <?php 
     include_once("config.php");
     include_once("include/start_conexao.php");
-    
-    Site::updateOnlineUsers();
-    Site::counter();
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +89,7 @@
             $_SESSION['vestibular'] = '';
             $_SESSION['ano'] = '';
             $_SESSION['tema'] = '';
+            $_SESSION['materia'] = '';
         }
     
         //Verificando se a url escolhida existe
