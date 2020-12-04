@@ -19,7 +19,7 @@
         <div class="center">
 
             <h1><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERRO 404<br><br>Ops! Página não encontrada</h1>
-            <p><a href="<?php echo INCLUDE_PATH; ?>">Voltar para a Página Inical</a></p>
+            <p><a href="<?php echo INCLUDE_PATH; ?>" class="link">Voltar para a Página Inical</a></p>
 
         </div>
     </section>

@@ -53,8 +53,8 @@
                 </table>
             </div>
             <div class="links">
-                <a href="<?php echo INCLUDE_PATH ?>" class="left"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-                <a href="../php/user/usuario_deslogar.php" id="sair" class="right">Deslogar <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a href="<?php echo INCLUDE_PATH ?>" class="left link"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                <a href="../php/user/usuario_deslogar.php" id="sair" class="right link">Deslogar <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 <div class="clear"></div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                         
                         <?php  include_once("../php/user/usuario_dadosquestoes.php");		?>
 
-                        <br><br><a href="<?php echo INCLUDE_PATH;?>area_de_questoes"><h3>Ir resolver mais questões!</h3></a>
+                        <br><br><a href="<?php echo INCLUDE_PATH;?>area_de_questoes" class="link"><h3>Ir resolver mais questões!</h3></a>
                     </div>
                     
                     <div class="clear"></div>

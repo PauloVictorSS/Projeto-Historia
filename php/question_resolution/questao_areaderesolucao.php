@@ -132,7 +132,7 @@
 			include_once("php/question_resolution/questao_verificaresposta2.php");
 
 		echo "<hr>";
-		echo "<a href='$areaquestoes'>Voltar para a Área de Questões</a>";
+		echo "<a href='$areaquestoes' class='link'>Voltar para a Área de Questões</a>";
 
 	}
 

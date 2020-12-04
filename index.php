@@ -119,7 +119,7 @@
                 </form>
             </div> 
             <div class="texto left">
-                <p>Desenvolvido por: <a href="#">Paulo Victor</a></p><br>
+                <p>Desenvolvido por: <a href="#" class="link">Paulo Victor</a></p><br>
                 <p>© Copyright 2020-2021</p><p>Todos os direitos reservados</p>
                 <?php include "php/enviar_email.php";  ?>
             </div>

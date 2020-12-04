@@ -38,6 +38,9 @@ a{
     text-decoration: none;
     color: black;
 }
+a.link:hover{
+    text-decoration: underline;
+}
 
 h1{
     font-size: 2rem;
@@ -80,7 +83,7 @@ div.mensagem{
     border-radius: 5px;
     box-shadow: 5px 5px 5px #222;
     color: white;
-}s
+}
 div.mensagem a{
     color: white;
 }
@@ -93,6 +96,7 @@ div.green{
 div.red{
     background: var(--color-red);
 }
+
 
 
 @media screen and (max-width: 675px){

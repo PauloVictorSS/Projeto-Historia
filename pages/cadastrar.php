@@ -44,7 +44,7 @@
                 </div>
                 
                 <br>
-                <a href="<?php echo INCLUDE_PATH; ?>pages/login.php">Já tem o seu cadastro?</a>
+                <a href="<?php echo INCLUDE_PATH; ?>pages/login.php" class="link">Já tem o seu cadastro?</a>
 
                 <button type="submit" value="Cadastrar">Cadastrar</button>
             </form>
