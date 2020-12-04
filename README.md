@@ -1,3 +1,5 @@
 # Projeto-Historia
 
-Repositorio para controle de versão do porjeto de historia desenvolvido em 2020 no meu 3º Ano do Ensino Médio 
+### Projeto desenvolvido durante o Bolsa Ensino no IFSP-HTO junto com o professor de história 
+
+Site com uma base de dados de questões de vestibular de diversas matérias para estudantes e não estudantes estudarem e se prepararem para o vestibular de maneira gratuita
