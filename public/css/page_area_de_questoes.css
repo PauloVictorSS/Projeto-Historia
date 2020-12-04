@@ -12,6 +12,7 @@ section.area-de-questoes form#filtro{
     margin: 10px auto 0;
     max-width: 700px;
     text-align: center;
+    padding: 0 5px;
 }
 
 section.area-de-questoes form#filtro input,
@@ -121,6 +122,9 @@ section.area-de-questoes div.resultados p.total_resultados{
     .w25{  width: 100%;  }
 
     section.area-de-questoes form#form select+select.w25{
+        margin-left: 0;
+    }
+    section.area-de-questoes form#filtro select+select.w25{
         margin-left: 0;
     }
 

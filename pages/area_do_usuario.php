@@ -63,10 +63,9 @@
         <div class="box-content">
             <div class="center">
                 <section>
-                    <h2>Dados sobre as questões</h2>
+                    <h2>Quantidade de questões feitas p/ tema</h2>
                     <div class="dados-questoes">
-                        <h3>Quantidade de questões feitas p/ tema</h3>
-
+                        
                         <?php  include_once("../php/user/usuario_dadosquestoes.php");		?>
 
                         <br><br><a href="<?php echo INCLUDE_PATH;?>area_de_questoes"><h3>Ir resolver mais questões!</h3></a>
