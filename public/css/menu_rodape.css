@@ -68,9 +68,6 @@ footer p a{
     color: white;
     font-size: 100%;
 }
-footer p a:hover{
-    text-decoration: underline;
-}
 
 div.palavras_chaves{
     text-align: center;

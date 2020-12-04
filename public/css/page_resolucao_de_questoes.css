@@ -70,10 +70,6 @@ section.resolvendo-questoes a{
     max-width: 300px;
 }
 
-section.resolvendo-questoes a:hover{
-    text-decoration: underline;
-}
-
 section.resolvendo-questoes form#navegation-bar button{
     background: none;
     border: none;

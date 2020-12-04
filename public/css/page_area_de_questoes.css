@@ -98,17 +98,11 @@ section.area-de-questoes a{
     color: black;
 	font-style: italic;
 }
-section.area-de-questoes a:hover{
-    text-decoration: underline;
-}
 
 section.area-de-questoes #paginacao-inicio{
     display: block; 
     text-align: center;
     margin-bottom: 20px; 
-}
-section.area-de-questoes #paginacao-inicio:hover{
-    text-decoration: underline;
 }
 
 section.area-de-questoes div.resultados p.total_resultados{
