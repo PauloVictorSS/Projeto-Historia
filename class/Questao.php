@@ -92,6 +92,20 @@
             self::$materia = "";
         }
 
+        public static function acertQuestion($id_questao){
+
+            $stmt = Mysql::getConnect()->prepare("SELECT * from resolucao where resolucao.id_questao = $id_questao");
+            $stmt->execute();
+            $qtdResp = count($stmt->fetchAll());
+
+            $stmt2 = Mysql::getConnect()->prepare("SELECT * from resolucao where resolucao.id_questao = $id_questao and resolucao.acertou = 's'");
+            $stmt2->execute();
+            $acertResp = count($stmt2->fetchAll());
+            
+            return [$acertResp, $qtdResp];
+
+        }
+
     }
 
 ?>
