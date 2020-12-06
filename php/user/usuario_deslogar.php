@@ -10,10 +10,10 @@
 	include_once("../../include/conexao_session.php");
 
 	unset(
-		$_SESSION['usuario'],
 		$_SESSION['senha'],
 		$_SESSION['status_login'],
-		$_SESSION['login']
+		$_SESSION['login'],
+		$_SESSION['id_usuario']
 	);
 
 	$url = INCLUDE_PATH.'pages/login.php';

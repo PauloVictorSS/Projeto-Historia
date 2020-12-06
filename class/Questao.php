@@ -40,6 +40,14 @@
             return $sql->rowCount();
         }
 
+        public static function selectQuestion($id){
+
+            $sql = MySql::getConnect()->prepare("SELECT vestibular.`descricao` AS `vestibular`, questoes.`ano`, questoes.`especial`, questoes.`imagem`, sub_tema.`descricao` AS `subtema`, questoes.`enunciado`, questoes.`alternativa_a`, questoes.`alternativa_b`, questoes.`alternativa_c`, questoes.`alternativa_d`,questoes.`alternativa_e`, questoes.`alternativa_certa`, questoes.`explicacao`, questoes.`pergunta`, questoes.`id`, questoes.`tipo`, questoes.`id_materia` FROM questoes, materia, vestibular, sub_tema WHERE questoes.`id_vestibular` = vestibular.`id` and questoes.`id_sub_tema` = sub_tema.`id` and questoes.`id_materia` = materia.`id` AND questoes.id = $id");
+            
+			$sql->execute();
+			return $sql->fetchAll();
+        }
+
         public static function filterQuestions($tema, $ano, $partenome, $vestibular, $materia){
             self::$tema = $tema;
             self::$ano = $ano;
