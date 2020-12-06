@@ -1,6 +1,6 @@
 <?php
 
-    $themes = Questao::selectThemes($materia);
+    $themes = Questao::selectThemes();
     $exams = Questao::selectExams();
 
     if(isset($_POST["action"])){
@@ -99,12 +99,15 @@
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
                 <?php
+                    $id_materia = $_SESSION['materia_prof'];
                     foreach ($themes as $key => $value) { 
+                        if($value[$id_materia] == $id_materia){
                 ?>
-                    
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
-
-                <?php } ?>
+                <?php 
+                        }
+                    } 
+                ?>
             </select>
 
             <select name="vest" required>
@@ -170,11 +173,15 @@
                 <option value="">Tema da Questão</option>
                 <?php
                     foreach ($themes as $key => $value) { 
+                        if($value[$id_materia] == $id_materia){
                 ?>
                     
                     <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
 
-                <?php } ?>
+                <?php 
+                        }
+                    } 
+                ?>
             </select>
 
             <select name="vest" required>

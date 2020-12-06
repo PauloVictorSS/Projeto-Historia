@@ -14,9 +14,10 @@
         
     }
 
-    $themes = Questao::selectThemes($materia);
+    $themes = Questao::selectThemes();
     $exams = Questao::selectExams();
 
+    $id_materia = $_SESSION['materia_prof'];
 
 ?>
 
@@ -59,15 +60,17 @@
 
         <h2>Temas já cadastrados</h2>
         <div class="box-category">
-            
 
             <?php
-                foreach ($themes as $key => $value) { 
-            ?>
-                    
-                <p><?php echo $value["descricao"]; ?></p>
 
-            <?php } ?>
+                foreach ($themes as $key => $value) { 
+                    if($value[$id_materia] == $_SESSION['materia_prof']){
+            ?>       
+                <p><?php echo $value["descricao"]; ?></p>
+            <?php 
+                    }
+                } 
+            ?>
             
         </div>
         <div class="box-category">
