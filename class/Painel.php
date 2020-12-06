@@ -22,16 +22,16 @@
             return $sql->rowCount();
         }
 
-        public static function addTema($name, $materia){
-            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, ?)");
-            $sql->execute(array($name, $materia));
+        public static function deleteVestibular($id){
+            $sql = MySql::getConnect()->prepare("DELETE FROM vestibular WHERE id = ?");
+            $sql->execute(array($id));
 
             return $sql->rowCount();
         }
 
-        public static function deleteVestibular($id){
-            $sql = MySql::getConnect()->prepare("DELETE FROM vestibular WHERE id = ?");
-            $sql->execute(array($id));
+        public static function addTema($name, $materia){
+            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, ?)");
+            $sql->execute(array($name, $materia));
 
             return $sql->rowCount();
         }
