@@ -3,29 +3,20 @@
 	$temas = Questao::selectThemes();
 	$materias = Adm::getSubject();
 
-	if(!empty($_POST['tema']))
-		$_SESSION['tema'] = $_POST['tema'];
+	$filtros = ["tema", "ano", "partenome", "vestibular", "qtd_quest", "materia"];
 
-	if(!empty($_POST['ano']))
-		$_SESSION['ano'] = $_POST['ano'];
+	foreach ($filtros as $campo) {
+		
+		if(!empty($_POST[$campo]))
+			$_SESSION[$campo] = $_POST[$campo];
+	}
+	
+	if(isset($_POST['btn-reset-filtro'])){
 
-	if(!empty($_POST['partenome']))
-		$_SESSION['partenome'] = $_POST['partenome'];
-
-	if(!empty($_POST['vestibular']))
-		$_SESSION['vestibular'] = $_POST['vestibular'];
-
-	if(!empty($_POST['qtd_quest']))
-		$_SESSION['qtd_quest'] = $_POST['qtd_quest'];
-
-	if(!empty($_POST['materia']))
-		$_SESSION['materia'] = $_POST['materia'];
-
-	$tema_filtro = $_SESSION['tema'];
-	$ano_filtro = $_SESSION['ano'];
-	$enunciado_filtro = $_SESSION['partenome'];
-	$vestibular_filtro = $_SESSION['vestibular'];
-	$materia_filtro = $_SESSION['materia'];
+		foreach ($filtros as $campo) {
+			$_SESSION[$campo] = "";
+		}
+	}
 
 	Questao::filterQuestions($_SESSION['tema'], $_SESSION['ano'], $_SESSION['partenome'], $_SESSION['vestibular'], $_SESSION['materia']);	
 
@@ -94,97 +85,85 @@
 				</div>
 			</form>
 
-			<form method="POST" action="php/question_area/reset_filtro.php">
+			<form method="POST" action="<?php echo INCLUDE_PATH; ?>area_de_questoes">
 				<button type="submit" value="1" name="btn-reset-filtro">Remover Filtros</button>
 			</form>
 
-			<div class="clear"></div>
 			<div class="center resultados">
-
-			<?php
-				if (!empty($_SESSION['qtd_quest'])) 
-					$total_reg = $_SESSION['qtd_quest'];
-				else
-					$total_reg = 4;
-
-				if (!$pagina)
-					$pc = 1;
-				else
-					$pc = $pagina;
-
-				$inicio = $pc - 1;
-				$inicio = $inicio * $total_reg;
-
-				$resultadoFiltro = Questao::resultFilter($inicio, $total_reg);
-				$totalResultadoFiltro = Questao::totalResultFilter();
-
-				$tr = count($totalResultadoFiltro);
-
-				echo "<p class='total_resultados right'>$tr resultados encontrados</p><div class='clear'></div>";
-
-				$tp = $tr / $total_reg;
-
-				if(count($resultadoFiltro) > 0){
-					foreach ($resultadoFiltro as $key => $questao) {
-
-						$vestibular = $questao['vestibular'];
-						$ano = $questao['ano'];
-						$imagem = $questao['imagem'];
-						$enunciado = $questao['enunciado'];
-						$especial = $questao['especial'];
-						$pergunta = $questao['pergunta'];
-						$id = $questao['id'];
-								
-						echo "<strong>($vestibular $ano)</strong> $enunciado";
-						
-						if(!empty($imagem)){
-							echo "<br><br>";
-							echo '<img src="data:image/jpeg;base64,'.base64_encode( $imagem ).'"/>';
-							echo "<div class='clear'></div>";
-						}
-
-						if(!empty($especial))
-							echo "<br><br>$especial<br>";
-						if(!empty($pergunta))
-							echo "<br><b>$pergunta</b>";	
-
-						echo "<p><br><b><i>(...)</i></b></p>";
-
-						$resolucao = INCLUDE_PATH.'resolucao_de_questoes';
-						$analise = INCLUDE_PATH_PAINEL.'Analise-Questao';
-
-						if($explode[0] == 'area_de_questoes') 
-							echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
-						else
-							echo "<form class='right entrar_questao' action='$analise' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Dados da questão <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
-					}
-							
-					$anterior = $pc - 1;
-					$proximo = $pc + 1;					
-				}
-				else
-					echo "<p class='mensagem-red'>Nenhum resultado encontrado</p>";
-			?>
-			<?php	
-				if(count($resultadoFiltro) > 0){
-
-					if($anterior > 1)
-						$anterior = INCLUDE_PATH.'area_de_questoes-'.$anterior;
+				<?php
+					if (!empty($_SESSION['qtd_quest'])) 
+						$total_reg = $_SESSION['qtd_quest'];
 					else
-						$anterior = INCLUDE_PATH.'area_de_questoes';
-			
-					$proximo = 	INCLUDE_PATH.'area_de_questoes-'.$proximo;
-					$inicio = 	INCLUDE_PATH.'area_de_questoes';
-			
-					if ($pc > 1)
-						echo "<a href='$anterior' id='paginacao-anterior' class='left link'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
+						$total_reg = 4;
+
+					if (!$pagina)
+						$pc = 1;
+					else
+						$pc = $pagina;
+
+					$inicio = $pc - 1;
+					$inicio = $inicio * $total_reg;
+
+					$resultadoFiltro = Questao::resultFilter($inicio, $total_reg);
+					$totalResultadoFiltro = Questao::totalResultFilter();
+
+					$tr = count($totalResultadoFiltro);
+
+					echo "<p class='total_resultados right'>$tr resultados encontrados</p><div class='clear'></div>";
+
+					$tp = $tr / $total_reg;
+
+					if(count($resultadoFiltro) > 0){
+						foreach ($resultadoFiltro as $key => $questao) {
+
+							$vestibular = $questao['vestibular'];
+							$ano = $questao['ano'];
+							$imagem = $questao['imagem'];
+							$enunciado = $questao['enunciado'];
+							$especial = $questao['especial'];
+							$pergunta = $questao['pergunta'];
+							$id = $questao['id'];
+									
+							echo "<strong>($vestibular $ano)</strong> $enunciado";
 							
-					if ($pc < $tp)
-						echo "<a href='$proximo' id='paginacao-proxima' class='right link'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
+							if(!empty($imagem)){
+								echo "<br><br>";
+								echo '<img src="data:image/jpeg;base64,'.base64_encode( $imagem ).'"/>';
+								echo "<div class='clear'></div>";
+							}
+
+							if(!empty($especial))
+								echo "<br><br>$especial<br>";
+							if(!empty($pergunta))
+								echo "<br><b>$pergunta</b>";	
+
+							echo "<p><br><b><i>(...)</i></b></p>";
+
+							$resolucao = INCLUDE_PATH.'resolucao_de_questoes';
+
+							echo "<form class='right entrar_questao' action='$resolucao' method='POST'><button type='submit' value='$id' class='btn-resolver-questao' name='id_questao'><b>Responder <i class='fa fa-arrow-right' aria-hidden='true'></i></b></button></form><div class='clear'></div><hr>";
+						}
+								
+						$anterior = $pc - 1;
+						$proximo = $pc + 1;	
+						
+						if($anterior > 1)
+							$anterior = INCLUDE_PATH.'area_de_questoes-'.$anterior;
+						else
+							$anterior = INCLUDE_PATH.'area_de_questoes';
 				
-					echo "<a href='$inicio' id='paginacao-inicio' class='link'>INÍCIO</a><div class='clear'></div>";
-				}
-			?>
+						$proximo = 	INCLUDE_PATH.'area_de_questoes-'.$proximo;
+						$inicio = 	INCLUDE_PATH.'area_de_questoes';
+				
+						if ($pc > 1)
+							echo "<a href='$anterior' id='paginacao-anterior' class='left link'><i class='fa fa-arrow-left' aria-hidden='true'></i>Anterior</a><div class='clear'></div>";
+								
+						if ($pc < $tp)
+							echo "<a href='$proximo' id='paginacao-proxima' class='right link'>Próxima <i class='fa fa-arrow-right' aria-hidden='true'></i></a><div class='clear'></div>";
+					
+						echo "<a href='$inicio' id='paginacao-inicio' class='link'>INÍCIO</a><div class='clear'></div>";
+					}
+				?>
 			</div>
 		</div>
 		<div class="clear"></div>
