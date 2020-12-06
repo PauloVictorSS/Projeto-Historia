@@ -28,8 +28,8 @@
                 <input type="password" name="senha" class="informacoes" maxlength="15" placeholder="Senha" required>
 
                 <br><br>
-                <a href="<?php echo INCLUDE_PATH; ?>cadastrar">Não fez o cadastro ainda?</a>
-                <a href="<?php echo INCLUDE_PATH; ?>">Voltar para a home</a>
+                <a href="<?php echo INCLUDE_PATH; ?>cadastrar" class="link">Não fez o cadastro ainda?</a>
+                <a href="<?php echo INCLUDE_PATH; ?>" class="link">Voltar para a home</a>
 
                 <button type="submit" name="submit" value="Entrar">Entrar</button>
             </form>
