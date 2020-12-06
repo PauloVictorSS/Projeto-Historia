@@ -1,6 +1,5 @@
 <?php
 
-
     class MySql{
         private static $pdo;
 
@@ -18,6 +17,5 @@
 			return self::$pdo;
         }
     }
-
 
 ?>

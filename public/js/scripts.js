@@ -21,7 +21,5 @@ $(function(){
             icone.removeClass('fa-times');
             icone.addClass('fa-bars');
         }
-
     })
-
 })
