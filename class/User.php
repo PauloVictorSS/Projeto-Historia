@@ -9,6 +9,14 @@
 
             return count($stmt->fetchAll());
         }
+
+        public static function saveResolutionQuest($id_usuario, $id_questao, $resp_dada, $acertou, $id_materia){
+
+            $stmt = Mysql::getConnect()->prepare("insert into resolucao (id_usuario, id_questao, resp_escolh, acertou, id_materia) values ($id_usuario, $id_questao, '$resp_dada', '$acertou', $id_materia)");
+            $stmt->execute();
+
+            return $stmt->rowCount();
+        }
     }
 
 
