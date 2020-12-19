@@ -55,9 +55,17 @@
             $senhacod = hash("sha512", $senha);
 
             $stmt = MySql::getConnect()->prepare("INSERT INTO usuarios (nome, senha, email, aniversario, id_rede, id_escolaridade) values(?, ?, ?, ?, ?, ?)");
-            $stmt->execute(array($nome, $senhacod, $email, $aniver, $escolaridade, $rede));
 
+            $stmt->execute(array($nome, $senhacod, $email, $aniver, $escolaridade, $rede));
             return $stmt->rowCount();
+        }
+
+        public static function resolvedQuestionTheme($id_materia, $id_user){
+
+            $stmt = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(questoes.id_sub_tema) AS 'qtd' FROM resolucao, questoes, sub_tema WHERE id_usuario = ? AND resolucao.id_questao = questoes.id AND questoes.id_sub_tema = sub_tema.id AND resolucao.id_materia = ? GROUP BY questoes.id_sub_tema");
+
+            $stmt->execute(array($id_user, $id_materia));
+            return $stmt->fetchAll();
         }
 
         public static function checksQuestionResolved($id_usuario, $id_questao){
