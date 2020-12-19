@@ -1,6 +1,5 @@
 <?php 
     include_once("../config.php");
-    include_once("../include/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,50 @@
     <section class="login">
         <div class="box">
 
-            <?php  include_once("../php/user/usuario_logando.php");  ?>
+            <?php  
+
+                if(!empty($_POST['submit'])){
+
+                    $infs = User::login($_POST['login'], $_POST['senha']);
+
+                    $infsUser = $infs[0];
+                    $infsAdm = $infs[1];
+
+                    if(!empty($infsUser) or !empty($infsAdm)){
+
+                        if(!empty($infsUser) and empty($infsAdm)){
+
+                            $_SESSION['login'] = $_POST['login'];
+                            $_SESSION['status_login'] = 1;
+
+                            foreach ($infsUser as $key => $aluno){
+
+                                $_SESSION['id_usuario'] = $aluno['id'];
+
+                                $url = INCLUDE_PATH.'pages/area_do_usuario.php';
+                                header("location: $url");
+                            }
+                        }
+                        elseif(empty($infsUser) and !empty($infsAdm)){
+
+                            $_SESSION['login_admin'] = $_POST['login'];
+                            $_SESSION['status_login'] = 2;
+
+                            foreach ($infsAdm as $key => $prof){
+
+                                $_SESSION['type_admin'] = $prof['type'];
+                                $_SESSION['nome_admin'] = $prof['nome'];
+                                $_SESSION['materia_prof'] = $prof['id_materia'];
+                                $_SESSION['id'] = $prof['id'];
+
+                                header("location: ".INCLUDE_PATH_PAINEL);
+                            }
+                        }
+                    }
+                    else
+                        echo "<p>Usuário ou Senha incorretos!</p>";
+                }
+            ?>
 
             <form method="POST" action="<?php echo INCLUDE_PATH; ?>pages/login.php">
                 <h1>Fazer login</h1>
