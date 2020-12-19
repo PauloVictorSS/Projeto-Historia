@@ -6,7 +6,7 @@
 
             session_destroy();
 
-            header("location: ".INCLUDE_PATH."php/user/usuario_deslogar.php");
+            header("location: ".INCLUDE_PATH."php/deslogar.php");
         }
 
         public static function registeredUsers(){

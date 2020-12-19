@@ -61,7 +61,7 @@
             </div>
             <div class="links">
                 <a href="<?php echo INCLUDE_PATH ?>" class="left link"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-                <a href="../php/user/usuario_deslogar.php" id="sair" class="right link">Deslogar <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a href="../php/deslogar.php" id="sair" class="right link">Deslogar <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 <div class="clear"></div>
             </div>
         </div>
@@ -89,8 +89,7 @@
                                         echo "<p class='temas'><b>".$tema['descricao'].":</b> ".$tema['qtd']."</p>";
                                     
                                     echo "</div>";
-                                }else
-                                    echo"<div class='temas_p_materia'><h3>Opa, você ainda não resolveu nenhuma questão!</h3></div>";
+                                }
                             }
                         ?>
                         <br><br>
