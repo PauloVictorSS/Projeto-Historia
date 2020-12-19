@@ -12,6 +12,14 @@
             $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE BINARY login = ? AND BINARY senha = ?");
             $adm->execute(array($login, $senhacod));
 
+        public static function checkEmail($email){
+
+            $aluno = Mysql::getConnect()->prepare("SELECT * FROM usuarios WHERE email = ?");
+            $aluno->execute(array($email));
+            
+            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE email = ?");
+            $adm->execute(array($email));
+
             return array($aluno->fetchAll(), $adm->fetchAll());
         }
 
