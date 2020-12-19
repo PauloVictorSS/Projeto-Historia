@@ -2,6 +2,35 @@
 
     class User{
 
+        public static function login($login, $senha){
+
+            $senhacod = hash("sha512", $senha);
+
+            $aluno = Mysql::getConnect()->prepare("SELECT login, senha, id FROM usuarios WHERE BINARY login = ? AND BINARY senha = ?");
+            $aluno->execute(array($login, $senhacod));
+            
+            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE BINARY login = ? AND BINARY senha = ?");
+            $adm->execute(array($login, $senhacod));
+
+            return array($aluno->fetchAll(), $adm->fetchAll());
+        }
+
+        public static function selectTypeNetwork(){
+
+            $stmt = MySql::getConnect()->prepare("SELECT * FROM `rede`");
+
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
+        public static function selectSchooling(){
+
+            $stmt = MySql::getConnect()->prepare("SELECT * FROM `escolaridade`");
+
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
         public static function checksQuestionResolved($id_usuario, $id_questao){
 
             $stmt = Mysql::getConnect()->prepare("select * from resolucao where id_usuario = $id_usuario and id_questao = $id_questao");
@@ -16,19 +45,6 @@
             $stmt->execute();
 
             return $stmt->rowCount();
-        }
-
-        public static function login($login, $senha){
-
-            $senhacod = hash("sha512", $senha);
-
-            $aluno = Mysql::getConnect()->prepare("SELECT login, senha, id FROM usuarios WHERE BINARY login = ? AND BINARY senha = ?");
-            $aluno->execute(array($login, $senhacod));
-            
-            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE BINARY login = ? AND BINARY senha = ?");
-            $adm->execute(array($login, $senhacod));
-
-            return array($aluno->fetchAll(), $adm->fetchAll());
         }
     }
 
