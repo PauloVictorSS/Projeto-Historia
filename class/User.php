@@ -2,15 +2,18 @@
 
     class User{
 
-        public static function login($login, $senha){
+        public static function login($email, $senha){
 
             $senhacod = hash("sha512", $senha);
 
-            $aluno = Mysql::getConnect()->prepare("SELECT login, senha, id FROM usuarios WHERE BINARY login = ? AND BINARY senha = ?");
-            $aluno->execute(array($login, $senhacod));
+            $aluno = Mysql::getConnect()->prepare("SELECT * FROM usuarios WHERE email = ? AND BINARY senha = ?");
+            $aluno->execute(array($email, $senhacod));
             
-            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE BINARY login = ? AND BINARY senha = ?");
-            $adm->execute(array($login, $senhacod));
+            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE email = ? AND BINARY senha = ?");
+            $adm->execute(array($email, $senhacod));
+
+            return array($aluno->fetchAll(), $adm->fetchAll());
+        }
 
         public static function checkEmail($email){
 
@@ -39,12 +42,12 @@
             return $stmt->fetchAll();
         }
 
-        public static function registerUsers($nome, $login, $senha, $email, $aniversario, $escolaridade, $rede){
+        public static function registerUsers($nome, $senha, $email, $aniver, $escolaridade, $rede){
 
             $senhacod = hash("sha512", $senha);
 
-            $stmt = MySql::getConnect()->prepare("INSERT into usuarios (nome, login, senha, email, aniversario, id_rede, id_escolaridade) values(?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute(array($nome, $login, $senhacod, $email, $aniversario, $escolaridade, $rede));
+            $stmt = MySql::getConnect()->prepare("INSERT INTO usuarios (nome, senha, email, aniversario, id_rede, id_escolaridade) values(?, ?, ?, ?, ?, ?)");
+            $stmt->execute(array($nome, $senhacod, $email, $aniver, $escolaridade, $rede));
 
             return $stmt->rowCount();
         }
