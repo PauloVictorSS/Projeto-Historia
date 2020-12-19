@@ -17,8 +17,6 @@
     $themes = Questao::selectThemes();
     $exams = Questao::selectExams();
 
-    $id_materia = $_SESSION['materia_prof'];
-
 ?>
 
 <div class="box-content">
@@ -63,13 +61,9 @@
 
             <?php
 
-                foreach ($themes as $key => $value) { 
-                    if($value[$id_materia] == $_SESSION['materia_prof']){
-            ?>       
-                <p><?php echo $value["descricao"]; ?></p>
-            <?php 
-                    }
-                } 
+                foreach ($themes as $key => $tema)
+                    if($tema['id_materia'] == $_SESSION['materia_prof'])
+                        echo "<p>".$tema["descricao"]."</p>";
             ?>
             
         </div>

@@ -98,16 +98,14 @@
 
             <select name="tema" required>
                 <option value="">Tema da Questão</option>
+
                 <?php
-                    $id_materia = $_SESSION['materia_prof'];
-                    foreach ($themes as $key => $value) { 
-                        if($value[$id_materia] == $id_materia){
+
+                    foreach ($themes as $key => $tema)
+                        if($tema['id_materia'] == $_SESSION['materia_prof'])
+                            echo "<option value='".$tema["id"]."'>".$tema["descricao"]."</option>";
                 ?>
-                    <option value="<?php echo $value["id"]; ?>"><?php echo $value["descricao"]; ?></option>
-                <?php 
-                        }
-                    } 
-                ?>
+
             </select>
 
             <select name="vest" required>

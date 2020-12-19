@@ -54,17 +54,12 @@
         <h2>Temas cadastrados</h2>
         <div class="box-category">       
 
-            <?php
-                $id_materia = $_SESSION['materia_prof'];
+        <?php
 
-                foreach ($themes as $key => $value) { 
-                    if($value[$id_materia] == $id_materia){    
-            ?>        
-                    <p><?php echo $value["descricao"]; ?></p>
-            <?php 
-                    }
-                } 
-            ?>
+            foreach ($themes as $key => $tema)
+                if($tema['id_materia'] == $_SESSION['materia_prof'])
+                    echo "<p>".$tema["descricao"]."</p>";
+        ?>
             
         </div>
 
