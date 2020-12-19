@@ -1,5 +1,52 @@
 <section class="cadastro">
-    <?php   include_once("php/user/cadastro_cadastrando.php");   ?>
+
+    <?php   
+    
+        $redes = User::selectTypeNetwork();
+        $escolaridades = User::selectSchooling();
+
+        if(!empty($_POST['submit'])){
+
+            $nome = $_POST['nome'];
+
+            $email = $_POST['e-mail'];
+            $conf_email = $_POST['conf_e-mail'];
+
+            $senha = $_POST['senha'];
+            $conf_senha = $_POST['conf_senha'];
+
+            $aniversario = $_POST['aniver'];
+            $escolaridade = $_POST['escolar'];
+            $rede = $_POST['rede'];
+
+            if($senha == $conf_senha and $email == $conf_email){
+
+                $infs = User::checkEmail($email);
+
+                $infsUser = $infs[0];
+                $infsAdm = $infs[1];
+                   
+                if(empty($infsUser) and empty($infsAdm)){
+
+                    $confirm = User::registerUsers($nome, $senha, $email, $aniversario, $escolaridade, $rede);
+
+                    if($confirm == 1)
+                        echo "<div class='mensagem green'><p>Cadastro feito com sucesso!</p></div>";
+                    else
+                        echo "<div class='mensagem red'>Houve algum erro em seu cadastro, contate-nos</div>";
+                }
+                else
+                    echo "<div class='mensagem red'><p>Já existe um usuário com essse e-mail</p></div>";
+            }else{
+
+                if($email != $conf_email)
+                    echo "<div class='mensagem red'>Os campos 'E-mail' e 'Confirmar E-mail' devem ser iguais</div>";
+                if($senha != $conf_senha)
+                    echo "<div class='mensagem red'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</div>";
+            }
+        }
+    ?>
+
     <div class="box">
         <div class="center">
             <h1>Crie sua conta</h1>
@@ -32,21 +79,29 @@
                     <label for="escolar">Sua escolaridade</label><span> *</span>
                     <select id="escolar" name="escolar" required>
                         <option value="">Escolaridade</option>
-                        <?php  include_once("php/user/cadastro_escolaridade.php")?>
+                        <?php  
+
+                            foreach ($escolaridades as $key => $escolaridade)
+                                echo"<option value='".$escolaridade['id']."'>".$escolaridade['descricao']."</option>";
+                        ?>
                     </select>
                 </div>
                 <div class="text-box">
                     <label for="rede">Rede da sua escola</label><span> *</span>
                     <select id="rede" name="rede" required>
                         <option value="">Rede</option>
-                        <?php  include_once("php/user/cadastro_rede.php")?>
+                        <?php  
+
+                            foreach ($redes as $key => $rede)
+                                echo"<option value='".$rede['id']."'>".$rede['descricao']."</option>";
+                        ?>
                     </select>
                 </div>
                 
                 <br>
                 <a href="<?php echo INCLUDE_PATH; ?>pages/login.php" class="link">Já tem o seu cadastro?</a>
 
-                <button type="submit" value="Cadastrar">Cadastrar</button>
+                <button type="submit" name="submit" value="Cadastrar">Cadastrar</button>
             </form>
         </div>
     </div>
