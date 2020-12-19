@@ -26,6 +26,14 @@
             return array($aluno->fetchAll(), $adm->fetchAll());
         }
 
+        public static function getUserInfs($id){
+
+            $user = MySql::getConnect()->prepare("SELECT usuarios.nome, usuarios.email, usuarios.aniversario, rede.descricao, escolaridade.descricao FROM usuarios, rede, escolaridade WHERE usuarios.id_rede = rede.id AND usuarios.id_escolaridade = escolaridade.id AND usuarios.id = ?");
+            $user->execute(array($id));
+
+            return $user->fetchAll();
+        }
+
         public static function selectTypeNetwork(){
 
             $stmt = MySql::getConnect()->prepare("SELECT * FROM `rede`");
