@@ -52,12 +52,16 @@
             <h1>Crie sua conta</h1>
             <form action="<?php echo INCLUDE_PATH; ?>cadastrar" method="POST">
                 <div class="text-box">
-                    <label for="nome">Nome Completo</label><span> *</span>
-                    <input type="text" name="nome" id="nome" class="informacoes" required>
+                    <label for="nome">Nome</label><span> *</span>
+                    <input type="text" name="nome" id="nome" class="informacoes" placeholder="Nome" required>
                 </div>
                 <div class="text-box">
-                    <label for="login">Usuário</label><span> *</span>
-                    <input type="text" name="login" id="login" class="informacoes" maxlength="20" required>
+                    <label for="e-mail">E-mail</label><span> *</span>
+                    <input type="e-mail" name="e-mail" id="e-mail" class="informacoes" placeholder="E-mail" required>
+                </div>
+                <div class="text-box">
+                    <label for="conf_e-mail">Confirmar E-mail</label><span> *</span>
+                    <input type="e-mail" name="conf_e-mail" id="conf_e-mail" class="informacoes" placeholder="Confirme seu E-mail" required>
                 </div>
                 <div class="text-box">
                     <label for="senha">Senha</label><span> *</span>
@@ -65,11 +69,7 @@
                 </div>
                 <div class="text-box">
                     <label for="conf_senha">Confirmar senha</label><span> *</span>
-                    <input type="password" name="conf_senha" id="conf_senha" class="informacoes" placeholder="Confirmar Senha" maxlength="15" required>
-                </div>
-                <div class="text-box">
-                    <label for="e-mail">E-mail</label><span> *</span>
-                    <input type="e-mail" name="e-mail" id="e-mail" class="informacoes" placeholder="E-mail" required>
+                    <input type="password" name="conf_senha" id="conf_senha" class="informacoes" placeholder="Confirme sua Senha" maxlength="15" required>
                 </div>
                 <div class="text-box">
                     <label for="nasc">Data de nascimento</label><span> *</span>
