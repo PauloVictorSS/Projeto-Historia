@@ -4,11 +4,10 @@
 
         public static function getAdms(){
 
-            $sql = MySql::getConnect()->prepare("SELECT `admin.usuarios`.`login`, `admin.usuarios`.`id`, `admin.usuarios`.`nome`, `materia`.`nome` as 'materia', `admin.usuarios`.`type` FROM `admin.usuarios`, `materia` where `admin.usuarios`.`id_materia` = `materia`.`id`");
+            $sql = MySql::getConnect()->prepare("SELECT `admin.usuarios`.`email`, `admin.usuarios`.`id`, `admin.usuarios`.`nome`, `materia`.`nome` as 'materia', `admin.usuarios`.`type` FROM `admin.usuarios`, `materia` where `admin.usuarios`.`id_materia` = `materia`.`id`");
 
             $sql->execute();
             return $sql->fetchAll();
-
         }
         
         public static function getOffice($type){
@@ -19,7 +18,6 @@
             ];
 
             return $cargos[$type];
-
         }
 
         public static function getSubject(){
@@ -29,9 +27,9 @@
             return $sql->fetchAll();
         }
 
-        public static function addAdms($name, $login, $pass, $id_materia){
+        public static function addAdms($name, $email, $pass, $id_materia){
             $sql = MySql::getConnect()->prepare("INSERT  INTO `admin.usuarios` VALUES (null, ?, ?, 1, ?, ?)");
-            $sql->execute(array($login, hash("sha512", $pass), $name, $id_materia));
+            $sql->execute(array($email, hash("sha512", $pass), $name, $id_materia));
 
             return $sql->rowCount();
         }
