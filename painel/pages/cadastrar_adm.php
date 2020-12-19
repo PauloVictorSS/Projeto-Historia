@@ -1,43 +1,46 @@
 <?php
-    if(isset($_POST["action"])){
+
+    if(isset($_POST["cadastrar"])){
 
         $nome = $_POST["nome"];
-        $login = $_POST["login"];
-        $pass = $_POST["pass"];
-        $conf_pass = $_POST["conf_pass"];
         $id_materia = $_POST["materia"];
 
+        $email = $_POST["email"];
+        $conf_email = $_POST["conf_email"];
+
+        $pass = $_POST["pass"];
+        $conf_pass = $_POST["conf_pass"];
+        
         $cont = 0;
 
-        if($pass == $conf_pass){
+        if($pass == $conf_pass and $email == $conf_email){
 
-            $adms = Adm::getAdms();
+            $infs = User::checkEmail($email);
 
-            foreach ($adms as $value) {
-                
-                if($value["login"] == $login){
-                    $cont = 1;
-                    break;
-                }
-            }
+            $infsUser = $infs[0];
+            $infsAdm = $infs[1];
+               
+            if(empty($infsUser) and empty($infsAdm)){
 
-            if($cont == 0){
-                $result = Adm::addAdms($nome, $login, $pass, $id_materia);
+                $confirm = Adm::addAdms($nome, $email, $pass, $id_materia);
 
-                if($result == 1)
+                if($confirm == 1)
                     echo "<div class='mensagem green'>Professor cadastrado com sucesso</div>";
                 else
                     echo "<div class='mensagem red'>Algo deu errado no cadastro!</div>";
             }
             else
-                echo "<div class='mensagem red'>Já exsite um professor com esse login, tente outro</div>";
-
+                echo "<div class='mensagem red'>Já existe um usuário com esse e-mail, tente outro</div>";
         }
-        else
-            echo "<div class='mensagem red'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais!</div>";
-    }
+        else{
 
-    if(isset($_POST["prof"])){
+            if($email != $conf_email)
+                echo "<div class='mensagem red'>Os campos 'E-mail' e 'Confirmar E-mail' devem ser iguais</div>";
+            if($pass != $conf_pass)
+                echo "<div class='mensagem red'>Os campos 'Senha' e 'Confirmar Senha' devem ser iguais</div>";
+        }    
+    }
+    elseif(isset($_POST["prof"])){
 
         $result = Adm::deleteAdms($_POST["prof"]);
 
@@ -46,8 +49,7 @@
         else
             echo "<div class='mensagem red'>Algo deu errado na deleção!</div>";
     }
-
-    if(isset($_POST["button-materia"])){
+    elseif(isset($_POST["button-materia"])){
 
         $result = Adm::addMateria($_POST["name_materia"]);
 
@@ -94,7 +96,7 @@
             <table>
                 <tr>
                     <th>Nome</th>
-                    <th>Login</th>
+                    <th>E-mail</th>
                     <th>Matéria</th>
                     <th></th>
                 </tr>
@@ -103,7 +105,7 @@
             ?>
                 <tr>        
                     <td><?php echo $value["nome"]; ?></td>
-                    <td><?php echo $value["login"]; ?></td>
+                    <td><?php echo $value["email"]; ?></td>
                     <td><?php echo $value["materia"]; ?></td>
 
                     <td>
@@ -129,25 +131,23 @@
             <h2>Cadastrar um Sub Administrador</h2>
 
             <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="login" placeholder="Login" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="email" name="conf_email" placeholder="Confirme o E-mail" required>
             <input type="password" name="pass" placeholder="Senha" required>
-            <input type="password" name="conf_pass" placeholder="Confirmar a senha" required>
+            <input type="password" name="conf_pass" placeholder="Confirme a senha" required>
             <select name="materia" required>
                 <?php
 
                     foreach ($materias as $materia) {
                         echo"<option value='".$materia['id']."'>".$materia['nome']."</option>";
                     }
-                
                 ?>
             </select>
-
         </div>
 
         <div class="buttons">
             <p>* Preenchimento Obrigatório</p>
-            <button type="submit" value="0"  name="action" form="form-cadastrar">Adicionar</button>
+            <button type="submit" value="0"  name="cadastrar" form="form-cadastrar">Adicionar</button>
         </div>
-
     </form>
 </div>
