@@ -6,8 +6,7 @@
 	estava legado
 */
 
-	include_once("../../config.php");
-	include_once("../../include/conexao_session.php");
+	include_once("../config.php");
 
 	unset(
 		$_SESSION['senha'],
