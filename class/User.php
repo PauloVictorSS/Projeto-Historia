@@ -31,6 +31,16 @@
             return $stmt->fetchAll();
         }
 
+        public static function registerUsers($nome, $login, $senha, $email, $aniversario, $escolaridade, $rede){
+
+            $senhacod = hash("sha512", $senha);
+
+            $stmt = MySql::getConnect()->prepare("INSERT into usuarios (nome, login, senha, email, aniversario, id_rede, id_escolaridade) values(?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute(array($nome, $login, $senhacod, $email, $aniversario, $escolaridade, $rede));
+
+            return $stmt->rowCount();
+        }
+
         public static function checksQuestionResolved($id_usuario, $id_questao){
 
             $stmt = Mysql::getConnect()->prepare("select * from resolucao where id_usuario = $id_usuario and id_questao = $id_questao");
