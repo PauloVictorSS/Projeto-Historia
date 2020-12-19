@@ -1,6 +1,5 @@
 <?php 
     include_once("config.php");
-    include_once("include/start_conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -127,8 +126,6 @@
         </div>
         <div class="clear"></div>
     </footer>
-
-    <?php 	include_once("include/close_conexao.php");  ?>
 
     <script src="<?php echo INCLUDE_PATH; ?>public/js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH; ?>public/js/scripts.js"></script>
