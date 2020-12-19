@@ -6,7 +6,7 @@
 		Painel::loggout();
     }
     
-    if(!isset($_SESSION['login_admin'])){
+    if(!isset($_SESSION['id'])){
         header("Location:".INCLUDE_PATH);
     }
 

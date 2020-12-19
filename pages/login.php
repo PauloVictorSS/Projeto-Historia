@@ -23,7 +23,7 @@
 
                 if(!empty($_POST['submit'])){
 
-                    $infs = User::login($_POST['login'], $_POST['senha']);
+                    $infs = User::login($_POST['e-mail'], $_POST['senha']);
 
                     $infsUser = $infs[0];
                     $infsAdm = $infs[1];
@@ -32,7 +32,6 @@
 
                         if(!empty($infsUser) and empty($infsAdm)){
 
-                            $_SESSION['login'] = $_POST['login'];
                             $_SESSION['status_login'] = 1;
 
                             foreach ($infsUser as $key => $aluno){
@@ -45,7 +44,6 @@
                         }
                         elseif(empty($infsUser) and !empty($infsAdm)){
 
-                            $_SESSION['login_admin'] = $_POST['login'];
                             $_SESSION['status_login'] = 2;
 
                             foreach ($infsAdm as $key => $prof){
@@ -60,13 +58,13 @@
                         }
                     }
                     else
-                        echo "<p>Usuário ou Senha incorretos!</p>";
+                        echo "<p>E-mail ou Senha incorretos!</p>";
                 }
             ?>
 
             <form method="POST" action="<?php echo INCLUDE_PATH; ?>pages/login.php">
                 <h1>Fazer login</h1>
-                <input type="text" name="login" class="informacoes" maxlength="20" placeholder="Usuário" required>
+                <input type="e-mail" name="e-mail" id="e-mail" class="informacoes" placeholder="E-mail" required>
                 <input type="password" name="senha" class="informacoes" maxlength="15" placeholder="Senha" required>
 
                 <br><br>

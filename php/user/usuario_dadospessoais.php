@@ -5,9 +5,9 @@
 	na área do usuário
 */
 
-	$login = $_SESSION['login'];
+	$id = $_SESSION['id_usuario'];
 
-	$consulta = "select usuarios.nome, usuarios.email, usuarios.aniversario, rede.descricao, escolaridade.descricao from usuarios, rede, escolaridade where usuarios.id_rede = rede.id and usuarios.id_escolaridade = escolaridade.id and login = '$login'";
+	$consulta = "select usuarios.nome, usuarios.email, usuarios.aniversario, rede.descricao, escolaridade.descricao from usuarios, rede, escolaridade where usuarios.id_rede = rede.id and usuarios.id_escolaridade = escolaridade.id and usuarios.id = '$id'";
 
 	$result = mysqli_query($conexao, $consulta);
 

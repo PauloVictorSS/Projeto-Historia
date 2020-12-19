@@ -12,7 +12,6 @@
 	unset(
 		$_SESSION['senha'],
 		$_SESSION['status_login'],
-		$_SESSION['login'],
 		$_SESSION['id_usuario']
 	);
 
