@@ -17,8 +17,19 @@
 
             return $stmt->rowCount();
         }
+
+        public static function login($login, $senha){
+
+            $senhacod = hash("sha512", $senha);
+
+            $aluno = Mysql::getConnect()->prepare("SELECT login, senha, id FROM usuarios WHERE BINARY login = ? AND BINARY senha = ?");
+            $aluno->execute(array($login, $senhacod));
+            
+            $adm = Mysql::getConnect()->prepare("SELECT * FROM `admin.usuarios` WHERE BINARY login = ? AND BINARY senha = ?");
+            $adm->execute(array($login, $senhacod));
+
+            return array($aluno->fetchAll(), $adm->fetchAll());
+        }
     }
-
-
 
 ?>
