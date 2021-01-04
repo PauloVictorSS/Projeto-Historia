@@ -22,6 +22,7 @@
 
     define("INCLUDE_PATH", "http://localhost/GitHub/Projetos%20Pessoais/Projeto-Historia/");
     define("INCLUDE_PATH_PAINEL", INCLUDE_PATH."painel/");
+    define("INCLUDE_PATH_ESTUDANTE", INCLUDE_PATH."estudante/");
 
     define("HOST", "localhost");
     define("USER", "root");

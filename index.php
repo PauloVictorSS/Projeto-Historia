@@ -49,7 +49,7 @@
                         }
                         elseif($_SESSION['status_login'] == 1){
                     ?>
-                        <li><a href="<?php echo INCLUDE_PATH; ?>pages/area_do_usuario.php">Área do Usuário</a></li>
+                        <li><a href="<?php echo INCLUDE_PATH_ESTUDANTE; ?>">Área do Usuário</a></li>
                     <?php
                         }
                         else{

@@ -38,8 +38,7 @@
 
                                 $_SESSION['id_usuario'] = $aluno['id'];
 
-                                $url = INCLUDE_PATH.'pages/area_do_usuario.php';
-                                header("location: $url");
+                                header("location: ".INCLUDE_PATH_ESTUDANTE);
                             }
                         }
                         elseif(empty($infsUser) and !empty($infsAdm)){
