@@ -1,0 +1,41 @@
+section.content div.dados-questoes{
+    padding-top: 30px;
+    text-align: center;
+}
+
+div.dados-questoes div.temas_p_materia{
+    width: 100%;
+
+    margin: 15px 0 40px;
+}
+
+div.temas_p_materia h3{
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+div.temas_p_materia p.temas{
+    display: inline-block;
+    
+    padding: 10px;
+
+    border-radius: 10px;
+    text-align: center;
+
+    background-color: rgb(203, 195, 226);
+    
+    min-width: 200px;
+}
+
+div.temas_p_materia p.temas+p.temas{
+    margin-left: 10px;
+}
+
+div.dados-questoes a{
+    display: block;
+
+    margin: 0 auto;
+    padding-top: 30px;
+
+    max-width: 250px;
+}
