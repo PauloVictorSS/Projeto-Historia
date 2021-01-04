@@ -16,19 +16,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="<?php echo INCLUDE_PATH; ?>public/images/favicon.ico" type="image/x-icon">
     <link href="<?php echo INCLUDE_PATH; ?>public/css/main.css" rel="stylesheet">
-    <link href="<?php echo INCLUDE_PATH; ?>public/css/page_area_do_usuario.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH_ESTUDANTE; ?>css/main.css" rel="stylesheet">
 
     <?php
 
         //Recuperando a url selecionada
-        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+        $url = isset($_GET['url']) ? $_GET['url'] : 'questoes_feitas';
 
         //Separando a url de possíveis parâmetros
         $explode = explode("-", $url);
 
         //Importar o CSS da página caso exista
         if(file_exists('public/css/page_'.$explode[0].'.css'))
-            echo'<link href="'.INCLUDE_PATH.'public/css/page_'.$explode[0].'.css" rel="stylesheet">';
+            echo'<link href="'.INCLUDE_PATH_ESTUDANTE.'css/page_'.$explode[0].'.css" rel="stylesheet">';
     ?>
 
 </head>
@@ -70,32 +70,21 @@
         <div class="box-content">
             <div class="center">
                 <section>
-                    <h2>Quantidade de questões feitas p/ tema</h2>
-                    <div class="dados-questoes">
-                        
-                        <?php  
 
-                            $materias = Adm::getSubject();
+                <?php
 
-                            foreach ($materias as $key => $materia) {
-                                
-                                $result = User::resolvedQuestionTheme($materia['id'], $_SESSION['id_usuario']);
+                    //Verificando de há algum parâmetro na
+                    if(count($explode) > 1)
+                        $pagina =  $explode[1];
+                    else
+                        $pagina = 1;
 
-                                if(count($result) > 0){
-
-                                    echo "<div class='temas_p_materia'><h3>".$materia['nome']."</h3>";
-
-                                    foreach ($result as $key => $tema) 
-                                        echo "<p class='temas'><b>".$tema['descricao'].":</b> ".$tema['qtd']."</p>";
-                                    
-                                    echo "</div>";
-                                }
-                            }
-                        ?>
-                        <br><br>
-                        <a href="<?php echo INCLUDE_PATH;?>area_de_questoes" class="link"><h3>Ir resolver mais questões!</h3></a>
-                    </div>
-                    <div class="clear"></div>
+                    //Verificando se a url escolhida existe
+                    if(file_exists('pages/'.$explode[0].'.php'))
+                        include_once('pages/'.$explode[0].'.php');
+                    else
+                        header("Location: pages/erro404.php");
+                ?>
                 </section>
             </div>
         </div>
