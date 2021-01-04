@@ -114,6 +114,9 @@
 							echo "<p class='resposta red'>Infelizmente você errou, a alternativa correta era a letra <strong>$gabarito</strong></p>";
 							$acertou = 'n'; 
 						}
+
+						if(!empty($explicacao))
+							echo"<br><p><b>Comentário do profess@r:</b><br><br>$explicacao</p>";
 					}
 					else{
 						$resposta = 1;
@@ -129,6 +132,9 @@
 						if(!empty($gabarito))
 							echo"<strong>C)</strong> $gabarito<br>";
 					
+						if(!empty($explicacao))
+							echo"<br><p><b>Comentário do profess@r:</b><br><br>$explicacao</p>";
+
 						$acertou = 's';
 					}
 

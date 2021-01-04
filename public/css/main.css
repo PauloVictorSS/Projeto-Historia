@@ -17,6 +17,10 @@
     font: 300 105% 'Arial', sans-serif;
 }
 
+.blue{  background: #0091ea;  }
+.yellow{  background: #F4B03E;  }
+.red{  background: #E05C4E;  }
+
 *{
     margin: 0;
     padding: 0;
@@ -96,7 +100,6 @@ div.green{
 div.red{
     background: var(--color-red);
 }
-
 
 
 @media screen and (max-width: 675px){
