@@ -28,7 +28,7 @@
 
         public static function getUserInfs($id){
 
-            $user = MySql::getConnect()->prepare("SELECT usuarios.nome, usuarios.email, usuarios.aniversario, rede.descricao, escolaridade.descricao FROM usuarios, rede, escolaridade WHERE usuarios.id_rede = rede.id AND usuarios.id_escolaridade = escolaridade.id AND usuarios.id = ?");
+            $user = MySql::getConnect()->prepare("SELECT usuarios.nome, usuarios.email, usuarios.aniversario, rede.descricao, escolaridade.descricao, usuarios.id_rede, usuarios.id_escolaridade FROM usuarios, rede, escolaridade WHERE usuarios.id_rede = rede.id AND usuarios.id_escolaridade = escolaridade.id AND usuarios.id = ?");
             $user->execute(array($id));
 
             return $user->fetchAll();
@@ -54,7 +54,7 @@
 
             $senhacod = hash("sha512", $senha);
 
-            $stmt = MySql::getConnect()->prepare("INSERT INTO usuarios (nome, senha, email, aniversario, id_rede, id_escolaridade) values(?, ?, ?, ?, ?, ?)");
+            $stmt = MySql::getConnect()->prepare("INSERT INTO usuarios (nome, senha, email, aniversario, id_escolaridade, id_rede) values(?, ?, ?, ?, ?, ?)");
 
             $stmt->execute(array($nome, $senhacod, $email, $aniver, $escolaridade, $rede));
             return $stmt->rowCount();
