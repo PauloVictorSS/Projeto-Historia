@@ -1,5 +1,5 @@
 <div class="box-content">
-    <h1>Bem vindo a área do estudante</h1><br><br>
+    <h1>Bem-vind@ à área do estudante</h1><br><br>
 
     <h2>Dados pessoais</h2>
     <div class="dados blue">

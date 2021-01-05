@@ -43,9 +43,6 @@
         <div class="menu-wraper">
             <div class="box-usuario">
                 <div class="logo"><a href="<?php echo INCLUDE_PATH; ?>"><img src="<?php echo INCLUDE_PATH; ?>public/images/logo.ico"></a></div>
-                <div class="nome-usuario">
-                    <p><b>Nome: </b><?php echo $user[0][0]; ?></p>
-                </div>
                 <div class="botao-menu-mobile">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </div>
