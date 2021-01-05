@@ -5,9 +5,11 @@
     <div class="dados blue">
         <?php  
 
+            $data_aniverario = new DateTime($user[0][2]);
+
             echo "<p><b>Nome:</b> ".$user[0][0]."</p><br>";
             echo "<p><b>E-mail:</b> ".$user[0][1]."</p><br>";
-            echo "<p><b>Data de Nascimento:</b> ".$user[0][2]."</p><br>";
+            echo "<p><b>Data de Nascimento:</b> ".$data_aniverario->format("d/m/Y")."</p><br>";
             echo "<p><b>Rede:</b> ".$user[0][3]."</p><br>";
             echo "<p><b>Escolariedade:</b> ".$user[0][4]."</p>";
         ?>

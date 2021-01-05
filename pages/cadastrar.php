@@ -5,6 +5,8 @@
         $redes = User::selectTypeNetwork();
         $escolaridades = User::selectSchooling();
 
+        $ano_max = date('Y') - 7;
+
         if(!empty($_POST['submit'])){
 
             $nome = $_POST['nome'];
@@ -73,7 +75,7 @@
                 </div>
                 <div class="text-box">
                     <label for="nasc">Data de nascimento</label><span> *</span>
-                    <input type="date" name="aniver" id="nasc" class="informacoes" placeholder="dd/mm/aaaa" required>
+                    <input type="date" name="aniver" id="nasc" class="informacoes" max="<?php echo $ano_max."-".date('m')."-".date('d') ?>" required>
                 </div>
                 <div class="text-box">
                     <label for="escolar">Sua escolaridade</label><span> *</span>

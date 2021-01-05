@@ -5,6 +5,8 @@
         $redes = User::selectTypeNetwork();
         $escolaridades = User::selectSchooling();
 
+        $ano_max = date('Y') - 7;
+
         if(isset($_POST["submit"]))
             if(!empty($_POST["nome"]) or !empty($_POST["aniver"]) or !empty($_POST["escolar"]) or !empty($_POST["rede"])){
 
@@ -37,8 +39,10 @@
                     if(!empty($_POST["nome"]))
                         echo "<br>Nome: ".$_POST["nome"];
 
-                    if(!empty($_POST["aniver"]))
-                        echo "<br>Data de aniversário: ".$_POST["aniver"];
+                    if(!empty($_POST["aniver"])){
+                        $data_aniverario = new DateTime($_POST["aniver"]);
+                        echo "<br>Data de aniversário: ".$data_aniverario->format("d/m/Y");
+                    }
 
                     if(!empty($_POST["rede"]))
                         echo "<br>Rede escolar: ".$_POST["rede"];
@@ -59,14 +63,14 @@
 
         <div class="text-box">
             <label for="nome">Novo nome</label><span> *</span>
-            <input type="text" name="nome" id="nome" class="informacoes" placeholder="Nome">
+            <input type="text" name="nome" id="nome" class="informacoes" placeholder="Nome" maxlength="50">
         </div>
         <div class="text-box">
             <label for="nasc">Nova data de nascimento</label><span> *</span>
-            <input type="date" name="aniver" id="nasc" class="informacoes" placeholder="dd/mm/aaaa">
+            <input type="date" name="aniver" id="nasc" class="informacoes" max="<?php echo $ano_max."-".date('m')."-".date('d') ?>">
         </div>
         <div class="text-box">
-            <label for="escolar">Sua escolaridade</label><span> *</span>
+            <label for="escolar">Nova escolaridade</label><span> *</span>
             <select id="escolar" name="escolar">
                 <option value="">Escolaridade</option>
                 <?php  
@@ -77,7 +81,7 @@
             </select>
         </div>
         <div class="text-box">
-            <label for="rede">Rede da sua escola</label><span> *</span>
+            <label for="rede">Nova rede da sua escola</label><span> *</span>
             <select id="rede" name="rede">
                 <option value="">Rede</option>
                 <?php  
