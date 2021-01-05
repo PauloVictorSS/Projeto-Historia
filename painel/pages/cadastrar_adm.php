@@ -78,7 +78,7 @@
         <div class="box-category">
             <h2>Cadastrar uma matéria</h2>
 
-            <input type="text" name="name_materia" placeholder="Nome da matéria" required>
+            <input type="text" name="name_materia" placeholder="Nome da matéria" maxlength="20" required>
 
         </div>
         <div class="buttons">
@@ -130,11 +130,11 @@
         <div class="box-category">
             <h2>Cadastrar um Sub Administrador</h2>
 
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="email" name="conf_email" placeholder="Confirme o E-mail" required>
-            <input type="password" name="pass" placeholder="Senha" required>
-            <input type="password" name="conf_pass" placeholder="Confirme a senha" required>
+            <input type="text" name="nome" placeholder="Nome" maxlength="50" required>
+            <input type="email" name="email" placeholder="E-mail" maxlength="100" required>
+            <input type="email" name="conf_email" placeholder="Confirme o E-mail" maxlength="100" required>
+            <input type="password" name="pass" placeholder="Senha" maxlength="16" required>
+            <input type="password" name="conf_pass" placeholder="Confirme a senha" maxlength="16" required>
             <select name="materia" required>
                 <?php
 

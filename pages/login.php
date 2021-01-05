@@ -63,8 +63,8 @@
 
             <form method="POST" action="<?php echo INCLUDE_PATH; ?>pages/login.php">
                 <h1>Fazer login</h1>
-                <input type="e-mail" name="e-mail" id="e-mail" class="informacoes" placeholder="E-mail" required>
-                <input type="password" name="senha" class="informacoes" maxlength="15" placeholder="Senha" required>
+                <input type="e-mail" name="e-mail" id="e-mail" class="informacoes" placeholder="E-mail" maxlength="100" required>
+                <input type="password" name="senha" class="informacoes" maxlength="16" placeholder="Senha" required>
 
                 <br><br>
                 <a href="<?php echo INCLUDE_PATH; ?>cadastrar" class="link">Não fez o cadastro ainda?</a>

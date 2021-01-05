@@ -28,7 +28,7 @@
 		<div class="center">	
 			<h1>Área de Questões</h1>
 			<form method="POST" action="<?php echo INCLUDE_PATH; ?>area_de_questoes" id="filtro">
-				<input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="100">
+				<input type="text" name="partenome" id="pesquisar-input" placeholder="Pesquisar" maxlength="200">
 				<select name="vestibular" id="vestibular-input" class="w25">
 					<option value="">Vestibular</option>
 					<?php

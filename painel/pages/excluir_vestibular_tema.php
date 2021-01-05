@@ -65,7 +65,7 @@
 
         <div class="box-category">
 
-            <input type="text" name="vest" placeholder="Nome do Vestibular para excluílo" required>
+            <input type="text" name="vest" placeholder="Nome do Vestibular para excluílo" maxlength="30" required>
 
         </div>
 

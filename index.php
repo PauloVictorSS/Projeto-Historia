@@ -111,7 +111,7 @@
 				<form action="#footer" method="POST">
                     <p class="right">Entre em contato conosco</p>
                     <div class="clear"></div>
-					<input type="text" name="email" placeholder="E-mail" required>
+					<input type="text" name="email" placeholder="E-mail" maxlength="100" required>
 					<textarea name="sugestao" placeholder="Escreva sua mensagem" required></textarea><br>
                     <button name="contato" value="1" type="submit" class="right">Enviar</button>
                     <div class="clear"></div>

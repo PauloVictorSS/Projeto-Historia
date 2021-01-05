@@ -39,7 +39,7 @@
         <div class="box-category">
             <h2>Cadastrar um vestibular</h2>
 
-            <input type="text" name="name" placeholder="Nome do Vestibular" required>
+            <input type="text" name="name" placeholder="Nome do Vestibular" maxlength="30" required>
 
         </div>
 
@@ -70,7 +70,7 @@
         <div class="box-category">
             <h2>Cadastrar um tema</h2>
 
-            <input type="text" name="name" placeholder="Nome do tema" required>
+            <input type="text" name="name" placeholder="Nome do tema" maxlength="50" required>
 
         </div>
         <div class="buttons">
