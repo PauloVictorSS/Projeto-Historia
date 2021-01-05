@@ -60,6 +60,14 @@
             return $stmt->rowCount();
         }
 
+        public static function changePersonalData($nome, $aniver, $escolaridade, $rede){
+
+            $stmt = MySql::getConnect()->prepare("UPDATE usuarios SET nome = ?, aniversario = ?, id_rede = ?, id_escolaridade = ?");
+
+            $stmt->execute(array($nome, $aniver, $rede, $escolaridade));
+            return $stmt->rowCount();
+        }
+
         public static function resolvedQuestionTheme($id_materia, $id_user){
 
             $stmt = MySql::getConnect()->prepare("SELECT sub_tema.descricao, COUNT(questoes.id_sub_tema) AS 'qtd' FROM resolucao, questoes, sub_tema WHERE id_usuario = ? AND resolucao.id_questao = questoes.id AND questoes.id_sub_tema = sub_tema.id AND resolucao.id_materia = ? GROUP BY questoes.id_sub_tema");
