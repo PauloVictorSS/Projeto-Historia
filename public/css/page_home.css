@@ -1,4 +1,4 @@
-/** Banner CSS **/
+/* CSS da página inicial */
 
 section.banner-principal{
     width: 100%;
@@ -35,7 +35,7 @@ section.banner-principal #cadastro button{
     width: 100%;
 
     background: var(--color-alternative-button);
-    color: #fff;
+    color: var(--color-white);
     font-size: 110%;
 
     border: none;

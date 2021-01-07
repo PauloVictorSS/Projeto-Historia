@@ -28,7 +28,7 @@ div.box-usuario div.botao-menu-mobile{
 
 div.box-usuario div.botao-menu-mobile i{
     text-align: center;
-    color: white;
+    color: var(--color-white);
     font-size: 25px;
     cursor: pointer;
 }
@@ -52,7 +52,7 @@ div.box-usuario div.nome-usuario{
 }
 
 div.box-usuario div.nome-usuario p{
-	color: white;
+	color: var(--color-white);
 }
 
 div.box-usuario div.nome-usuario p b{
@@ -74,7 +74,7 @@ div.box-links div.itens a{
     text-align: center;
 	text-decoration: none;
 	font-weight: normal;
-    color: white;
+    color: var(--color-white);
     
     border-bottom: 2px solid var(--color-footer);
     
@@ -88,7 +88,7 @@ div.menu div.links{
 
 div.menu div.links a,
 div.menu div.links i{
-    color: white;
+    color: var(--color-white);
 }
 
 
@@ -110,7 +110,7 @@ section.content{
 	padding: 30px 7px;
 	margin-bottom: 25px;
 	width: 100%;
-    background-color: white;
+    background-color: var(--color-white);
 }
 
 section.content h2{
@@ -157,7 +157,7 @@ section.content h2{
     .box-content{
         margin-bottom: 25px;
         width: 100%;
-        background-color: white;
+        background-color: var(--color-white);
     }
 
     div.temas_p_materia p.temas{

@@ -1,5 +1,5 @@
 
-/** Área de Questões **/
+/* CSS da Área de Questões */
 
 section.area-de-questoes{
     background: #eee;
@@ -19,7 +19,7 @@ section.area-de-questoes form#filtro select{
     margin-top: 10px;
     padding: 5px;    
     border: none;
-    background: white;
+    background: var(--color-white);
 }
 
 section.area-de-questoes form#filtro select+select.w25{
@@ -94,7 +94,7 @@ section.area-de-questoes div.resultados form.entrar_questao button:hover{
 section.area-de-questoes a{
     margin-top: 20px;
     text-decoration: none;
-    color: black;
+    color: var(--color-black);
 	font-style: italic;
 }
 
@@ -105,7 +105,7 @@ section.area-de-questoes #paginacao-inicio{
 }
 
 section.area-de-questoes div.resultados p.total_resultados{
-	background-color: white;
+	background-color: var(--color-white);
 	padding: 5px;
     margin: 15px 0;
 }

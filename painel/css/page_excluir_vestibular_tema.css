@@ -1,13 +1,13 @@
 /* Excluir Vestibular ou Tema CSS*/
 
 div.box-content form#form-vestib div.box-category div.element{
-	border-bottom: 1px solid #c0954b;
+	border-bottom: 1px solid var(--color-classic-button);
 	margin-top: 20px;
 }
 
 div.box-content form#form-vestib div.box-category div.element button{
 	background: none;
-	color: #E05C4E;
+	color: var(--color-red);
 	cursor: pointer;
 }
 
@@ -18,7 +18,7 @@ form#form-temas div.box-category p{
 }
 
 form#form-temas div.box-category:nth-of-type(1){
-	background-color: #00426B;
+	background-color: var(--color-alternative-blue);
 	text-align: center;
 	padding: 6px;
 	margin-top: 10px;

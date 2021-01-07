@@ -1,4 +1,4 @@
-/** Menu CSS **/
+/* CSS do Menu e do Rodapé */
 
 header{
     padding: 3px 0;
@@ -9,6 +9,7 @@ header .center{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
     padding: 5px;
 }
 
@@ -37,7 +38,7 @@ nav.desktop li:hover{
 }
 
 nav.desktop a{
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
 }
 
@@ -60,13 +61,21 @@ footer div.center{
 
 footer p{
     font-weight: 400;
-    color: white;
+    color: var(--color-white);
     font-size: 85%;
 }
 
 footer p a{
-    color: white;
+    color: var(--color-white);
     font-size: 100%;
+}
+
+footer #confirm_email{
+    color: var(--color-green);
+}
+
+footer #negate_email{
+    color: var(--color-red);
 }
 
 div.palavras_chaves{
@@ -91,7 +100,7 @@ div.palavras_chaves div.bola{
 
 div.contato form{
     text-align: right;
-    color: white;
+    color: var(--color-white);
     max-width: 200px;
 }
 
@@ -123,7 +132,7 @@ div.contato form button{
     border-radius: 5px;
 
     background: none;
-    color: white;
+    color: var(--color-white);
 
     cursor: pointer;
 }
@@ -178,7 +187,7 @@ div.contato form button:hover{
 
     .botao-menu-mobile{
         cursor: pointer;
-        color: white;
+        color: var(--color-white);
         font-size: 50px;
         margin-top: 10px;
     }

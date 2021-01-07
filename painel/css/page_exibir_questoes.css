@@ -1,11 +1,11 @@
 /* Exibir Questões */
 
 div.area-de-questoes{
-    background: #ddd;
+    background: var(--color-background-basic);
 }
 
 div.area-de-questoes p.total_resultados{
-	background-color: white;
+	background-color: var(--color-white);
 	padding: 5px;
     margin: 15px 0;
 }
@@ -90,7 +90,7 @@ div.area-de-questoes div.resultados form.entrar_questao button:hover{
 
 div.area-de-questoes a{
     text-decoration: none;
-    color: black;
+    color: var(--color-black);
 	font-style: italic;
 }
 

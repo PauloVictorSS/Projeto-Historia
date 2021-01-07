@@ -1,4 +1,4 @@
-/** Resolução de Questões **/
+/* CSS da página de resolução de questões */
 
 section.resolvendo-questoes{
     padding: 80px 0 50px;
@@ -14,7 +14,7 @@ section.resolvendo-questoes h2+p{
     display: block;
     padding: 3px;
     margin-top: -30px;
-    background-color: white;
+    background-color: var(--color-white);
     border-radius: 7px;
 }
 

@@ -29,7 +29,7 @@ div.box-usuario div.botao-menu-mobile{
 
 div.box-usuario div.botao-menu-mobile i{
     text-align: center;
-    color: white;
+    color: var(--color-white);
     padding-top: 10px;
     font-size: 25px;
     cursor: pointer;
@@ -45,7 +45,7 @@ div.box-usuario div.nome-usuario{
 }
 
 div.box-usuario div.nome-usuario p{
-	color: white;
+	color: var(--color-white);
 }
 
 div.box-usuario div.nome-usuario p b{
@@ -67,7 +67,7 @@ div.box-links div.itens a{
     text-align: center;
 	text-decoration: none;
 	font-weight: normal;
-    color: white;
+    color: var(--color-white);
     
     border-bottom: 2px solid var(--color-footer);
     
@@ -81,7 +81,7 @@ div.menu div.links{
 
 div.menu div.links a,
 div.menu div.links i{
-    color: white;
+    color: var(--color-white);
 }
 
 
@@ -102,7 +102,7 @@ section.content{
 	padding: 30px;
 	margin-bottom: 25px;
 	width: 100%;
-    background-color: white;
+    background-color: var(--color-white);
 }
 
 section.content h2{
@@ -121,7 +121,7 @@ section.content div.box-infs div.infs{
 	min-height: 95px;
     height: 100%;
     
-    color: white;
+    color: var(--color-white);
 	text-align: center;
     
 	padding: 10px;
@@ -141,8 +141,8 @@ div.box-content form.formulario{
 	margin: 10px 0;
     padding: 20px;
     
-	color: white;
-    border: 1px solid black;
+	color: var(--color-white);
+    border: 1px solid var(--color-black);
     
 	position: relative;
 	left: 50%;
@@ -208,7 +208,7 @@ div.box-content table{
 
 div.box-content table tr:nth-of-type(1){
 	background: var(--color-alternative-button);
-	color: white;
+	color: var(--color-white);
 }
 
 div.box-content table tr td,
@@ -217,7 +217,7 @@ div.box-content table tr th{
 }
 
 div.box-content table tr td{
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid var(--color-background-basic);
 } 
 
 div.box-content table tr td button{
@@ -315,7 +315,7 @@ div.box-content div.reports div.infs.blue{
         padding: 30px 10px;
         margin-bottom: 25px;
         width: 100%;
-        background-color: white;
+        background-color: var(--color-white);
     }
 
 }

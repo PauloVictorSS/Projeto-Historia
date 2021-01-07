@@ -22,7 +22,7 @@ div.temas_p_materia p.temas{
     border-radius: 10px;
     text-align: center;
 
-    background-color: rgb(203, 195, 226);
+    background-color: var(--color-menu);
     
     min-width: 200px;
 }

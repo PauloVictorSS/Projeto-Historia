@@ -7,7 +7,7 @@ form#form-temas div.box-category p{
 }
 
 form#form-temas div.box-category:nth-of-type(1){
-	background-color: #00426B;
+	background-color: var(--color-alternative-blue);
 	text-align: center;
 	padding: 6px;
 	margin-top: 10px;
