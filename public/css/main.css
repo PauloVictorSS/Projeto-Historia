@@ -1,7 +1,13 @@
+/* CSS principal do site */
+
 :root{
+    --color-white: #fff;
+    --color-black: #000;
     --color-background-basic: #eee;
 
-    --color-red:  #ce3232;
+    --color-shadow: #222;
+
+    --color-red: #E05C4E;
     --color-green:  #59d859;
     --color-text-basic: rgb(36, 41, 46);
 
@@ -13,6 +19,7 @@
     --color-menu: #505BC7;
     --color-footer:  #2C225E;
     --color-footer-secundary:  #1c1f3d; 
+    --color-alternative-blue:  #00426B;
 
     font: 300 105% 'Arial', sans-serif;
 }
@@ -40,7 +47,7 @@ a,p{  font-size: 100%;  }
 
 a{
     text-decoration: none;
-    color: black;
+    color: var(--color-black);
 }
 a.link:hover{
     text-decoration: underline;
@@ -80,16 +87,18 @@ h1{
 }
 
 div.mensagem{
-    margin: 15px auto;
     width: 80%;
-    text-align: center;
+
+    margin: 15px auto;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px #222;
-    color: white;
+    box-shadow: 5px 5px 5px var(--color-shadow);
+
+    text-align: center;
+    color: var(--color-white);
 }
 div.mensagem a{
-    color: white;
+    color: var(--color-white);
 }
 div.mensagem a:hover{
     text-decoration: underline;
