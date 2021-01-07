@@ -57,7 +57,7 @@
             }
     ?>
     <h1>Alterar informações pessoais</h1>
-    <span class="aviso">** Caso não queira alterar algum valor, deixe-o em branco **</span>
+    <span class="aviso">** Caso não queira alterar alguma informação, deixe-o em branco **</span>
 
     <form action="<?php echo INCLUDE_PATH_ESTUDANTE; ?>alterar_dados" method="POST">
 
@@ -93,6 +93,6 @@
         </div>
 
         <button type="submit" name="submit" value="person">Alterar informações pessoais</button>
-        <span class="aviso">** Caso não queira alterar algum valor, deixe-o em branco **</span>
     </form>
+    <span class="aviso">** Caso não queira alterar alguma informação, deixe-o em branco **</span>
 </div>

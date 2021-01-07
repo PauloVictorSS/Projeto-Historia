@@ -1,24 +1,21 @@
 <?php
 
+    //Iniciando uma sessão e definindo a timezone
+
     if(!isset($_SESSION)) 
         session_start(); 
     
     date_default_timezone_set('America/Sao_Paulo');
+
+    //Criação de um autoloader para as classes em PHP
 
     $autoload = function($class){
         include('class/'.$class.'.php');
     };
     spl_autoload_register($autoload);
 
-    function clear($input) {
-        global $conexao;
 
-        $var = mysqli_escape_string($conexao, $input);
-
-        $var = htmlspecialchars($var);
-
-        return $var;
-    }
+    //Definir as constantes do sistema
 
     define("INCLUDE_PATH", "http://localhost/GitHub/Projetos%20Pessoais/Projeto-Historia/");
     define("INCLUDE_PATH_PAINEL", INCLUDE_PATH."painel/");

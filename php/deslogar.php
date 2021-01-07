@@ -14,8 +14,6 @@
 		$_SESSION['id_usuario']
 	);
 
-	$url = INCLUDE_PATH.'pages/login.php';
-
-	header("location: $url");	
+	header("location: ".INCLUDE_PATH."pages/login.php");	
 
 ?>
