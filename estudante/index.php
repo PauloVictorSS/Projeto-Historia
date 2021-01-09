@@ -76,7 +76,7 @@
             if(file_exists('pages/'.$explode[0].'.php'))
                 include_once('pages/'.$explode[0].'.php');
             else
-                header("Location: pages/erro404.php");
+                header("Location: ".INCLUDE_PATH."pages/erro404.php");
         ?>
     </section>
 
