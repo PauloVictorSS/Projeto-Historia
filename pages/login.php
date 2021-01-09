@@ -51,6 +51,7 @@
                                 $_SESSION['nome_admin'] = $prof['nome'];
                                 $_SESSION['materia_prof'] = $prof['id_materia'];
                                 $_SESSION['id'] = $prof['id'];
+                                $_SESSION['prof_admin'] = $prof['senha'];
 
                                 header("location: ".INCLUDE_PATH_PAINEL);
                             }
