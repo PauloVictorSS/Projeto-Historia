@@ -106,6 +106,24 @@
 
         }
 
+        public static function alterQuestObj($enunciado, $pergunta, $alter_a, $alter_b, $alter_c, $alter_d, $alter_e, $gabarito, $explic, $tema, $vest, $ano,  $conteudo, $id){
+
+            $sql = MySql::getConnect()->prepare("UPDATE questoes SET enunciado = ?, pergunta = ?, alternativa_a = ?, alternativa_b = ?, alternativa_c = ?, alternativa_d = ?, alternativa_e = ?, alternativa_certa = ?, explicacao = ?, imagem = '$conteudo', id_sub_tema = ?, id_vestibular = ?, ano = ? WHERE id = ?");
+        
+            $sql->execute(array($enunciado, $pergunta, $alter_a, $alter_b, $alter_c, $alter_d, $alter_e, $gabarito, $explic, $tema, $vest, $ano, $id));
+
+            return $sql->rowCount();
+        }
+
+        public static function alterQuestDissert($enunciado, $pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $tema, $vest, $ano, $conteudo, $id, $explic){
+
+            $sql = MySql::getConnect()->prepare("UPDATE questoes SET enunciado = ?, pergunta = ?, alternativa_a = ?, alternativa_b = ?, alternativa_c = ?, alternativa_d = ?, alternativa_e = ?, alternativa_certa = ?, explicacao = ?, imagem = '$conteudo', id_sub_tema = ?, id_vestibular = ?, ano = ? WHERE id = ?");
+
+            $sql->execute(array($enunciado, $pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $explic, $tema, $vest, $ano, $id));
+
+            return $sql->rowCount();
+        }
+
     }
 
 ?>
