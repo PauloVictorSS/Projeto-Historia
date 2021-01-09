@@ -1,0 +1,19 @@
+div.alterar_quest{
+    width: 100%;
+    margin: 10px auto;
+}
+
+div.alterar_quest h3{
+    text-align: center;
+}
+
+div.alterar_quest span.aviso{
+    display: block;
+    width: 100%;
+    max-width: 900px;
+
+    margin: 15px auto;
+
+    text-align: center;
+    color: var(--color-red);
+}
