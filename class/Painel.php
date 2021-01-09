@@ -10,41 +10,39 @@
         }
 
         public static function registeredUsers(){
-            $sql = MySql::getConnect()->prepare("SELECT * FROM `usuarios`");
-			$sql->execute();
-			return $sql->fetchAll();
+            $stmt = MySql::getConnect()->prepare("SELECT * FROM `usuarios`");
+			$stmt->execute();
+			return $stmt->fetchAll();
         }
 
         public static function addVestibular($name){
-            $sql = MySql::getConnect()->prepare("INSERT  INTO vestibular VALUES (null, ?)");
-            $sql->execute(array($name));
+            $stmt = MySql::getConnect()->prepare("INSERT  INTO vestibular VALUES (null, ?)");
+            $stmt->execute(array($name));
 
-            return $sql->rowCount();
+            return $stmt->rowCount();
         }
 
         public static function deleteVestibular($id){
-            $sql = MySql::getConnect()->prepare("DELETE FROM vestibular WHERE id = ?");
-            $sql->execute(array($id));
+            $stmt = MySql::getConnect()->prepare("DELETE FROM vestibular WHERE id = ?");
+            $stmt->execute(array($id));
 
-            return $sql->rowCount();
+            return $stmt->rowCount();
         }
 
         public static function addTema($name, $materia){
-            $sql = MySql::getConnect()->prepare("INSERT  INTO sub_tema VALUES (null, ?, ?)");
-            $sql->execute(array($name, $materia));
+            $stmt = MySql::getConnect()->prepare("INSERT INTO sub_tema VALUES (null, ?, ?)");
+            $stmt->execute(array($name, $materia));
 
-            return $sql->rowCount();
+            return $stmt->rowCount();
         }
 
         public static function deleteTema($name){
-            $sql = MySql::getConnect()->prepare("DELETE FROM sub_tema WHERE descricao = ?");
-            $sql->execute(array($name));
+            $stmt = MySql::getConnect()->prepare("DELETE FROM sub_tema WHERE descricao = ?");
+            $stmt->execute(array($name));
 
-            return $sql->rowCount();
+            return $stmt->rowCount();
         }
 
-    }
-    
 
 
 ?>
