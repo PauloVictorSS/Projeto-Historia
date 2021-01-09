@@ -62,15 +62,15 @@
     <form action="<?php echo INCLUDE_PATH_ESTUDANTE; ?>alterar_dados" method="POST">
 
         <div class="text-box">
-            <label for="nome">Novo nome</label><span> *</span>
+            <label for="nome">Novo nome</label>
             <input type="text" name="nome" id="nome" class="informacoes" placeholder="Nome" maxlength="50">
         </div>
         <div class="text-box">
-            <label for="nasc">Nova data de nascimento</label><span> *</span>
+            <label for="nasc">Nova data de nascimento</label>
             <input type="date" name="aniver" id="nasc" class="informacoes" max="<?php echo $ano_max."-".date('m')."-".date('d') ?>">
         </div>
         <div class="text-box">
-            <label for="escolar">Nova escolaridade</label><span> *</span>
+            <label for="escolar">Nova escolaridade</label>
             <select id="escolar" name="escolar">
                 <option value="">Escolaridade</option>
                 <?php  
@@ -81,7 +81,7 @@
             </select>
         </div>
         <div class="text-box">
-            <label for="rede">Nova rede da sua escola</label><span> *</span>
+            <label for="rede">Nova rede da sua escola</label>
             <select id="rede" name="rede">
                 <option value="">Rede</option>
                 <?php  
