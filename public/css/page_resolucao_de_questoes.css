@@ -63,7 +63,7 @@ section.resolvendo-questoes a{
 
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: var(--color-black);
 
     cursor: pointer;
     

@@ -222,7 +222,7 @@ div.box-content table tr td{
 
 div.box-content table tr td button{
 	background: none;
-	color: #E05C4E;
+	color: var(--color-red);
 	cursor: pointer;
 }
 

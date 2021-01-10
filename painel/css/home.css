@@ -35,8 +35,7 @@ div.text-box select{
     margin-top: 8px;
     padding: 10px;
 
-    background: #fafbfc;
-    border: 1px solid #dfe1e4;
+    background: var(--color-background-basic);
     border-radius: 5px;
     
     outline: none;
@@ -61,7 +60,7 @@ form button{
     cursor: pointer;
 
     background-color: var(--color-classic-button);
-    color: white;
+    color: var(--color-white);
     font-size: 110%;
 
     transition: background 0.2s;

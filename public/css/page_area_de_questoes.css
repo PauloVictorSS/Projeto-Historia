@@ -2,7 +2,7 @@
 /* CSS da Área de Questões */
 
 section.area-de-questoes{
-    background: #eee;
+    background: var(--color-background-basic);
     min-height: 500px;
     padding: 50px 0;
 }
@@ -69,25 +69,25 @@ section.area-de-questoes div.resultados{
     padding: 20px 5px;
 }
 
-section.area-de-questoes div.resultados h2{
+div.resultados h2{
     text-align: center;
     padding-top: 10px;
     font-size: 100%;
     padding-bottom: 20px;
 }
 
-section.area-de-questoes div.resultados img{
+div.resultados img{
     display: block;
     margin: 0 auto;
     max-width: 500px;
 }
 
-section.area-de-questoes div.resultados form.entrar_questao button{
+div.resultados form.entrar_questao button{
     background: none;
     border: none;
     cursor: pointer;
 }
-section.area-de-questoes div.resultados form.entrar_questao button:hover{
+div.resultados form.entrar_questao button:hover{
     text-decoration: underline;
 }
 
