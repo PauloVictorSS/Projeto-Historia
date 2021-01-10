@@ -6,153 +6,91 @@
     if(!empty($_POST["id_questao"]))
         $_SESSION["id_questao"] = $_POST["id_questao"];
 
-    $id_questao = $_SESSION["id_questao"];
-
-    $result = Questao::selectQuestion($id_questao);
+    $result = Questao::selectQuestion($_SESSION["id_questao"]);
     $questao = $result[0];
-
-    $tipo = $questao['tipo'];
-
-    $vestibular = $questao['vestibular'];
-    $ano = $questao['ano'];
-    $tema = $questao['subtema'];
-
-    $enunciado = $questao['enunciado'];
-    $imagem = $questao['imagem'];
-    $pergunta = $questao['pergunta'];
-
-    $alternativa_A = $questao['alternativa_a'];
-    $alternativa_B = $questao['alternativa_b'];
-    $alternativa_C = $questao['alternativa_c'];
-    $alternativa_D = $questao['alternativa_d'];
-    $alternativa_E = $questao['alternativa_e'];
-
-    $gabarito = $questao['alternativa_certa'];
-    $explicacao = $questao['explicacao'];
 
     $areaquestoes = INCLUDE_PATH_PAINEL.'Exibir-Questoes';
 
     if(isset($_POST["action"])){
 
-        $tipo = $_POST["action"];
-
         if(!empty($_POST["texto"]))
-            $novo_enunciado = str_replace("\n", "<br>", str_replace("'", "`", $_POST["texto"]));
-        else
-            $novo_enunciado = $enunciado;
+            $questao['enunciado'] = str_replace("\n", "<br>", str_replace("'", "`", $_POST["texto"]));
         
         if(!empty($_POST["enunciado"]))
-            $nova_pergunta = str_replace("'", "`", $_POST["enunciado"]);
-        else
-            $nova_pergunta = $pergunta;
+            $questao['pergunta'] = str_replace("'", "`", $_POST["enunciado"]);
 
         $imagem = $_FILES['image']['tmp_name'];
-        $tamanho = $_FILES['image']['size'];
-        $tipoImg = $_FILES['image']['type'];
-        $nome = $_FILES['image']['name'];
 
         if(!empty($imagem)){
+
+            $tamanho = $_FILES['image']['size'];
+            $tipoImg = $_FILES['image']['type'];
+            $nome = $_FILES['image']['name'];
+
             $fp = fopen($imagem, "rb");
             $novo_conteudo = fread($fp, $tamanho);
-            $novo_conteudo = addslashes($novo_conteudo);
+            $questao['imagem'] = addslashes($novo_conteudo);
         }
-        else
-            $novo_conteudo = $imagem;
 
         if(!empty($_POST["ano"]))
-            $novo_ano = $_POST["ano"];
-        else
-            $novo_ano = $ano;
+            $questao['ano'] = $_POST["ano"];
 
         if(!empty($_POST["tema"]))
-            $novo_tema = $_POST["tema"];
-        else
-            $novo_tema = $questao["id_sub_tema"];
+            $questao["id_sub_tema"] = $_POST["tema"];
 
         if(!empty($_POST["vest"]))
-            $novo_vest = $_POST["vest"];
-        else
-            $novo_vest = $questao["id_vestibular"];
+            $questao["id_vestibular"] = $_POST["vest"];
 
         if(!empty($_POST["explic"]))
-            $nova_explic = str_replace("'", "`", $_POST["explic"]);
-        else
-            $nova_explic = $explicacao;
+            $questao['explicacao'] = str_replace("'", "`", $_POST["explic"]);
 
-        if($tipo == 1){
+        if($_POST["action"] == 1){
 
             if(!empty($_POST["alter_a"]))
-                $nova_alter_a = str_replace("'", "`", $_POST["alter_a"]);
-            else
-                $nova_alter_a = $alternativa_A;
+                $questao['alternativa_a'] = str_replace("'", "`", $_POST["alter_a"]);
             
             if(!empty($_POST["alter_b"]))
-                $nova_alter_b = str_replace("'", "`", $_POST["alter_b"]);
-            else
-                $nova_alter_b = $alternativa_B;
+                $questao['alternativa_b'] = str_replace("'", "`", $_POST["alter_b"]);
 
             if(!empty($_POST["alter_c"]))
-                $nova_alter_c = str_replace("'", "`", $_POST["alter_c"]);
-            else
-                $nova_alter_c = $alternativa_C;
+                $questao['alternativa_c'] = str_replace("'", "`", $_POST["alter_c"]);
 
             if(!empty($_POST["alter_d"]))
-                $nova_alter_d = str_replace("'", "`", $_POST["alter_d"]);
-            else
-                $nova_alter_d = $alternativa_D;
+                $questao['alternativa_d'] = str_replace("'", "`", $_POST["alter_d"]);
 
             if(!empty($_POST["alter_e"]))
-                $nova_alter_e = str_replace("'", "`", $_POST["alter_e"]);
-            else
-                $nova_alter_e = $alternativa_E;
+                $questao['alternativa_e'] = str_replace("'", "`", $_POST["alter_e"]);
 
             if(!empty($_POST["gabarito"]))
-                $novo_gabarito = $_POST["gabarito"];
-            else
-                $novo_gabarito = $gabarito;
+                $questao['alternativa_certa'] = $_POST["gabarito"];
 
-            $result = Questao::alterQuestObj($novo_enunciado, $nova_pergunta, $nova_alter_a, $nova_alter_b, $nova_alter_c, $nova_alter_d, $nova_alter_e, $novo_gabarito, $nova_explic, $novo_tema, $novo_vest, $novo_ano, $novo_conteudo, $id_questao);
+            $result = Questao::alterQuestObj($questao['enunciado'], $questao['pergunta'], $questao['alternativa_a'], $questao['alternativa_b'], $questao['alternativa_c'], $questao['alternativa_d'], $questao['alternativa_e'], $questao['alternativa_certa'], $questao['explicacao'], $questao["id_sub_tema"], $questao["id_vestibular"], $questao['ano'], $questao['imagem'], $_SESSION["id_questao"]);
 
         }else{
 
             if(!empty($_POST["quest_a"]))
-                $quest_a = str_replace("'", "`", $_POST["quest_a"]);
-            else
-                $quest_a = $alternativa_A;
+                $questao['alternativa_a'] = str_replace("'", "`", $_POST["quest_a"]);
             
             if(!empty($_POST["quest_b"]))
-                $quest_b = str_replace("'", "`", $_POST["quest_b"]);
-            else
-                $quest_b = $alternativa_B;
+                $questao['alternativa_b'] = str_replace("'", "`", $_POST["quest_b"]);
 
             if(!empty($_POST["quest_c"]))
-                $quest_c = str_replace("'", "`", $_POST["quest_c"]);
-            else
-                $quest_c = $alternativa_C;
+                $questao['alternativa_c'] = str_replace("'", "`", $_POST["quest_c"]);
             
             if(!empty($_POST["resp_a"]))
-                $resp_a = str_replace("'", "`", $_POST["resp_a"]);
-            else
-                $resp_a = $alternativa_D;
+                $questao['alternativa_d'] = str_replace("'", "`", $_POST["resp_a"]);
             
             if(!empty($_POST["resp_b"]))
-                $resp_b = str_replace("'", "`", $_POST["resp_b"]);
-            else
-                $resp_b = $alternativa_E;
+                $questao['alternativa_e'] = str_replace("'", "`", $_POST["resp_b"]);
 
             if(!empty($_POST["resp_c"]))
-                $resp_c = str_replace("'", "`", $_POST["resp_c"]);
-            else
-                $resp_c = $gabarito;
+                $questao['alternativa_certa'] = str_replace("'", "`", $_POST["resp_c"]);
 
-            $result = Questao::alterQuestDissert($novo_enunciado, $nova_pergunta, $quest_a, $quest_b, $quest_c, $resp_a, $resp_b, $resp_c, $novo_tema, $novo_vest, $novo_ano, $novo_conteudo, $id_questao, $nova_explic);
+            $result = Questao::alterQuestDissert($questao['enunciado'], $questao['pergunta'], $questao['alternativa_a'], $questao['alternativa_b'], $questao['alternativa_c'], $questao['alternativa_d'], $questao['alternativa_e'], $questao['alternativa_certa'], $questao["id_sub_tema"], $questao["id_vestibular"], $questao['ano'], $questao['imagem'], $_SESSION["id_questao"], $questao['explicacao']);
         }
 
-        if($result == 1){
-            
-            $_SESSION["result"] = $result; 
-            header("Location: ".INCLUDE_PATH_PAINEL."Analise-Questao");
-        }
+        if($result == 1)
+            echo "<div class='mensagem green'>Informações da questão alterados com sucesso!</div>";
         else
             echo "<div class='mensagem red'>Nenhum dado foi alterado, caso não seja o resultado esperado, contate-nos</div>";
     }
@@ -162,35 +100,30 @@
 
     <?php
 
-        echo "<h1>Questão sobre $tema</h1>";
+        echo "<h1>Questão sobre ".$questao['subtema']."</h1><hr>";
 
-        echo "<hr>";
-
-        echo "<p><b>($vestibular $ano)</b> $enunciado</p>";
+        echo "<p><b>(".$questao['vestibular']." ".$questao['ano'].")</b> ".$questao['enunciado']."</p>";
                     
-        if(!empty($imagem))
-            echo '<img src="data:image/jpeg;base64,'.base64_encode( $imagem ).'"/>';
+        if(!empty($questao['imagem']))
+            echo '<img src="data:image/jpeg;base64,'.base64_encode( $questao['imagem'] ).'"/>';
                 
-        if(!empty($pergunta))
-            echo "<p><b>$pergunta</b></p><br>";
+        if(!empty($questao['pergunta']))
+            echo "<p><b>".$questao['pergunta']."</b></p><br>";
 
-        if($tipo == 1){
+        if($questao['tipo'] == 1){
             
-            echo "<p><b>A) </b> $alternativa_A</p><br>";
-            echo "<p><b>B) </b> $alternativa_B</p><br>";
-            echo "<p><b>C) </b> $alternativa_C</p><br>";
-            echo "<p><b>D) </b> $alternativa_D</p><br>";
-            if(!empty($alternativa_E)){
-                echo "<p><b>E) </b> $alternativa_E</p><br>";	
-            }
+            echo "<p><b>A) </b> ".$questao['alternativa_a']."</p><br>";
+            echo "<p><b>B) </b> ".$questao['alternativa_b']."</p><br>";
+            echo "<p><b>C) </b> ".$questao['alternativa_c']."</p><br>";
+            echo "<p><b>D) </b> ".$questao['alternativa_d']."</p><br>";
+
+            if(!empty($questao['alternativa_e']))
+                echo "<p><b>E) </b> ".$questao['alternativa_e']."</p><br>";	
             
-            $acertTotal = Questao::acertQuestion($id_questao, $tipo);
-            $acertos = $acertTotal[0];
-            $total = $acertTotal[1];
+            $acertTotal = Questao::acertQuestion($_SESSION["id_questao"], $questao['tipo']);
 
-            echo "<br><p class='right'><b>Acertos:</b> $acertos/$total</p>";
-            echo "<p><b>Gabarito:</b> $gabarito</p>";
-
+            echo "<br><p class='right'><b>Acertos:</b> ".$acertTotal[0]."/".$acertTotal[1]."</p>";
+            echo "<p><b>Gabarito:</b> ".$questao['alternativa_certa']."</p>";
     ?>
     <hr>
     <div class="alterar_quest">
@@ -276,26 +209,26 @@
     <?php
         }
 
-        elseif($tipo == 2){
+        elseif($questao['tipo'] == 2){
 
-            if(!empty($alternativa_A))
-                echo "<b>A) </b> $alternativa_A<br>";
+            if(!empty($questao['alternativa_a']))
+                echo "<b>A) </b> ".$questao['alternativa_a']."<br>";
 
-            if(!empty($alternativa_B))
-                echo "<b>B) </b> $alternativa_B<br>";
+            if(!empty($questao['alternativa_b']))
+                echo "<b>B) </b> ".$questao['alternativa_b']."<br>";
 
-            if(!empty($alternativa_C))
-                echo "<b>C) </b> $alternativa_C<br>";
+            if(!empty($questao['alternativa_c']))
+                echo "<b>C) </b> ".$questao['alternativa_c']."<br>";
 
             echo "<br><p><b>Respostas esperadas:</b></p><br>";
-            if(!empty($alternativa_D))
-                echo"<b>A)</b> $alternativa_D<br><br>";
+            if(!empty($questao['alternativa_d']))
+                echo"<b>A)</b> ".$questao['alternativa_d']."<br><br>";
         
-            if(!empty($alternativa_E))
-                echo"<b>B)</b> $alternativa_E<br><br>";
+            if(!empty($questao['alternativa_e']))
+                echo"<b>B)</b> ".$questao['alternativa_e']."<br><br>";
         
-            if(!empty($gabarito))
-                echo"<b>C)</b> $gabarito<br>";
+            if(!empty($questao['alternativa_certa']))
+                echo"<b>C)</b> ".$questao['alternativa_certa']."<br>";
     ?>
 
     <hr>
