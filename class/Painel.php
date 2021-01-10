@@ -1,5 +1,10 @@
 <?php
 
+/*
+   Classe que contém os métodos relacionados as funções do painel dos
+   administradores
+*/
+
     class Painel{
 
         public static function loggout(){
@@ -39,15 +44,6 @@
         public static function deleteTema($name){
             $stmt = MySql::getConnect()->prepare("DELETE FROM sub_tema WHERE descricao = ?");
             $stmt->execute(array($name));
-
-            return $stmt->rowCount();
-        }
-
-        public static function newPass($nova_senha, $id){
-            $senha_codif = hash("sha512", $nova_senha);
-
-            $stmt = MySql::getConnect()->prepare("UPDATE `admin.usuarios` SET senha = ? WHERE id = ?");
-            $stmt->execute(array($senha_codif, $id));
 
             return $stmt->rowCount();
         }

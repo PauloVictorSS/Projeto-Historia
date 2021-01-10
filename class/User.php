@@ -1,5 +1,10 @@
 <?php
 
+/*
+   Classe que contém os métodos relacionados ao usuário comum, como login, cadastro, 
+   retornar as informações, alterar informações, etc.
+*/
+
     class User{
 
         public static function login($email, $senha){

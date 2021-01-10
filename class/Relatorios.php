@@ -1,5 +1,9 @@
 <?php
 
+/*
+   Classe que contém os métodos para gerar os Relatórios das questões
+*/
+
     class Relatorios{
 
         private static $cores = array();

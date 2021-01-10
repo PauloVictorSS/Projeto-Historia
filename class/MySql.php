@@ -1,5 +1,10 @@
 <?php
 
+/*
+   Calsse que tem o método que faz a conexão com banco de dados 
+   e retorna ela
+*/
+
     class MySql{
         private static $pdo;
 

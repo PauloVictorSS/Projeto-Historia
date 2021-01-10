@@ -15,7 +15,7 @@
         if($senha_atual == $_SESSION["prof_admin"]){
             if($_POST["newpass"] == $_POST["conf_newpass"]){
 
-                if(Painel::newPass($_POST["newpass"], $_SESSION["id"]) == 1)
+                if(Adm::newPass($_POST["newpass"], $_SESSION["id"]) == 1)
                     echo "<div class='mensagem green'>Senha alterada com sucesso</div>";
                 else
                     echo "<div class='mensagem red'>Houve algum erro ao alterar a senha, por favor contate-nos e tente mais tarde</div>";

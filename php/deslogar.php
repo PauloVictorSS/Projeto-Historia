@@ -2,8 +2,7 @@
 
 /*
 	Desloga o usuário e destrói as sessões
-	com o login e a senha do usuário que
-	estava legado
+	com as informações do usuário
 */
 
 	include_once("../config.php");

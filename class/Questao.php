@@ -1,5 +1,10 @@
 <?php
 
+/*
+   Classe que contém os métodos relacionadaos as Questões, como os filtros utilizados
+   na Área de Questões e a adição de novas questões pelos professores
+*/
+
     class Questao{
 
         private static $tema = "";
