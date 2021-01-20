@@ -82,14 +82,32 @@
         else
             $pagina = 1;
         
+        //Iniciando as sessões caso elas não existam
+        if(!isset($_SESSION['partenome']))
+            $_SESSION['partenome'] = '';
+
+        if(!isset($_SESSION['vestibular']))
+            $_SESSION['vestibular'] = '';
+
+        if(!isset($_SESSION['ano']))
+            $_SESSION['ano'] = '';
+
+        if(!isset($_SESSION['tema']))
+            $_SESSION['tema'] = '';
+
+        if(!isset($_SESSION['materia']))
+            $_SESSION['materia'] = '';
+
+        //Resetanto os filtros caso o usuário não esteja nas áreas de Resolução ou de Questão
         if($explode[0] != 'area_de_questoes' and $explode[0] != 'resolucao_de_questoes'){
+
             $_SESSION['partenome'] = '';
             $_SESSION['vestibular'] = '';
             $_SESSION['ano'] = '';
             $_SESSION['tema'] = '';
             $_SESSION['materia'] = '';
         }
-    
+
         //Verificando se a url escolhida existe
         if(file_exists('pages/'.$explode[0].'.php'))
             include_once('pages/'.$explode[0].'.php');
