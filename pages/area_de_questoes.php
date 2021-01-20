@@ -5,18 +5,20 @@
 
 	$filtros = ["tema", "ano", "partenome", "vestibular", "qtd_quest", "materia"];
 
+	$filtro_exist = false;
+
+	if(isset($_POST['btn-reset-filtro']))
+		foreach ($filtros as $campo) 
+			$_SESSION[$campo] = "";
+	
 	foreach ($filtros as $campo) {
-		
 		if(!empty($_POST[$campo]))
 			$_SESSION[$campo] = $_POST[$campo];
-	}
-	
-	if(isset($_POST['btn-reset-filtro'])){
 
-		foreach ($filtros as $campo) {
-			$_SESSION[$campo] = "";
-		}
+		if(!empty($_SESSION[$campo]))
+			$filtro_exist = true;
 	}
+
 
 	Questao::filterQuestions($_SESSION['tema'], $_SESSION['ano'], $_SESSION['partenome'], $_SESSION['vestibular'], $_SESSION['materia']);	
 
@@ -100,7 +102,7 @@
 							if(!empty($_SESSION[$campo]) and $campo != "partenome"){
 								
 								$nome_campo = str_replace("_", " ", $campo);
-								echo "<p class='p_filtro'><b>$nome_campo:</b> ".$_SESSION[$campo]."</p>";
+								echo "<p class='p_filtro'><b>".ucfirst($nome_campo).":</b> ".$_SESSION[$campo]."</p>";
 							}
 					?>
 							
