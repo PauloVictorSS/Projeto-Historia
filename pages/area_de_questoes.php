@@ -89,6 +89,27 @@
 				<button type="submit" value="1" name="btn-reset-filtro">Remover Filtros</button>
 			</form>
 
+			<?php	
+				if($filtro_exist){		
+			?>
+				<div class="filtros_usados">
+					<h3>Filtros ativos: </h3>
+					<?php
+
+						foreach ($filtros as $campo)
+							if(!empty($_SESSION[$campo]) and $campo != "partenome"){
+								
+								$nome_campo = str_replace("_", " ", $campo);
+								echo "<p class='p_filtro'><b>$nome_campo:</b> ".$_SESSION[$campo]."</p>";
+							}
+					?>
+							
+				</div>
+
+			<?php
+				}
+			?>
+
 			<div class="center resultados">
 				<?php
 					if (!empty($_SESSION['qtd_quest'])) 
